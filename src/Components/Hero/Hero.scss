@@ -1,0 +1,14 @@
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 256px;
+}
+
+.hero-title {
+    // @extend .title;
+    font-size: 5rem;
+}
