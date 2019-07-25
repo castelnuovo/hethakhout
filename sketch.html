@@ -45,7 +45,7 @@
         </style>
     </head>
     <body class="has-navbar-fixed-top">
-        <nav id="navbarComponent" class="navbar is-fixed-top is-primary">
+        <nav id="navbarComponent" class="navbar is-fixed-top">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">
@@ -77,7 +77,7 @@
                         <span class="navbar-item">
                             <a
                                 id="bookWalkBtn"
-                                class="button is-primary is-inverted"
+                                class="button is-primary is-outlined"
                                 href="/"
                             >
                                 <span class="icon">
@@ -90,10 +90,7 @@
                 </div>
             </div>
         </nav>
-        <section
-            id="heroComponent"
-            class="hero is-primary is-fullheight-with-navbar"
-        >
+        <section id="heroComponent" class="hero is-fullheight-with-navbar">
             <!-- Hero content: will be in the middle -->
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -114,11 +111,7 @@
                 </div>
             </div>
         </section>
-
-        <section
-            id="welcomeComponent"
-            class="section is-medium has-background-danger"
-        >
+        <section id="welcomeComponent" class="section is-medium">
             <div class="container is-small has-text-centered">
                 <div class="columns">
                     <div class="column is-half is-offset-one-quarter">
@@ -146,7 +139,7 @@
                 </div>
             </div>
         </section>
-        <section id="blogComponent" class="section has-background-warning">
+        <section id="blogComponent" class="section">
             <div class="container is-small has-text-centered">
                 <div class="columns is-vcentered is-multiline">
                     <div
@@ -200,7 +193,7 @@
                 </div>
             </div>
         </section>
-        <section id="ciskaComponent" class="section has-background-success">
+        <section id="ciskaComponent" class="section">
             <div class="container">
                 <div class="columns">
                     <div class="column is-one-third">
@@ -227,7 +220,7 @@
                 </div>
             </div>
         </section>
-        <footer id="footerComponent" class="footer has-background-info">
+        <footer id="footerComponent" class="footer">
             <div class="content has-text-centered ">
                 <p>
                     <strong>Bulma</strong> by
@@ -246,7 +239,6 @@
         <script>
             const navBar = document.querySelector('#navbarComponent');
             const navBarLogo = document.querySelector('#navbar-image');
-            const heroLogo = document.querySelector('#header-image');
             const bookWalkBtn = document.querySelector('#bookWalkBtn');
 
             window.onscroll = function() {
@@ -258,17 +250,15 @@
                     document.body.scrollTop > 25 ||
                     document.documentElement.scrollTop > 25
                 ) {
-                    navBar.classList.remove('is-primary');
-                    navBarLogo.classList.remove('hidden');
-                    bookWalkBtn.classList.remove('is-inverted');
-                    bookWalkBtn.classList.add('is-outlined');
-                    // heroLogo.classList.add('hidden');
-                } else {
                     navBar.classList.add('is-primary');
-                    navBarLogo.classList.add('hidden');
+                    navBarLogo.classList.remove('hidden');
                     bookWalkBtn.classList.add('is-inverted');
                     bookWalkBtn.classList.remove('is-outlined');
-                    // heroLogo.classList.remove('hidden');
+                } else {
+                    navBar.classList.remove('is-primary');
+                    navBarLogo.classList.add('hidden');
+                    bookWalkBtn.classList.remove('is-inverted');
+                    bookWalkBtn.classList.add('is-outlined');
                 }
             }
         </script>
