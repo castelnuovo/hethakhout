@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+        />
+        <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+        ></script>
+        <style>
+            html {
+                overscroll-behavior: none;
+            }
+
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar {
+                transition: background-color 0.2s linear;
+            }
+
+            #navbar-image {
+                transition-property: transform, opacity;
+                transition-duration: 0.1s;
+                transition-timing-function: ease-in;
+            }
+
+            #navbar-image.hidden {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            #header-image {
+                max-width: 384px;
+            }
+        </style>
+    </head>
+    <body class="has-navbar-fixed-top">
+        <nav id="navbarComponent" class="navbar is-fixed-top is-primary">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <img
+                            src="/src/Assets/images/logo_green_withouw_brand.png"
+                            id="navbar-image"
+                            class="hidden"
+                            alt="Logo"
+                        />
+                    </a>
+                    <span
+                        class="navbar-burger burger"
+                        data-target="navbarMenuHeroA"
+                    >
+                        <!-- TODO: Create Hamburger Menu -->
+                    </span>
+                </div>
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="/">
+                            Blog
+                        </a>
+                        <a class="navbar-item" href="/">
+                            Foto's
+                        </a>
+                        <span class="navbar-item">
+                            <a
+                                id="bookWalkBtn"
+                                class="button is-primary is-inverted"
+                                href="/"
+                            >
+                                <span class="icon">
+                                    <i class="fas fa-walking"></i>
+                                </span>
+                                <span>Boek een Wandeling</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section
+            id="heroComponent"
+            class="hero is-primary is-fullheight-with-navbar"
+        >
+            <!-- Hero content: will be in the middle -->
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <figure class="center">
+                        <img
+                            src="/src/Assets/images/logo_green_withouw_brand.png"
+                            id="header-image"
+                            class="image"
+                            alt="Logo"
+                        />
+                    </figure>
+                    <h1 class="title">
+                        Welkom bij Het Hak Hout
+                    </h1>
+                    <h2 class="subtitle">
+                        Rondleidingen, Wandelingen en Meer
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="welcomeComponent"
+            class="section is-medium has-background-danger"
+        >
+            <div class="container is-small has-text-centered">
+                <div class="columns">
+                    <div class="column is-half is-offset-one-quarter">
+                        <h1 class="title is-spaced">
+                            Het Gebied
+                        </h1>
+                        <div class="columns">
+                            <div class="column is-two-thirds">
+                                <p class="content">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Sapiente facilis eaque
+                                    aliquam inventore praesentium sit accusamus
+                                    eveniet ad ducimus corrupti distinctio
+                                    pariatur in adipisci accusantium totam ipsa,
+                                    saepe provident mollitia!
+                                </p>
+                            </div>
+                            <div class="column is-one-third">
+                                <figure class="image card">
+                                    <img src="/src/Assets/images/gebied.png" />
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="blogComponent" class="section has-background-warning">
+            <div class="container is-small has-text-centered">
+                <div class="columns is-vcentered is-multiline">
+                    <div
+                        class="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd"
+                    >
+                        <div class="tile is-vertical box is-large">
+                            <a href="/">
+                                <p class="title">
+                                    Blog 1
+                                </p>
+                                <p class="subtitle">
+                                    Customize your game. Your options are ticket
+                                    price, balls, ranges, frequency, fees, and
+                                    more.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd"
+                    >
+                        <div class="tile is-vertical box">
+                            <a href="/">
+                                <p class="title">
+                                    Blog 2
+                                </p>
+                                <p class="subtitle">
+                                    Customize your game. Your options are ticket
+                                    price, balls, ranges, frequency, fees, and
+                                    more.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd"
+                    >
+                        <div class="tile is-vertical box">
+                            <a href="/">
+                                <p class="title">
+                                    Blog 3
+                                </p>
+                                <p class="subtitle">
+                                    Customize your game. Your options are ticket
+                                    price, balls, ranges, frequency, fees, and
+                                    more.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="ciskaComponent" class="section has-background-success">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img
+                                class="is-rounded"
+                                src="/src/Assets/images/francisca_laporte.jpg"
+                            />
+                        </figure>
+                    </div>
+                    <div class="column is-two-thirds">
+                        <h1 class="title">
+                            Francisca Laporte
+                        </h1>
+                        <p class="subtitle">With even more content</p>
+                        <div class="content">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Repellat omnis quidem debitis, tenetur atque
+                            iusto exercitationem, libero ab aperiam porro
+                            inventore nihil corrupti, ullam alias harum
+                            excepturi neque sit eos?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footerComponent" class="footer has-background-info">
+            <div class="content has-text-centered ">
+                <p>
+                    <strong>Bulma</strong> by
+                    <a href="https://jgthms.com">Jeremy Thomas</a>. The source
+                    code is licensed
+                    <a href="http://opensource.org/licenses/mit-license.php"
+                        >MIT</a
+                    >. The website content is licensed
+                    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                        >CC BY NC SA 4.0</a
+                    >.
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            const navBar = document.querySelector('#navbarComponent');
+            const navBarLogo = document.querySelector('#navbar-image');
+            const heroLogo = document.querySelector('#header-image');
+            const bookWalkBtn = document.querySelector('#bookWalkBtn');
+
+            window.onscroll = function() {
+                growShrinkLogo();
+            };
+
+            function growShrinkLogo() {
+                if (
+                    document.body.scrollTop > 25 ||
+                    document.documentElement.scrollTop > 25
+                ) {
+                    navBar.classList.remove('is-primary');
+                    navBarLogo.classList.remove('hidden');
+                    bookWalkBtn.classList.remove('is-inverted');
+                    bookWalkBtn.classList.add('is-outlined');
+                    // heroLogo.classList.add('hidden');
+                } else {
+                    navBar.classList.add('is-primary');
+                    navBarLogo.classList.add('hidden');
+                    bookWalkBtn.classList.add('is-inverted');
+                    bookWalkBtn.classList.remove('is-outlined');
+                    // heroLogo.classList.remove('hidden');
+                }
+            }
+        </script>
+    </body>
+</html>

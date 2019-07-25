@@ -23,3 +23,7 @@ $input-shadow: none;
 
 // Import required Bulma files
 @import '~bulma/bulma.sass';
+
+.App {
+    background-color: $primary-color;
+}
