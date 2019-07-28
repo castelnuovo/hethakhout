@@ -1,22 +1,16 @@
 import React from 'react';
-import './Hero.scss';
-import logo from '../../Assets/images/logo_orange_without_brand.png';
+import HeroImage from './HeroImage';
+import HeroStyles from './Hero.module.scss';
 
 const Hero = () => {
     return (
-        <section className="hero is-primary is-fullheight">
+        <section className="hero is-fullheight-with-navbar">
             <div className="hero-body">
                 <div className="container has-text-centered">
-                    <figure className="image hero-image-container">
-                        <img
-                            src={logo}
-                            alt="Logo || Het Hak Hout"
-                            className="hero-image"
-                        />
-                    </figure>
-                    <h1 className="title">Het Hak Hout</h1>
+                    <HeroImage styles={HeroStyles} />
+                    <h1 className="title">Welkom bij Het Hak Hout</h1>
                     <h2 className="subtitle">
-                        Wandelingen, Rondleidingen en Meer
+                        Rondleidingen, Wandelingen en Meer
                     </h2>
                 </div>
             </div>

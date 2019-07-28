@@ -24,6 +24,17 @@ $input-shadow: none;
 // Import required Bulma files
 @import '~bulma/bulma.sass';
 
+// General Styles
+html {
+    overscroll-behavior: none;
+}
+
 .App {
     background-color: $primary-color;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
