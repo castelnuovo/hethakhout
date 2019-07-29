@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import NavbarStyles from './Navbar.module.scss';
 import NavbarBrand from './NavbarBrand';
-import NavbarMenu from './NavbarMenu';
+import NavbarMenu from './Menu';
 
 class Navbar extends Component {
     constructor(props) {
