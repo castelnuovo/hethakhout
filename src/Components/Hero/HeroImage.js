@@ -2,8 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import logo from '../../Assets/images/logo_green_withouw_brand.png';
 
-const HeroImage = props => {
-    let classes = classNames('image', props.styles.image);
+const HeroImage = ({ styles }) => {
+    let classes = classNames('image', styles.image);
 
     return (
         <figure className="center">

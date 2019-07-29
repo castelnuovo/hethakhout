@@ -2,9 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 import logo from '../../Assets/images/logo_green_withouw_brand.png';
 
-const NavbarBrand = props => {
-    let classesTrue = classNames(props.styles.image);
-    let classesFalse = classNames(props.styles.image, props.styles.hidden);
+const NavbarBrand = ({ styles, scrolledPastBreakpoint }) => {
+    let classes = {
+        true: classNames(styles.image),
+        false: classNames(styles.image, styles.hidden)
+    };
 
     return (
         <div className="navbar-brand">
@@ -12,9 +14,7 @@ const NavbarBrand = props => {
                 <img
                     src={logo}
                     className={
-                        !props.scrolledPastBreakpoint
-                            ? classesTrue
-                            : classesFalse
+                        scrolledPastBreakpoint ? classes.true : classes.false
                     }
                     alt="Logo"
                 />

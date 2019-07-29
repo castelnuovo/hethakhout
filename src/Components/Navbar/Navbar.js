@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Link, NavLink, withRouter } from 'react-router-dom';
 import NavbarStyles from './Navbar.module.scss';
-import Icon from '../Icon';
 import NavbarBrand from './NavbarBrand';
+import NavbarMenu from './NavbarMenu';
 
 class Navbar extends Component {
     constructor(props) {
@@ -30,50 +29,34 @@ class Navbar extends Component {
     };
 
     render() {
-        let classesNavbar = classNames(
+        let classes = classNames(
             'navbar',
             'is-fixed-top',
             NavbarStyles.navbar,
-            { 'is-primary': !this.state.scrolledPastBreakpoint }
+            {
+                'is-primary': !this.state.scrolledPastBreakpoint
+            }
         );
 
-        let classesBtn = classNames('button', 'is-primary', {
-            'is-inverted': !this.state.scrolledPastBreakpoint,
-            'is-outlined': this.state.scrolledPastBreakpoint
-        });
-
         return (
-            <nav className={classesNavbar}>
+            <nav className={classes}>
                 <div className="container">
                     <NavbarBrand
                         styles={NavbarStyles}
                         scrolledPastBreakpoint={
-                            this.props.scrolledPastBreakpoint
+                            this.state.scrolledPastBreakpoint
                         }
                     />
-                    <div className="navbar-menu">
-                        <div className="navbar-end">
-                            <Link exact className="navbar-item" to="/">
-                                Home
-                            </Link>
-                            <NavLink className="navbar-item" to="/blog">
-                                Blog
-                            </NavLink>
-                            <NavLink className="navbar-item" to="/foto">
-                                Foto's
-                            </NavLink>
-                            <span className="navbar-item">
-                                <NavLink className={classesBtn} to="/walk">
-                                    <Icon type="fas" icon="walking" />
-                                    <span>Boek een Wandeling</span>
-                                </NavLink>
-                            </span>
-                        </div>
-                    </div>
+                    <NavbarMenu
+                        styles={NavbarStyles}
+                        scrolledPastBreakpoint={
+                            this.state.scrolledPastBreakpoint
+                        }
+                    />
                 </div>
             </nav>
         );
     }
 }
 
-export default withRouter(Navbar);
+export default Navbar;

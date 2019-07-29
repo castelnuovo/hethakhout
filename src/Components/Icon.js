@@ -1,13 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Icon = props => {
+const Icon = ({ type, icon, options }) => {
     return (
         <span className="icon">
-            <FontAwesomeIcon
-                icon={[props.type, props.icon]}
-                {...props.options}
-            />
+            <FontAwesomeIcon icon={[type, icon]} {...options} />
         </span>
     );
 };
