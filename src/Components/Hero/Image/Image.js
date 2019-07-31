@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import logo from '../../Assets/images/logo_green_withouw_brand.png';
+import logo from '../../../Assets/images/logo_green_withouw_brand.png';
 
-const HeroImage = ({ styles }) => {
+const Image = ({ styles }) => {
     let classes = classNames('image', styles.image);
 
     return (
@@ -12,4 +12,6 @@ const HeroImage = ({ styles }) => {
     );
 };
 
-export default HeroImage;
+// REQUIRED PROPS: styles (css module)
+
+export default Image;

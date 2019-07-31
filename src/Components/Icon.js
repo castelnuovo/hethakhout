@@ -9,4 +9,7 @@ const Icon = ({ type, icon, options }) => {
     );
 };
 
+// REQUIRED PROPS: type (string), icon (string)
+// OPTIONAL PROPS: options (object)
+
 export default Icon;

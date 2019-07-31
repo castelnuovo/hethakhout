@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import classNames from 'classnames';
 import NavbarStyles from './Navbar.module.scss';
-import NavbarBrand from './NavbarBrand';
-import NavbarMenu from './Menu';
+import Brand from './Brand';
+import Menu from './Menu';
 
 class Navbar extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Navbar extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        // this.handleScroll();
     }
 
     componentWillUnmount() {
@@ -26,6 +28,9 @@ class Navbar extends Component {
         this.setState({
             scrolledPastBreakpoint: scrollTop > 25
         });
+
+        // console.log('match', this.props.match);
+        // console.log('location', this.props.location);
     };
 
     render() {
@@ -41,14 +46,13 @@ class Navbar extends Component {
         return (
             <nav className={classes}>
                 <div className="container">
-                    <NavbarBrand
+                    <Brand
                         styles={NavbarStyles}
                         scrolledPastBreakpoint={
                             this.state.scrolledPastBreakpoint
                         }
                     />
-                    <NavbarMenu
-                        styles={NavbarStyles}
+                    <Menu
                         scrolledPastBreakpoint={
                             this.state.scrolledPastBreakpoint
                         }
@@ -59,4 +63,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

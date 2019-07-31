@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class About extends Component {
-    render() {
-        return (
-            <div className="container">
-                <p>Yeeter Skeeter</p>
-            </div>
-        );
-    }
-}
+const About = ({ match }) => {
+    return (
+        <div className="container">
+            <p>ID: {match.params.id}</p>
+        </div>
+    );
+};
 
 export default About;

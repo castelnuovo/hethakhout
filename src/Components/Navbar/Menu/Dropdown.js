@@ -1,16 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from './Link';
 
-const Dropdown = ({ title, to, children }) => {
+const Dropdown = ({ to, children, title }) => {
     return (
-        <div class="navbar-item has-dropdown is-hoverable">
-            <NavLink class="navbar-link" to={to}>
+        <div className="navbar-item has-dropdown is-hoverable">
+            <Link to={to} className="navbar-link">
                 {title}
-            </NavLink>
+            </Link>
 
-            <div class="navbar-dropdown">{children}</div>
+            <div className="navbar-dropdown">{children}</div>
         </div>
     );
 };
+
+// REQUIRED PROPS: to (string), children (???), title (string)
 
 export default Dropdown;

@@ -10,11 +10,13 @@ const Btn = ({ to, children, scrolledPastBreakpoint }) => {
 
     return (
         <span className="navbar-item">
-            <Link className={classes} to={to}>
+            <Link to={to} className={classes}>
                 {children}
             </Link>
         </span>
     );
 };
+
+// REQUIRED PROPS: to (string), children (???), scrolledPastBreakpoint (boolean)
 
 export default Btn;

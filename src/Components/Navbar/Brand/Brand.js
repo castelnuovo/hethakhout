@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import logo from '../../Assets/images/logo_green_withouw_brand.png';
+import logo from '../../../Assets/images/logo_green_withouw_brand.png';
 
-const NavbarBrand = ({ styles, scrolledPastBreakpoint }) => {
+const Brand = ({ styles, scrolledPastBreakpoint }) => {
     let classes = {
         true: classNames(styles.image),
         false: classNames(styles.image, styles.hidden)
@@ -24,4 +24,6 @@ const NavbarBrand = ({ styles, scrolledPastBreakpoint }) => {
     );
 };
 
-export default NavbarBrand;
+// REQUIRED PROPS: styles (css module), scrolledPastBreakpoint (boolean)
+
+export default Brand;

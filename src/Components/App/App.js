@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
 
 import Navbar from '../Navbar';
@@ -19,6 +19,11 @@ const removePreLoader = () => {
     preloader.classList.add('preloader--hide');
 };
 
+const routes = [
+    { path: '/', exact: true, component: Home },
+    { path: '/tour/:id', exact: false, component: About }
+];
+
 class App extends Component {
     componentDidMount() {
         removePreLoader();
@@ -26,14 +31,20 @@ class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
+            <Router>
                 <div className="App">
                     <Navbar />
-                    <Route exact path="/" component={Home} />
-                    <Route path="/rondleidingen" component={About} />
+                    {routes.map(route => (
+                        <Route
+                            key={route.path}
+                            route={route.path}
+                            excact={route.exact}
+                            component={route.component}
+                        />
+                    ))}
                     <Footer />
                 </div>
-            </BrowserRouter>
+            </Router>
         );
     }
 }

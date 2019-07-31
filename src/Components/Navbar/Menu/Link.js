@@ -1,17 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Link = ({ to, title }) => {
+const Link = ({ to, children, className }) => {
     return (
         <NavLink
             exact
-            className="navbar-item"
             to={to}
+            className={className}
             activeClassName="is-active"
         >
-            {title}
+            {children}
         </NavLink>
     );
 };
+
+Link.defaultProps = { className: 'navbar-item' };
+
+// REQUIRED PROPS: to (string), children (???)
+// OPTIONAL PROPS: className (string/className object)
 
 export default Link;

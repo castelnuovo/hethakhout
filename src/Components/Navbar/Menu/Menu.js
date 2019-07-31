@@ -4,16 +4,18 @@ import Btn from './Btn';
 import Dropdown from './Dropdown';
 import Icon from '../../Icon';
 
-const Menu = ({ styles, scrolledPastBreakpoint }) => {
+const Menu = ({ scrolledPastBreakpoint }) => {
     return (
         <div className="navbar-menu">
             <div className="navbar-end">
-                <Link styles={styles} to="/" isNavlink={false} title="Home" />
-                <Link to="/blog" title="Blog" />
-                <Link to="/foto" title="Foto's" />
-                <Dropdown title="mennu" to="/menu">
-                    <Link to="/blog" title="Blog" />
-                    <Link to="/foto" title="Foto's" />
+                <Link to="/">Home</Link>
+                <Link to="/tour/PARAM_ID">Rondleidingen</Link>
+                <Link to="/foto">Foto's</Link>
+                <Dropdown to="/dropdown" title="Dropdown">
+                    <Link to={{ pathname: '/tour/1', state: { foo: 'bar' } }}>
+                        Dropdown 1
+                    </Link>
+                    <Link to="/dropdown/2">Dropdown 2</Link>
                 </Dropdown>
                 <Btn
                     to="/walking"
@@ -26,5 +28,7 @@ const Menu = ({ styles, scrolledPastBreakpoint }) => {
         </div>
     );
 };
+
+// REQUIRED PROPS: scrolledPastBreakpoint (boolean)
 
 export default Menu;
