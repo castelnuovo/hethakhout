@@ -1,20 +1,26 @@
 import React from 'react';
+import classNames from 'classnames';
 import Link from './Link';
 import Btn from './Btn';
 import Dropdown from './Dropdown';
 import Icon from '../../Icon';
 
-const Menu = ({ scrolledPastBreakpoint }) => {
+const Menu = ({ scrolledPastBreakpoint, hamburgerOpen }) => {
+    let classes = {
+        open: classNames('navbar-menu', 'is-active'),
+        close: classNames('navbar-menu')
+    };
+
     return (
-        <div className="navbar-menu">
+        <div className={hamburgerOpen ? classes.open : classes.close}>
             <div className="navbar-end">
-                <Link to="/">Home</Link>
+                <Link to="/" hasActiveState={false}>
+                    Home
+                </Link>
                 <Link to="/tour/PARAM_ID">Rondleidingen</Link>
                 <Link to="/foto">Foto's</Link>
-                <Dropdown to="/dropdown" title="Dropdown">
-                    <Link to={{ pathname: '/tour/1', state: { foo: 'bar' } }}>
-                        Dropdown 1
-                    </Link>
+                <Dropdown title="Dropdown">
+                    <Link to="/dropdown/1">Dropdown 1</Link>
                     <Link to="/dropdown/2">Dropdown 2</Link>
                 </Dropdown>
                 <Btn

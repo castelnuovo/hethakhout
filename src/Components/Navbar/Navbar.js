@@ -9,7 +9,8 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrolledPastBreakpoint: false
+            scrolledPastBreakpoint: false,
+            hamburgerOpen: false
         };
     }
 
@@ -33,6 +34,14 @@ class Navbar extends Component {
         // console.log('location', this.props.location);
     };
 
+    toggleHamburger = () => {
+        const { hamburgerOpen } = this.state;
+        this.setState({
+            hamburgerOpen: !hamburgerOpen,
+            scrolledPastBreakpoint: !hamburgerOpen
+        });
+    };
+
     render() {
         let classes = classNames(
             'navbar',
@@ -51,11 +60,14 @@ class Navbar extends Component {
                         scrolledPastBreakpoint={
                             this.state.scrolledPastBreakpoint
                         }
+                        hamburgerClick={this.toggleHamburger}
+                        hamburgerOpen={this.state.hamburgerOpen}
                     />
                     <Menu
                         scrolledPastBreakpoint={
                             this.state.scrolledPastBreakpoint
                         }
+                        hamburgerOpen={this.state.hamburgerOpen}
                     />
                 </div>
             </nav>

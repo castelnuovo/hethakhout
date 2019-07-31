@@ -1,29 +1,27 @@
 import React from 'react';
-import classNames from 'classnames';
-import logo from '../../../Assets/images/logo_green_withouw_brand.png';
+import Logo from './Logo';
+import Hamburger from './Hamburger';
 
-const Brand = ({ styles, scrolledPastBreakpoint }) => {
-    let classes = {
-        true: classNames(styles.image),
-        false: classNames(styles.image, styles.hidden)
-    };
-
+const Brand = ({
+    styles,
+    scrolledPastBreakpoint,
+    hamburgerClick,
+    hamburgerOpen
+}) => {
     return (
         <div className="navbar-brand">
-            <a className="navbar-item" href="/">
-                <img
-                    src={logo}
-                    className={
-                        scrolledPastBreakpoint ? classes.true : classes.false
-                    }
-                    alt="Logo"
-                />
-            </a>
-            <span className="navbar-burger burger" data-target="navbar"></span>
+            <Logo
+                scrolledPastBreakpoint={scrolledPastBreakpoint}
+                styles={styles}
+            />
+            <Hamburger
+                hamburgerOpen={hamburgerOpen}
+                hamburgerClick={hamburgerClick}
+            />
         </div>
     );
 };
 
-// REQUIRED PROPS: styles (css module), scrolledPastBreakpoint (boolean)
+// REQUIRED PROPS: styles (css module), scrolledPastBreakpoint (boolean), hamburgerOpen (function), hamburgerOpen (boolean)
 
 export default Brand;

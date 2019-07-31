@@ -19,10 +19,10 @@ const removePreLoader = () => {
     preloader.classList.add('preloader--hide');
 };
 
-const routes = [
-    { path: '/', exact: true, component: Home },
-    { path: '/tour/:id', exact: false, component: About }
-];
+// const routes = [
+//     { path: '/', exact: true, component: Home },
+//     { path: '/tour/:id', exact: true, component: About }
+// ];
 
 class App extends Component {
     componentDidMount() {
@@ -34,14 +34,16 @@ class App extends Component {
             <Router>
                 <div className="App">
                     <Navbar />
-                    {routes.map(route => (
+                    {/* {routes.map(route => (
                         <Route
                             key={route.path}
                             route={route.path}
-                            excact={route.exact}
+                            exact={route.exact}
                             component={route.component}
                         />
-                    ))}
+                    ))} */}
+                    <Route path="/" component={Home} exact />
+                    <Route path="/tour/:id" component={About} />
                     <Footer />
                 </div>
             </Router>

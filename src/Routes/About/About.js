@@ -2,9 +2,12 @@ import React from 'react';
 
 const About = ({ match }) => {
     return (
-        <div className="container">
-            <p>ID: {match.params.id}</p>
-        </div>
+        <section className="section">
+            <div className="container">
+                <h1>About Page</h1>
+                <h2>ID: {match.params.id}</h2>
+            </div>
+        </section>
     );
 };
 

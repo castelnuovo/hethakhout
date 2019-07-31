@@ -1,13 +1,9 @@
 import React from 'react';
-import Link from './Link';
 
-const Dropdown = ({ to, children, title }) => {
+const Dropdown = ({ children, title }) => {
     return (
         <div className="navbar-item has-dropdown is-hoverable">
-            <Link to={to} className="navbar-link">
-                {title}
-            </Link>
-
+            <span className="navbar-link">{title}</span>
             <div className="navbar-dropdown">{children}</div>
         </div>
     );
