@@ -16,3 +16,8 @@
 .transparent:focus {
     background-color: transparent !important;
 }
+
+.scroll-lock {
+    overflow-x: unset;
+    overflow-y: unset;
+}
