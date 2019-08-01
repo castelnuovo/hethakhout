@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Link = ({ to, children, className, hasActiveState }) => {
+const MenuLink = ({ to, children, className, hasActiveState }) => {
     return (
         <NavLink
             exact
@@ -14,9 +14,9 @@ const Link = ({ to, children, className, hasActiveState }) => {
     );
 };
 
-Link.defaultProps = { className: 'navbar-item', hasActiveState: true };
+MenuLink.defaultProps = { className: 'navbar-item', hasActiveState: true };
 
 // REQUIRED PROPS: to (string), children (???)
 // OPTIONAL PROPS: className (string/className object)
 
-export default Link;
+export default MenuLink;

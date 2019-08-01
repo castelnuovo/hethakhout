@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dropdown = ({ children, title }) => {
+const MenuDropdown = ({ children, title }) => {
     return (
         <div className="navbar-item has-dropdown is-hoverable">
             <span className="navbar-link">{title}</span>
@@ -11,4 +11,4 @@ const Dropdown = ({ children, title }) => {
 
 // REQUIRED PROPS: to (string), children (???), title (string)
 
-export default Dropdown;
+export default MenuDropdown;

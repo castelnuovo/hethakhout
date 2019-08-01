@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from './Logo';
-import Hamburger from './Hamburger';
+import BrandLogo from './BrandLogo';
+import BrandHamburger from './BrandHamburger';
 
 const Brand = ({
     styles,
@@ -10,11 +10,11 @@ const Brand = ({
 }) => {
     return (
         <div className="navbar-brand">
-            <Logo
+            <BrandLogo
                 scrolledPastBreakpoint={scrolledPastBreakpoint}
                 styles={styles}
             />
-            <Hamburger
+            <BrandHamburger
                 hamburgerOpen={hamburgerOpen}
                 hamburgerClick={hamburgerClick}
             />

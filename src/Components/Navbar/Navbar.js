@@ -9,37 +9,73 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrolledPastBreakpoint: false,
-            hamburgerOpen: false
+            homePage: false,
+            hamburgerOpen: false,
+            scrolledPastBreakpoint: true
         };
     }
 
     componentDidMount() {
+        this.unlisten = this.props.history.listen(location => {
+            this.handleRouteChange(location);
+        });
+
+        this.handleRouteChange(this.props.location);
         window.addEventListener('scroll', this.handleScroll);
-        // this.handleScroll();
     }
 
     componentWillUnmount() {
+        this.unlisten();
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll = () => {
-        let scrollTop = document.documentElement.scrollTop;
+    handleRouteChange(location) {
+        const { hamburgerOpen } = this.state;
+
+        if (!hamburgerOpen) {
+            this.setState({
+                scrolledPastBreakpoint: location.pathname !== '/'
+            });
+        }
 
         this.setState({
-            scrolledPastBreakpoint: scrollTop > 25
+            homePage: location.pathname === '/'
         });
+    }
 
-        // console.log('match', this.props.match);
-        // console.log('location', this.props.location);
+    handleScroll = () => {
+        const { homePage, hamburgerOpen } = this.state;
+        const scrollPosition = document.documentElement.scrollTop;
+        const breakpoint = 25;
+
+        if (!homePage || hamburgerOpen) {
+            return;
+        }
+
+        this.setState({
+            scrolledPastBreakpoint: scrollPosition > breakpoint
+        });
     };
 
     toggleHamburger = () => {
-        const { hamburgerOpen } = this.state;
+        const { hamburgerOpen, homePage } = this.state;
+
         this.setState({
-            hamburgerOpen: !hamburgerOpen,
-            scrolledPastBreakpoint: !hamburgerOpen
+            hamburgerOpen: !hamburgerOpen
         });
+
+        if (homePage) {
+            this.setState(
+                {
+                    scrolledPastBreakpoint: !hamburgerOpen
+                },
+                () => {
+                    if (hamburgerOpen) {
+                        this.handleScroll();
+                    }
+                }
+            );
+        }
     };
 
     render() {

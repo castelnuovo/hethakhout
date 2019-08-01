@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import MenuLink from './MenuLink';
 
-const Btn = ({ to, children, scrolledPastBreakpoint }) => {
+const MenuBtn = ({ to, children, scrolledPastBreakpoint }) => {
     let classes = classNames('button', 'is-primary', {
         'is-inverted': !scrolledPastBreakpoint,
         'is-outlined': scrolledPastBreakpoint
@@ -10,13 +10,13 @@ const Btn = ({ to, children, scrolledPastBreakpoint }) => {
 
     return (
         <span className="navbar-item">
-            <Link to={to} className={classes}>
+            <MenuLink to={to} className={classes}>
                 {children}
-            </Link>
+            </MenuLink>
         </span>
     );
 };
 
 // REQUIRED PROPS: to (string), children (???), scrolledPastBreakpoint (boolean)
 
-export default Btn;
+export default MenuBtn;

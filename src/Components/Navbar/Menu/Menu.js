@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import Link from './Link';
-import Btn from './Btn';
-import Dropdown from './Dropdown';
+import MenuLink from './MenuLink';
+import MenuBtn from './MenuBtn';
+import MenuDropdown from './MenuDropdown';
 import Icon from '../../Icon';
 
 const Menu = ({ scrolledPastBreakpoint, hamburgerOpen }) => {
@@ -14,22 +14,22 @@ const Menu = ({ scrolledPastBreakpoint, hamburgerOpen }) => {
     return (
         <div className={hamburgerOpen ? classes.open : classes.close}>
             <div className="navbar-end">
-                <Link to="/" hasActiveState={false}>
+                <MenuLink to="/" hasActiveState={false}>
                     Home
-                </Link>
-                <Link to="/tour/PARAM_ID">Rondleidingen</Link>
-                <Link to="/foto">Foto's</Link>
-                <Dropdown title="Dropdown">
-                    <Link to="/dropdown/1">Dropdown 1</Link>
-                    <Link to="/dropdown/2">Dropdown 2</Link>
-                </Dropdown>
-                <Btn
+                </MenuLink>
+                <MenuLink to="/tour/PARAM_ID">Rondleidingen</MenuLink>
+                <MenuLink to="/foto">Foto's</MenuLink>
+                <MenuDropdown title="Dropdown">
+                    <MenuLink to="/dropdown/1">Dropdown 1</MenuLink>
+                    <MenuLink to="/dropdown/2">Dropdown 2</MenuLink>
+                </MenuDropdown>
+                <MenuBtn
                     to="/walking"
                     scrolledPastBreakpoint={scrolledPastBreakpoint}
                 >
                     <Icon type="fas" icon="walking" />
                     <span>Boek een Wandeling</span>
-                </Btn>
+                </MenuBtn>
             </div>
         </div>
     );

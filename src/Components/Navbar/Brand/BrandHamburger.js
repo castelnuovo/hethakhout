@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Hamburger = ({ hamburgerOpen, hamburgerClick }) => {
+const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
     let classes = {
         open: classNames('navbar-burger', 'burger', 'is-active'),
         close: classNames('navbar-burger', 'burger')
@@ -21,4 +21,4 @@ const Hamburger = ({ hamburgerOpen, hamburgerClick }) => {
 
 // REQUIRED PROPS: hamburgerOpen (function), hamburgerOpen (boolean)
 
-export default Hamburger;
+export default BrandHamburger;

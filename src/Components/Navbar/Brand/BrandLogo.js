@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import Link from '../Menu/Link';
+import Link from '../Menu/MenuLink';
 import logo from '../../../Assets/images/logo_green_withouw_brand.png';
 
-const Logo = ({ scrolledPastBreakpoint, styles }) => {
+const BrandLogo = ({ scrolledPastBreakpoint, styles }) => {
     let classes = {
         true: classNames(styles.image),
         false: classNames(styles.image, styles.hidden)
@@ -24,4 +24,4 @@ const Logo = ({ scrolledPastBreakpoint, styles }) => {
 
 // REQUIRED PROPS: styles (css module), scrolledPastBreakpoint (boolean)
 
-export default Logo;
+export default BrandLogo;
