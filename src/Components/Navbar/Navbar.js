@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import classNames from 'classnames';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import NavbarStyles from './Navbar.module.scss';
 import Brand from './Brand';
 import Menu from './Menu';
@@ -11,6 +12,7 @@ class Navbar extends Component {
         this.state = {
             homePage: false,
             hamburgerOpen: false,
+            hamburgerPrevState: false,
             scrolledPastBreakpoint: true
         };
     }
@@ -27,18 +29,13 @@ class Navbar extends Component {
         // Check initial route
         this.handleRouteChange(this.props.location);
 
-        // Prevent scrolling if hamburgermenu open
-        if (this.state.hamburgerOpen) {
-            document.body.style.overflow = 'hidden';
-        }
+        // Set element to exempt scroll lock
+        this.targetElement = document.querySelector('.navbar-menu');
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
         this.unlisten();
-
-        // Enable scrolling
-        document.body.style.overflow = 'unset';
     }
 
     handleRouteChange(location) {
@@ -62,6 +59,18 @@ class Navbar extends Component {
         });
     };
 
+    scrollLock(activate) {
+        const html = document.querySelector('html');
+
+        if (activate) {
+            html.style.setProperty('overflow', 'unset');
+            disableBodyScroll(this.targetElement);
+        } else {
+            html.style.removeProperty('overflow');
+            enableBodyScroll(this.targetElement);
+        }
+    }
+
     toggleHamburger = () => {
         const {
             hamburgerOpen,
@@ -75,12 +84,16 @@ class Navbar extends Component {
                 hamburgerPrevState: scrolledPastBreakpoint,
                 scrolledPastBreakpoint: hamburgerPrevState
             });
+
+            this.scrollLock(false);
         } else {
             this.setState({
                 hamburgerOpen: !hamburgerOpen,
                 hamburgerPrevState: scrolledPastBreakpoint,
                 scrolledPastBreakpoint: !hamburgerOpen
             });
+
+            this.scrollLock(true);
         }
     };
 
