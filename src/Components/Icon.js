@@ -1,5 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+// Import required icons
+import { faWalking } from '@fortawesome/free-solid-svg-icons';
+library.add(faWalking);
 
 const Icon = ({ type, icon, options }) => {
     return (

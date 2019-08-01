@@ -9,11 +9,6 @@ import Footer from '../Footer';
 import Home from '../../Routes/Home';
 import About from '../../Routes/About';
 
-// Impor Font Awesome
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-library.add(fas);
-
 const removePreLoader = () => {
     const preloader = document.querySelector('.preloader');
     preloader.classList.add('preloader--hide');
