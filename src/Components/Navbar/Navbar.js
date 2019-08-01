@@ -16,65 +16,71 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
+        // Update navbar on scroll
+        window.addEventListener('scroll', this.handleScroll);
+
+        // Handle route change
         this.unlisten = this.props.history.listen(location => {
             this.handleRouteChange(location);
         });
 
+        // Check initial route
         this.handleRouteChange(this.props.location);
-        window.addEventListener('scroll', this.handleScroll);
+
+        // Prevent scrolling if hamburgermenu open
+        if (this.state.hamburgerOpen) {
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     componentWillUnmount() {
-        this.unlisten();
         window.removeEventListener('scroll', this.handleScroll);
+        this.unlisten();
+
+        // Enable scrolling
+        document.body.style.overflow = 'unset';
     }
 
     handleRouteChange(location) {
-        const { hamburgerOpen } = this.state;
-
-        if (!hamburgerOpen) {
-            this.setState({
-                scrolledPastBreakpoint: location.pathname !== '/'
-            });
-        }
-
         this.setState({
-            homePage: location.pathname === '/'
+            homePage: location.pathname === '/',
+            scrolledPastBreakpoint: location.pathname !== '/',
+            hamburgerPrevState: location.pathname !== '/'
         });
     }
 
     handleScroll = () => {
-        const { homePage, hamburgerOpen } = this.state;
+        const { homePage } = this.state;
         const scrollPosition = document.documentElement.scrollTop;
-        const breakpoint = 25;
 
-        if (!homePage || hamburgerOpen) {
+        if (!homePage) {
             return;
         }
 
         this.setState({
-            scrolledPastBreakpoint: scrollPosition > breakpoint
+            scrolledPastBreakpoint: scrollPosition > 25
         });
     };
 
     toggleHamburger = () => {
-        const { hamburgerOpen, homePage } = this.state;
+        const {
+            hamburgerOpen,
+            hamburgerPrevState,
+            scrolledPastBreakpoint
+        } = this.state;
 
-        this.setState({
-            hamburgerOpen: !hamburgerOpen
-        });
-
-        if (homePage) {
-            this.setState(
-                {
-                    scrolledPastBreakpoint: !hamburgerOpen
-                },
-                () => {
-                    if (hamburgerOpen) {
-                        this.handleScroll();
-                    }
-                }
-            );
+        if (hamburgerOpen) {
+            this.setState({
+                hamburgerOpen: !hamburgerOpen,
+                hamburgerPrevState: scrolledPastBreakpoint,
+                scrolledPastBreakpoint: hamburgerPrevState
+            });
+        } else {
+            this.setState({
+                hamburgerOpen: !hamburgerOpen,
+                hamburgerPrevState: scrolledPastBreakpoint,
+                scrolledPastBreakpoint: !hamburgerOpen
+            });
         }
     };
 
