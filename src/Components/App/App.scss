@@ -21,6 +21,9 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
+// Navbar
+$navbar-item-active-background-color: red;
+
 // Import required Bulma files
 @import '~bulma/bulma.sass';
 

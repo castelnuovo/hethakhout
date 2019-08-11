@@ -42,6 +42,7 @@ class Navbar extends Component {
         this.setState({
             homePage: location.pathname === '/',
             scrolledPastBreakpoint: location.pathname !== '/',
+            hamburgerOpen: false,
             hamburgerPrevState: location.pathname !== '/'
         });
     }
