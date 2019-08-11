@@ -8,6 +8,7 @@ import Footer from '../Footer';
 // TODO: place this in an seperate router component
 import Home from '../../Routes/Home';
 import About from '../../Routes/About';
+import NotFound from '../../Routes/NotFound';
 
 const removePreLoader = () => {
     const preloader = document.querySelector('.preloader');
@@ -39,6 +40,7 @@ class App extends Component {
                     ))} */}
                     <Route path="/" component={Home} exact />
                     <Route path="/tour/:id" component={About} />
+                    <Route component={NotFound} />
                     <Footer />
                 </div>
             </Router>
