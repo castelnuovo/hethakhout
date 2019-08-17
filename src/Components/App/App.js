@@ -1,51 +1,27 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from 'react';
+import { renderRoutes } from 'react-router-config';
 import './App.scss';
 
 import Navbar from '../Navbar';
 import Footer from '../Footer';
-
-// TODO: place this in an seperate router component
-import Home from '../../Routes/Home';
-import About from '../../Routes/About';
-import NotFound from '../../Routes/NotFound';
 
 const removePreLoader = () => {
     const preloader = document.querySelector('.preloader');
     preloader.classList.add('preloader--hide');
 };
 
-// const routes = [
-//     { path: '/', exact: true, component: Home },
-//     { path: '/tour/:id', exact: true, component: About }
-// ];
+const App = props => {
+    const { route } = props;
 
-class App extends Component {
-    componentDidMount() {
-        removePreLoader();
-    }
+    removePreLoader();
 
-    render() {
-        return (
-            <Router>
-                <div className="App">
-                    <Navbar />
-                    {/* {routes.map(route => (
-                        <Route
-                            key={route.path}
-                            route={route.path}
-                            exact={route.exact}
-                            component={route.component}
-                        />
-                    ))} */}
-                    <Route path="/" component={Home} exact />
-                    <Route path="/tour/:id" component={About} />
-                    <Route component={NotFound} />
-                    <Footer />
-                </div>
-            </Router>
-        );
-    }
-}
+    return (
+        <div className="App">
+            <Navbar />
+            {renderRoutes(route.routes)}
+            <Footer />
+        </div>
+    );
+};
 
 export default App;

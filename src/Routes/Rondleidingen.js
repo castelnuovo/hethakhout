@@ -1,6 +1,8 @@
 import React from 'react';
+import withBaseRoute from '../utils/withBaseRoute';
 
-const About = ({ match }) => {
+const Rondleidingen = props => {
+    const { match } = props;
     return (
         <section className="section">
             <div className="container">
@@ -11,4 +13,4 @@ const About = ({ match }) => {
     );
 };
 
-export default About;
+export default withBaseRoute(Rondleidingen);

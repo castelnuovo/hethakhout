@@ -18,6 +18,8 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
+
         // Update navbar on scroll
         window.addEventListener('scroll', this.handleScroll);
 
