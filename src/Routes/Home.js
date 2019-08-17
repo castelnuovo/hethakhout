@@ -1,6 +1,5 @@
 import React from 'react';
-import withBaseRoute from '../utils/withBaseRoute';
-
+import withBaseRoute from '../Utils/withBaseRoute';
 import Hero from '../Components/Hero';
 
 const Home = props => {

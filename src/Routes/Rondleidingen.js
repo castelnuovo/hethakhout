@@ -1,5 +1,5 @@
 import React from 'react';
-import withBaseRoute from '../utils/withBaseRoute';
+import withBaseRoute from '../Utils/withBaseRoute';
 
 const Rondleidingen = props => {
     const { match } = props;
