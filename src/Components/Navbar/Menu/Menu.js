@@ -11,6 +11,11 @@ const Menu = ({ scrolledPastBreakpoint, hamburgerOpen }) => {
         close: classNames('navbar-menu')
     };
 
+    // TODO: find way to use - in object key
+    // let classes = classNames('navbar-menu', {
+    //     is-active: hamburgerOpen
+    // });
+
     return (
         <div className={hamburgerOpen ? classes.open : classes.close}>
             <div className="navbar-end">

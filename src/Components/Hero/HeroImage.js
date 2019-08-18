@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import logo from '../../Assets/images/logo_green_withouw_brand.png';
 
 const HeroImage = ({ styles }) => {
-    let classes = classNames('image', styles.image);
+    const classes = classNames('image', styles.image);
 
     return (
         <figure className="center">

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import MenuLink from './MenuLink';
 
 const MenuBtn = ({ to, children, scrolledPastBreakpoint }) => {
-    let classes = classNames('button', 'is-primary', {
+    const classes = classNames('button', 'is-primary', {
         'is-inverted': !scrolledPastBreakpoint,
         'is-outlined': scrolledPastBreakpoint
     });

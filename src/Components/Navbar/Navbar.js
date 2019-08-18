@@ -101,7 +101,7 @@ class Navbar extends Component {
     };
 
     render() {
-        let classes = classNames(
+        const classes = classNames(
             'navbar',
             'is-fixed-top',
             NavbarStyles.navbar,
