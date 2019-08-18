@@ -1,25 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { renderRoutes } from 'react-router-config';
 import './App.scss';
 
 import Navbar from '../Navbar';
-import Footer from '../Footer';
-
-const removePreLoader = () => {
-    const preloader = document.querySelector('.preloader');
-    preloader.classList.add('preloader--hide');
-};
+// import Footer from '../Footer';
 
 const App = props => {
     const { route } = props;
 
-    removePreLoader();
+    useEffect(() => {
+        const preloader = document.querySelector('.preloader');
+        preloader.classList.add('preloader--hide');
+    }, []);
 
     return (
         <div className="App">
             <Navbar />
             {renderRoutes(route.routes)}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

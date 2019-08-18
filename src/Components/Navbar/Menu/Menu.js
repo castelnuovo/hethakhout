@@ -17,6 +17,7 @@ const Menu = ({ scrolledPastBreakpoint, hamburgerOpen }) => {
                 <MenuLink to="/" hasActiveState={false}>
                     Home
                 </MenuLink>
+                <MenuLink to="/blog">Blog</MenuLink>
                 <MenuLink to="/rondleidingen/123">Rondleidingen</MenuLink>
                 <MenuLink to="/foto">Foto's</MenuLink>
                 <MenuDropdown title="Dropdown">

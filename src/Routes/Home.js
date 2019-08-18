@@ -1,12 +1,13 @@
 import React from 'react';
 import withBaseRoute from '../Utils/withBaseRoute';
 import Hero from '../Components/Hero';
+import BlogWidget from '../Components/BlogWidget';
 
-const Home = props => {
+const Home = () => {
     return (
         <div>
             <Hero />
-            {/* <BlogWidget /> */}
+            <BlogWidget />
             {/* <Contact /> */}
 
             <section className="section">
