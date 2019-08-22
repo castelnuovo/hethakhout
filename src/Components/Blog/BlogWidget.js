@@ -22,12 +22,14 @@ const BlogWidget = () => {
             <div className="container is-small has-text-centered">
                 <div className="columns is-vcentered is-multiline">
                     {data.map(post => (
-                        <BlogItem
-                            key={post.slug}
-                            slug={post.slug}
-                            title={post.title}
-                            summary={post.summary}
-                        />
+                        <div className="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd">
+                            <BlogItem
+                                key={post.slug}
+                                slug={post.slug}
+                                title={post.title}
+                                summary={post.summary}
+                            />
+                        </div>
                     ))}
                 </div>
             </div>

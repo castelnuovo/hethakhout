@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from '../../Utils/useFetch';
-import BlogListItem from './BlogListItem';
+import BlogItem from './BlogItem';
 
 const BlogList = () => {
     const [data, isLoading] = useFetch(
@@ -18,18 +18,18 @@ const BlogList = () => {
     }
 
     return (
-        <React.Fragment>
+        <>
             <h1 className="title">Blog Posts</h1>
 
             {data.map(post => (
-                <BlogListItem
+                <BlogItem
                     key={post.slug}
                     slug={post.slug}
                     title={post.title}
                     summary={post.summary}
                 />
             ))}
-        </React.Fragment>
+        </>
     );
 };
 

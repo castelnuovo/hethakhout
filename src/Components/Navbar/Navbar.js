@@ -101,17 +101,17 @@ class Navbar extends Component {
     };
 
     render() {
-        const classes = classNames(
-            'navbar',
-            'is-fixed-top',
-            NavbarStyles.navbar,
-            {
-                'is-primary': !this.state.scrolledPastBreakpoint
-            }
-        );
-
         return (
-            <nav className={classes}>
+            <nav
+                className={classNames(
+                    'navbar',
+                    'is-fixed-top',
+                    NavbarStyles.navbar,
+                    {
+                        'is-primary': !this.state.scrolledPastBreakpoint
+                    }
+                )}
+            >
                 <div className="container">
                     <Brand
                         styles={NavbarStyles}

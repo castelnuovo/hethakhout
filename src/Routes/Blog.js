@@ -1,11 +1,9 @@
 import React from 'react';
 import withBaseRoute from '../Utils/withBaseRoute';
+import BlogList from '../Components/Blog/BlogList';
+import BlogView from '../Components/Blog/BlogView';
 
-import BlogList from '../Components/BlogList';
-import BlogView from '../Components/BlogView';
-
-const Blog = props => {
-    const { match } = props;
+const Blog = ({ match }) => {
     const slug = match.params.slug;
 
     return (

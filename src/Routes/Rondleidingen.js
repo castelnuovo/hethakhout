@@ -1,8 +1,7 @@
 import React from 'react';
 import withBaseRoute from '../Utils/withBaseRoute';
 
-const Rondleidingen = props => {
-    const { match } = props;
+const Rondleidingen = ({ match }) => {
     return (
         <section className="section">
             <div className="container">

@@ -3,14 +3,15 @@ import classNames from 'classnames';
 import MenuLink from './MenuLink';
 
 const MenuBtn = ({ to, children, scrolledPastBreakpoint }) => {
-    const classes = classNames('button', 'is-primary', {
-        'is-inverted': !scrolledPastBreakpoint,
-        'is-outlined': scrolledPastBreakpoint
-    });
-
     return (
         <span className="navbar-item">
-            <MenuLink to={to} className={classes}>
+            <MenuLink
+                to={to}
+                className={classNames('button', 'is-primary', {
+                    'is-inverted': !scrolledPastBreakpoint,
+                    'is-outlined': scrolledPastBreakpoint
+                })}
+            >
                 {children}
             </MenuLink>
         </span>

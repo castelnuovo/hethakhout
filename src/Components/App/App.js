@@ -5,9 +5,7 @@ import './App.scss';
 import Navbar from '../Navbar';
 // import Footer from '../Footer';
 
-const App = props => {
-    const { route } = props;
-
+const App = ({ route }) => {
     useEffect(() => {
         const preloader = document.querySelector('.preloader');
         preloader.classList.add('preloader--hide');

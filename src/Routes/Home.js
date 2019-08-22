@@ -1,7 +1,7 @@
 import React from 'react';
 import withBaseRoute from '../Utils/withBaseRoute';
 import Hero from '../Components/Hero';
-import BlogWidget from '../Components/BlogWidget';
+import BlogWidget from '../Components/Blog/BlogWidget';
 
 const Home = () => {
     return (

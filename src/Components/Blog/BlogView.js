@@ -3,8 +3,7 @@ import Markdown from 'markdown-to-jsx';
 import { Redirect } from 'react-router-dom';
 import useFetch from '../../Utils/useFetch';
 
-const BlogView = props => {
-    const { slug } = props;
+const BlogView = ({ slug }) => {
     const [redirect, setRedirect] = useState(false);
     const [data, isLoading] = useFetch(
         'http://localhost:3000/BlogPosts/' + slug + '.md',

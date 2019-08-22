@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BlogListItem = props => {
-    const { slug, title, summary } = props;
-
+const BlogItem = ({ slug, title, summary }) => {
     return (
         <div className="tile is-vertical box is-large">
             <Link to={'blog/' + slug}>
@@ -14,4 +12,4 @@ const BlogListItem = props => {
     );
 };
 
-export default BlogListItem;
+export default BlogItem;
