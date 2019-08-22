@@ -9,24 +9,27 @@ const BlogWidget = () => {
         []
     );
 
+    if (isLoading) {
+        return <Loader size="medium" />;
+    }
+
     return (
         <section className="section">
             <div className="container is-small has-text-centered">
-                {isLoading && <Loader size="medium" />}
-                {!isLoading && (
-                    <div className="columns is-vcentered is-multiline">
-                        {data.map(post => (
-                            <div className="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd">
-                                <BlogItem
-                                    key={post.slug}
-                                    slug={post.slug}
-                                    title={post.title}
-                                    summary={post.summary}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <div className="columns is-vcentered is-multiline">
+                    {data.map(post => (
+                        <div
+                            key={post.slug}
+                            className="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd"
+                        >
+                            <BlogItem
+                                slug={post.slug}
+                                title={post.title}
+                                summary={post.summary}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );
