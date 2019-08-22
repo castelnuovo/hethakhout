@@ -1,6 +1,7 @@
 import React from 'react';
 import useFetch from '../../Utils/useFetch';
 import BlogItem from './BlogItem';
+import Loader from '../Loader';
 
 const BlogList = () => {
     const [data, isLoading] = useFetch(
@@ -9,28 +10,17 @@ const BlogList = () => {
     );
 
     if (isLoading) {
-        return (
-            <progress
-                className="progress is-medium is-primary is-vcentered"
-                max="100"
-            ></progress>
-        );
+        return <Loader size="medium" />;
     }
 
-    return (
-        <>
-            <h1 className="title">Blog Posts</h1>
-
-            {data.map(post => (
-                <BlogItem
-                    key={post.slug}
-                    slug={post.slug}
-                    title={post.title}
-                    summary={post.summary}
-                />
-            ))}
-        </>
-    );
+    return data.map(post => (
+        <BlogItem
+            key={post.slug}
+            slug={post.slug}
+            title={post.title}
+            summary={post.summary}
+        />
+    ));
 };
 
 export default BlogList;

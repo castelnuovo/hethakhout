@@ -10,6 +10,7 @@ const Blog = ({ match }) => {
         <div>
             <section className="section">
                 <div className="container">
+                    <h1 className="title">Blog Posts</h1>
                     <BlogList />
                     {slug && <BlogView slug={slug} />}
                 </div>

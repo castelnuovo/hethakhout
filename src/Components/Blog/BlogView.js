@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { Redirect } from 'react-router-dom';
 import useFetch from '../../Utils/useFetch';
+import Loader from '../Loader';
 
 const BlogView = ({ slug }) => {
     const [redirect, setRedirect] = useState(false);
@@ -10,15 +11,6 @@ const BlogView = ({ slug }) => {
         [],
         false
     );
-
-    if (isLoading) {
-        return (
-            <progress
-                className="progress is-medium is-primary is-vcentered"
-                max="100"
-            ></progress>
-        );
-    }
 
     const handleRedirect = () => {
         if (redirect) {
@@ -39,14 +31,8 @@ const BlogView = ({ slug }) => {
                     ></button>
                 </header>
                 <section className="modal-card-body">
-                    {isLoading ? (
-                        <progress
-                            className="progress is-medium is-primary is-vcentered"
-                            max="100"
-                        ></progress>
-                    ) : (
-                        <Markdown>{data}</Markdown>
-                    )}
+                    {isLoading && <Loader size="medium" />}
+                    {!isLoading && <Markdown>{data}</Markdown>}
                 </section>
             </div>
 
