@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
@@ -24,6 +25,9 @@ const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
     );
 };
 
-// REQUIRED PROPS: hamburgerOpen (function), hamburgerOpen (boolean)
+BrandHamburger.propTypes = {
+    hamburgerOpen: PropTypes.bool.isRequired,
+    hamburgerClick: PropTypes.func.isRequired
+};
 
 export default BrandHamburger;

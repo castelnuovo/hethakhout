@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import MenuLink from './MenuLink';
 import MenuBtn from './MenuBtn';
@@ -38,6 +39,8 @@ const Menu = ({ hamburgerOpen }) => {
     );
 };
 
-// REQUIRED PROPS: hamburgerOpen (boolean)
+Menu.propTypes = {
+    hamburgerOpen: PropTypes.bool.isRequired
+};
 
 export default Menu;

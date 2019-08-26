@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MenuLink from './MenuLink';
 
 const MenuBtn = ({ to, children }) => {
@@ -11,6 +12,9 @@ const MenuBtn = ({ to, children }) => {
     );
 };
 
-// REQUIRED PROPS: to (string), children (???)
+MenuBtn.propTypes = {
+    to: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired
+};
 
 export default MenuBtn;

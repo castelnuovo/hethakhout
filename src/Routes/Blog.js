@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withBaseRoute from '../Utils/withBaseRoute';
 import BlogList from '../Components/Blog/BlogList';
 import BlogView from '../Components/Blog/BlogView';
@@ -17,6 +18,10 @@ const Blog = ({ match }) => {
             </section>
         </div>
     );
+};
+
+Blog.propTypes = {
+    match: PropTypes.object.isRequired
 };
 
 export default withBaseRoute(Blog);

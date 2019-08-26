@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from '../Menu/MenuLink';
 import logo from '../../../Assets/images/logo_green_withouw_brand.png';
 
@@ -10,6 +11,8 @@ const BrandLogo = ({ styles }) => {
     );
 };
 
-// REQUIRED PROPS: styles (css module),
+BrandLogo.propTypes = {
+    styles: PropTypes.object.isRequired
+};
 
 export default BrandLogo;

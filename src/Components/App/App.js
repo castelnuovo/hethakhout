@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
 import './App.scss';
 
@@ -18,6 +19,10 @@ const App = ({ route }) => {
             {/* <Footer /> */}
         </div>
     );
+};
+
+App.propTypes = {
+    route: PropTypes.object.isRequired
 };
 
 export default App;

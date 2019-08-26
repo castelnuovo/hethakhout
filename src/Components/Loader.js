@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Loader = ({ isLoading, size }) => {
     return (
@@ -7,6 +8,11 @@ const Loader = ({ isLoading, size }) => {
             max="100"
         ></progress>
     );
+};
+
+Loader.propTypes = {
+    isLoading: PropTypes.bool.isRequired,
+    size: PropTypes.string.isRequired
 };
 
 export default Loader;
