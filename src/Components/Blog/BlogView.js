@@ -4,9 +4,9 @@ import { Redirect } from 'react-router-dom';
 import useFetch from '../../Utils/useFetch';
 import Loader from '../Loader';
 
-const BlogView = ({ slug }) => {
+const BlogView = ({ id }) => {
     const [redirect, setRedirect] = useState(false);
-    const [data, isLoading] = useFetch('/api/posts/' + slug + '.md', [], false);
+    const [data, isLoading] = useFetch('/api/posts/' + id + '.md', [], false);
 
     const handleRedirect = () => {
         if (redirect) {

@@ -4,10 +4,7 @@ import BlogItem from './BlogItem';
 import Loader from '../Loader';
 
 const BlogList = () => {
-    const [data, isLoading] = useFetch(
-        'http://localhost:3000/BlogPosts.json',
-        []
-    );
+    const [data, isLoading] = useFetch('/api/posts', []);
 
     if (isLoading) {
         return <Loader size="medium" />;
@@ -15,8 +12,8 @@ const BlogList = () => {
 
     return data.map(post => (
         <BlogItem
-            key={post.slug}
-            slug={post.slug}
+            key={post.id}
+            id={post.id}
             title={post.title}
             summary={post.summary}
         />

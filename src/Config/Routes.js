@@ -24,7 +24,7 @@ const Routes = [
                 ]
             },
             {
-                path: '/blog/:slug?',
+                path: '/blog/:id?',
                 component: Blog
             },
             {

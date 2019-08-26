@@ -4,7 +4,7 @@ import BlogList from '../Components/Blog/BlogList';
 import BlogView from '../Components/Blog/BlogView';
 
 const Blog = ({ match }) => {
-    const slug = match.params.slug;
+    const id = match.params.id;
 
     return (
         <div>
@@ -12,7 +12,7 @@ const Blog = ({ match }) => {
                 <div className="container">
                     <h1 className="title">Blog Posts</h1>
                     <BlogList />
-                    {slug && <BlogView slug={slug} />}
+                    {id && <BlogView id={id} />}
                 </div>
             </section>
         </div>
