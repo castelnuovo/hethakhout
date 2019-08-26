@@ -24,12 +24,6 @@ const Hero = () => {
                     </h2>
                 </div>
             </div>
-
-            <div className="hero-foot">
-                <div className="has-text-centered">
-                    <p>Scroll</p>
-                </div>
-            </div>
         </section>
     );
 };
