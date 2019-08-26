@@ -8,6 +8,11 @@ import Menu from './Menu';
 const Navbar = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
+    const toggleHamburger = () => {
+        console.log(!hamburgerOpen);
+        setHamburgerOpen(!hamburgerOpen);
+    };
+
     return (
         <nav
             className={classNames(
@@ -17,11 +22,8 @@ const Navbar = () => {
             )}
         >
             <div className="container">
-                <Brand />
-                <Menu
-                    hamburgerOpen={hamburgerOpen}
-                    setHamburgerOpen={setHamburgerOpen}
-                />
+                <Brand toggleHamburger={toggleHamburger} />
+                <Menu hamburgerOpen={hamburgerOpen} />
             </div>
         </nav>
     );

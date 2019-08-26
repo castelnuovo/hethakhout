@@ -5,7 +5,7 @@ import MenuBtn from './MenuBtn';
 import MenuDropdown from './MenuDropdown';
 import Icon from '../../Icon';
 
-const Menu = ({ scrolledPastBreakpoint, hamburgerOpen }) => {
+const Menu = ({ hamburgerOpen }) => {
     let classes = {
         open: classNames('navbar-menu', 'is-active'),
         close: classNames('navbar-menu')
@@ -38,6 +38,6 @@ const Menu = ({ scrolledPastBreakpoint, hamburgerOpen }) => {
     );
 };
 
-// REQUIRED PROPS: scrolledPastBreakpoint (boolean)
+// REQUIRED PROPS: hamburgerOpen (boolean)
 
 export default Menu;
