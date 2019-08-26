@@ -13,10 +13,7 @@ const Navbar = () => {
             className={classNames(
                 'navbar',
                 'is-fixed-top',
-                NavbarStyles.navbar,
-                {
-                    'is-primary': !this.state.scrolledPastBreakpoint
-                }
+                NavbarStyles.navbar
             )}
         >
             <div className="container">
