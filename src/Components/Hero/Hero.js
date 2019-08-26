@@ -25,8 +25,8 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div class="hero-foot">
-                <div class="has-text-centered">
+            <div className="hero-foot">
+                <div className="has-text-centered">
                     <p>Scroll</p>
                 </div>
             </div>

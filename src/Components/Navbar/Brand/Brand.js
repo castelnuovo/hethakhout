@@ -3,13 +3,13 @@ import BrandLogo from './BrandLogo';
 import BrandHamburger from './BrandHamburger';
 import BrandStyles from './Brand.module.scss';
 
-const Brand = ({ hamburgerClick, hamburgerOpen }) => {
+const Brand = ({ hamburgerOpen, toggleHamburger }) => {
     return (
         <div className="navbar-brand">
             <BrandLogo styles={BrandStyles} />
             <BrandHamburger
                 hamburgerOpen={hamburgerOpen}
-                hamburgerClick={hamburgerClick}
+                hamburgerClick={toggleHamburger}
             />
         </div>
     );

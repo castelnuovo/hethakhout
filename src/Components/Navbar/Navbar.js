@@ -8,6 +8,10 @@ import Menu from './Menu';
 const Navbar = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
+    const toggleHamburger = () => {
+        setHamburgerOpen(!hamburgerOpen);
+    };
+
     return (
         <nav
             className={classNames(
@@ -17,11 +21,11 @@ const Navbar = () => {
             )}
         >
             <div className="container">
-                <Brand />
-                <Menu
+                <Brand
                     hamburgerOpen={hamburgerOpen}
-                    setHamburgerOpen={setHamburgerOpen}
+                    toggleHamburger={toggleHamburger}
                 />
+                <Menu hamburgerOpen={hamburgerOpen} />
             </div>
         </nav>
     );

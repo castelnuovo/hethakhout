@@ -6,11 +6,7 @@ import Loader from '../Loader';
 
 const BlogView = ({ slug }) => {
     const [redirect, setRedirect] = useState(false);
-    const [data, isLoading] = useFetch(
-        'http://localhost:3000/BlogPosts/' + slug + '.md',
-        [],
-        false
-    );
+    const [data, isLoading] = useFetch('/api/posts/' + slug + '.md', [], false);
 
     const handleRedirect = () => {
         if (redirect) {
