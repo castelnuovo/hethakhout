@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withBaseRoute from '../Utils/withBaseRoute';
 
 const Rondleidingen = ({ match }) => {
@@ -10,6 +11,10 @@ const Rondleidingen = ({ match }) => {
             </div>
         </section>
     );
+};
+
+Rondleidingen.propTypes = {
+    match: PropTypes.object.isRequired
 };
 
 export default withBaseRoute(Rondleidingen);

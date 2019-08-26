@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Markdown from 'markdown-to-jsx';
 import { Redirect } from 'react-router-dom';
 import useFetch from '../../Utils/useFetch';
@@ -35,6 +36,10 @@ const BlogView = ({ id }) => {
             {handleRedirect()}
         </div>
     );
+};
+
+BlogView.propTypes = {
+    id: PropTypes.number.isRequired
 };
 
 export default BlogView;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MenuDropdown = ({ children, title }) => {
     return (
@@ -9,6 +10,8 @@ const MenuDropdown = ({ children, title }) => {
     );
 };
 
-// REQUIRED PROPS: to (string), children (???), title (string)
-
+MenuDropdown.propTypes = {
+    children: PropTypes.element.isRequired,
+    title: PropTypes.string.isRequired
+};
 export default MenuDropdown;

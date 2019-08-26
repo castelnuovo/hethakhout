@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BrandLogo from './BrandLogo';
 import BrandHamburger from './BrandHamburger';
 import BrandStyles from './Brand.module.scss';
@@ -15,6 +16,11 @@ const Brand = ({ hamburgerOpen, toggleHamburger }) => {
     );
 };
 
-// REQUIRED PROPS: styles (css module), scrolledPastBreakpoint (boolean), hamburgerOpen (function), hamburgerOpen (boolean)
+Brand.propTypes = {
+    styles: PropTypes.object.isRequired,
+    scrolledPastBreakpoint: PropTypes.bool.isRequired,
+    hamburgerOpen: PropTypes.func.isRequired,
+    toggleHamburger: PropTypes.bool.isRequired
+};
 
 export default Brand;

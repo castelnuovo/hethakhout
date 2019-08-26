@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -14,7 +15,10 @@ const Icon = ({ type, icon, options }) => {
     );
 };
 
-// REQUIRED PROPS: type (string), icon (string)
-// OPTIONAL PROPS: options (object)
+Icon.propTypes = {
+    type: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    options: PropTypes.object
+};
 
 export default Icon;

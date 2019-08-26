@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import logo from '../../Assets/images/logo_green_withouw_brand.png';
 
@@ -14,6 +15,8 @@ const HeroImage = ({ styles }) => {
     );
 };
 
-// REQUIRED PROPS: styles (css module)
+HeroImage.propTypes = {
+    stylesd: PropTypes.object.isRequired
+};
 
 export default HeroImage;

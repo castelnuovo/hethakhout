@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const BlogItem = ({ id, title, summary }) => {
@@ -10,6 +11,12 @@ const BlogItem = ({ id, title, summary }) => {
             </Link>
         </div>
     );
+};
+
+BlogItem.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired
 };
 
 export default BlogItem;
