@@ -9,7 +9,6 @@ const Navbar = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
     const toggleHamburger = () => {
-        console.log(!hamburgerOpen);
         setHamburgerOpen(!hamburgerOpen);
     };
 
@@ -22,7 +21,10 @@ const Navbar = () => {
             )}
         >
             <div className="container">
-                <Brand toggleHamburger={toggleHamburger} />
+                <Brand
+                    hamburgerOpen={hamburgerOpen}
+                    toggleHamburger={toggleHamburger}
+                />
                 <Menu hamburgerOpen={hamburgerOpen} />
             </div>
         </nav>
