@@ -16,8 +16,10 @@ const Hero = () => {
             <div className="hero-body">
                 <div className="container has-text-centered">
                     <HeroImage styles={HeroStyles} />
-                    <h1 className="title">Welkom bij Het Hak Hout</h1>
-                    <h2 className="subtitle">
+                    <h1 className="title has-text-white">
+                        Welkom bij Het Hak Hout
+                    </h1>
+                    <h2 className="subtitle has-text-white">
                         Rondleidingen, Wandelingen en Meer
                     </h2>
                 </div>
