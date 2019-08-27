@@ -1,11 +1,11 @@
 import React from 'react';
-import withBaseRoute from '../Utils/withBaseRoute';
-import Hero from '../Components/Hero';
-import BlogWidget from '../Components/Blog/BlogWidget';
+import withBaseRoute from 'Utils/withBaseRoute';
+import Hero from 'Components/Hero';
+import BlogWidget from 'Components/Blog/BlogWidget';
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Hero />
             <BlogWidget />
             {/* <Contact /> */}
@@ -22,7 +22,7 @@ const Home = () => {
                     </p>
                 </div>
             </section>
-        </div>
+        </>
     );
 };
 

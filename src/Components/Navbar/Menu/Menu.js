@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import MenuLink from './MenuLink';
 import MenuBtn from './MenuBtn';
 import MenuDropdown from './MenuDropdown';
-import Icon from '../../Icon';
+import Icon from 'Components/Icon';
 
 const Menu = ({ hamburgerOpen }) => {
     let classes = {

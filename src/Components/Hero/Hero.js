@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroStyles from './Hero.module.scss';
 import HeroImage from './HeroImage';
-import BackgroundVideo from '../../Assets/videos/trailer.mp4';
+import BackgroundVideo from 'Assets/videos/trailer.mp4';
 
 const Hero = () => {
     return (

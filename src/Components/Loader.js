@@ -11,7 +11,7 @@ const Loader = ({ isLoading, size }) => {
 };
 
 Loader.propTypes = {
-    isLoading: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool,
     size: PropTypes.string.isRequired
 };
 

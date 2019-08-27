@@ -11,7 +11,7 @@ const MenuDropdown = ({ children, title }) => {
 };
 
 MenuDropdown.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired
 };
 export default MenuDropdown;

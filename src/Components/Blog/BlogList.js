@@ -1,7 +1,7 @@
 import React from 'react';
-import useFetch from '../../Utils/useFetch';
+import useFetch from 'Utils/useFetch';
 import BlogItem from './BlogItem';
-import Loader from '../Loader';
+import Loader from 'Components/Loader';
 
 const BlogList = () => {
     const [data, isLoading] = useFetch('/api/posts', []);
@@ -15,7 +15,7 @@ const BlogList = () => {
             key={post.id}
             id={post.id}
             title={post.title}
-            summary={post.summary}
+            summary={post.body}
         />
     ));
 };

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'markdown-to-jsx';
 import { Redirect } from 'react-router-dom';
-import useFetch from '../../Utils/useFetch';
-import Loader from '../Loader';
+import useFetch from 'Utils/useFetch';
+import Loader from 'Components/Loader';
 
 const BlogView = ({ id }) => {
     const [redirect, setRedirect] = useState(false);

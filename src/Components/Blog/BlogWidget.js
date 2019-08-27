@@ -1,7 +1,7 @@
 import React from 'react';
-import useFetch from '../../Utils/useFetch';
+import useFetch from 'Utils/useFetch';
 import BlogItem from './BlogItem';
-import Loader from '../Loader';
+import Loader from 'Components/Loader';
 
 const BlogWidget = () => {
     const [data, isLoading] = useFetch('/api/posts/', []);
@@ -11,7 +11,7 @@ const BlogWidget = () => {
             <div className="container is-small has-text-centered">
                 <div className="columns is-vcentered is-multiline">
                     {isLoading && <Loader size="medium" />}
-                    {data.map(post => (
+                    {data.slice(0, 4).map(post => (
                         <div
                             key={post.id}
                             className="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd"
@@ -19,7 +19,7 @@ const BlogWidget = () => {
                             <BlogItem
                                 id={post.id}
                                 title={post.title}
-                                summary={post.summary}
+                                summary={post.body}
                             />
                         </div>
                     ))}

@@ -30,8 +30,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
-        "deploy": "npm run test && npm run build && aws s3 sync build/ s3://BUCKET_NAME"
+        "test": "react-scripts test"
     },
     "husky": {
         "hooks": {
@@ -44,6 +43,25 @@
             "./node_modules/.bin/eslint --max-warnings 0",
             "git add"
         ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "plugin:prettier/recommended"
+        ],
+        "settings": {
+            "import/resolver": {
+                "node": {
+                    "paths": [
+                        "src"
+                    ]
+                }
+            }
+        }
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": true
     },
     "browserslist": {
         "production": [

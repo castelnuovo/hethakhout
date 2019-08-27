@@ -5,10 +5,10 @@ const withBaseRoute = PassedComponent => {
     return class extends React.Component {
         render() {
             return (
-                <React.Fragment>
+                <>
                     <PassedComponent {...this.props} />
                     {renderRoutes(this.props.route.routes)}
-                </React.Fragment>
+                </>
             );
         }
     };

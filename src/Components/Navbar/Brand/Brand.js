@@ -17,10 +17,8 @@ const Brand = ({ hamburgerOpen, toggleHamburger }) => {
 };
 
 Brand.propTypes = {
-    styles: PropTypes.object.isRequired,
-    scrolledPastBreakpoint: PropTypes.bool.isRequired,
-    hamburgerOpen: PropTypes.func.isRequired,
-    toggleHamburger: PropTypes.bool.isRequired
+    hamburgerOpen: PropTypes.bool.isRequired,
+    toggleHamburger: PropTypes.func.isRequired
 };
 
 export default Brand;
