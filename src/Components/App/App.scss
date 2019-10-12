@@ -20,9 +20,7 @@ $body-background-color: $background-color;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
-
-// Navbar
-$navbar-item-active-background-color: red;
+$navbar-item-active-background-color: #fafafa;
 
 // Import required Bulma files
 @import '~bulma/bulma.sass';
