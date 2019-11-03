@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BrandLogo from './BrandLogo';
+import { Link } from 'react-router-dom';
+
 import BrandHamburger from './BrandHamburger';
-import BrandStyles from './Brand.module.scss';
+import logo from 'Assets/images/logo_green_withouw_brand.png';
 
 const Brand = ({ hamburgerOpen, toggleHamburger }) => {
     return (
         <div className="navbar-brand">
-            <BrandLogo styles={BrandStyles} />
             <BrandHamburger
                 hamburgerOpen={hamburgerOpen}
                 hamburgerClick={toggleHamburger}
             />
+
+            <Link to="/" className="navbar-item">
+                <img
+                    src={logo}
+                    alt="Bulma: a modern CSS framework based on Flexbox"
+                />
+            </Link>
         </div>
     );
 };

@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router';
-import classNames from 'classnames';
-import NavbarStyles from './Navbar.module.scss';
 import Brand from './Brand';
 import Menu from './Menu';
+
+/**
+
+.navbar-item.is-mega {
+    position: static;
+
+    .is-mega-menu-title {
+        margin-bottom: 0;
+        padding: 0.375rem 1rem;
+    }
+}
+ */
 
 const Navbar = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -13,13 +23,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav
-            className={classNames(
-                'navbar',
-                'is-fixed-top',
-                NavbarStyles.navbar
-            )}
-        >
+        <nav className="navbar is-fixed-top">
             <div className="container">
                 <Brand
                     hamburgerOpen={hamburgerOpen}

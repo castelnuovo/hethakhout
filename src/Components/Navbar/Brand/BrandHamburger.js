@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import MenuLink from '../Menu/MenuLink';
+
 const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
     const classes = {
         open: classNames('navbar-burger', 'burger', 'is-active'),
@@ -14,14 +16,24 @@ const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
     // });
 
     return (
-        <span
-            className={hamburgerOpen ? classes.open : classes.close}
-            onClick={hamburgerClick}
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
+        <>
+            <MenuLink
+                to="/redirect/instagram"
+                className="navbar-item is-hidden-desktop"
+            >
+                <span className="icon" style={{ color: '#333' }}>
+                    <i className="fab fa-instagram"></i>
+                </span>
+            </MenuLink>
+            <div
+                className={hamburgerOpen ? classes.open : classes.close}
+                onClick={hamburgerClick}
+            >
+                <span />
+                <span />
+                <span />
+            </div>
+        </>
     );
 };
 

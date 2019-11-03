@@ -4,11 +4,18 @@ import MenuLink from './MenuLink';
 
 const MenuBtn = ({ to, children }) => {
     return (
-        <span className="navbar-item">
-            <MenuLink to={to} className={'button is-primary is-outlined'}>
-                {children}
-            </MenuLink>
-        </span>
+        <div className="navbar-item">
+            <div className="field is-grouped">
+                <p className="control">
+                    <MenuLink
+                        to={to}
+                        className={'button is-primary is-outlined'}
+                    >
+                        {children}
+                    </MenuLink>
+                </p>
+            </div>
+        </div>
     );
 };
 
