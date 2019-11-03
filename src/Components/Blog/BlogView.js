@@ -7,7 +7,11 @@ import Loader from 'Components/Loader';
 
 const BlogView = ({ id }) => {
     const [redirect, setRedirect] = useState(false);
-    const [data, isLoading] = useFetch('/api/posts/' + id, [], false);
+    const [data, isLoading] = useFetch(
+        'https://jsonplaceholder.typicode.com/posts/' + id,
+        [],
+        false
+    );
 
     const handleRedirect = () => {
         if (redirect) {

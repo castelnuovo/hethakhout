@@ -7,8 +7,6 @@ const Home = () => {
     return (
         <>
             <Hero />
-            <BlogWidget />
-            {/* <Contact /> */}
 
             <section className="section">
                 <div className="container">
@@ -22,6 +20,9 @@ const Home = () => {
                     </p>
                 </div>
             </section>
+
+            <BlogWidget />
+            {/* <Contact /> */}
         </>
     );
 };

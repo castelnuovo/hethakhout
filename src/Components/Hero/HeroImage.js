@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import logo from 'Assets/images/logo_green_withouw_brand.png';
+import logo from 'Assets/images/logo_orange_without_brand.png';
 
 const HeroImage = ({ styles }) => {
     return (

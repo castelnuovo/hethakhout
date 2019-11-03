@@ -4,7 +4,10 @@ import BlogItem from './BlogItem';
 import Loader from 'Components/Loader';
 
 const BlogWidget = () => {
-    const [data, isLoading] = useFetch('/api/posts/', []);
+    const [data, isLoading] = useFetch(
+        'https://jsonplaceholder.typicode.com/posts',
+        []
+    );
 
     return (
         <section className="section">

@@ -20,7 +20,7 @@ const Hero = () => {
                         Welkom bij Het Hak Hout
                     </h1>
                     <h2 className="subtitle has-text-white">
-                        Rondleidingen, Wandelingen en Meer
+                        Natuuractiviteiten, Shinrin-Yoku en Wandelingen
                     </h2>
                 </div>
             </div>

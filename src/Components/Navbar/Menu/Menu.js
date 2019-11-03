@@ -23,16 +23,27 @@ const Menu = ({ hamburgerOpen }) => {
                 <MenuLink to="/" hasActiveState={false}>
                     Home
                 </MenuLink>
-                <MenuLink to="/blog">Blog</MenuLink>
-                <MenuLink to="/rondleidingen/123">Rondleidingen</MenuLink>
-                <MenuLink to="/foto">Foto's</MenuLink>
-                <MenuDropdown title="Dropdown">
-                    <MenuLink to="/dropdown/1">Dropdown 1</MenuLink>
-                    <MenuLink to="/dropdown/2">Dropdown 2</MenuLink>
+                <MenuLink to="/shinrin-yoku">Shinrin-Yoku</MenuLink>
+
+                <MenuDropdown title="Activiteiten">
+                    <MenuLink to="/wandelingen">Wandelingen</MenuLink>
+                    {/* <MenuDropdown title="Wandelingen">
+                        <MenuLink to="/wandelingen/lang">Lange Wandeling</MenuLink>
+                        <MenuLink to="/wandelingen/kort">Korte Wandeling</MenuLink>
+                        <MenuLink to="/wandelingen/stilte">Stilte Wandeling</MenuLink>
+                        <MenuLink to="/wandelingen/reeen">Reeën Wandeling</MenuLink>
+                    </MenuDropdown> */}
+                    <MenuLink to="/jeugd">Jeugd</MenuLink>
+                    <MenuLink to="/lezing">Lezing</MenuLink>
+                    <MenuLink to="/vogels">Vogels</MenuLink>
                 </MenuDropdown>
+
+                <MenuLink to="/foto">Foto's</MenuLink>
+                <MenuLink to="/blog">Blog</MenuLink>
+
                 <MenuBtn to="/walking">
                     <Icon type="fas" icon="walking" />
-                    <span>Boek een Wandeling</span>
+                    <span>Kom je langs?</span>
                 </MenuBtn>
             </div>
         </div>

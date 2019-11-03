@@ -4,7 +4,10 @@ import BlogItem from './BlogItem';
 import Loader from 'Components/Loader';
 
 const BlogList = () => {
-    const [data, isLoading] = useFetch('/api/posts', []);
+    const [data, isLoading] = useFetch(
+        'https://jsonplaceholder.typicode.com/posts',
+        []
+    );
 
     if (isLoading) {
         return <Loader size="medium" />;
