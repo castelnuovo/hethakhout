@@ -2,6 +2,7 @@ import Home from 'Routes/Home';
 import Rondleidingen from 'Routes/Rondleidingen';
 import Blog from 'Routes/Blog';
 import Redirect from 'Routes/Redirect';
+import Booking from 'Routes/Booking';
 import NotFound from 'Routes/NotFound';
 
 const Routes = [
@@ -27,6 +28,10 @@ const Routes = [
     {
         path: '/redirect/:src',
         component: Redirect
+    },
+    {
+        path: '/booking',
+        component: Booking
     },
     {
         component: NotFound
