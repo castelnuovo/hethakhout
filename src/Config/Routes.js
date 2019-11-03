@@ -1,6 +1,7 @@
 import Home from 'Routes/Home';
 import Rondleidingen from 'Routes/Rondleidingen';
 import Blog from 'Routes/Blog';
+import Redirect from 'Routes/Redirect';
 import NotFound from 'Routes/NotFound';
 
 const Routes = [
@@ -22,6 +23,10 @@ const Routes = [
     {
         path: '/blog/:id?',
         component: Blog
+    },
+    {
+        path: '/redirect/:src',
+        component: Redirect
     },
     {
         component: NotFound

@@ -18,23 +18,6 @@ const Menu = ({ hamburgerOpen }) => {
     //     is-active: hamburgerOpen
     // });
 
-    /*
-        <MenuDropdown title="Activiteiten">
-            <MenuLink to="/wandelingen">Wandelingen</MenuLink>
-            <MenuLink to="/jeugd">Jeugd</MenuLink>
-            <MenuLink to="/lezing">Lezing</MenuLink>
-            <MenuLink to="/vogels">Vogels</MenuLink>
-        </MenuDropdown>
-
-        <MenuLink to="/foto">Foto's</MenuLink>
-        <MenuLink to="/blog">Blog</MenuLink>
-
-        <MenuBtn to="/walking">
-            <Icon type="fas" icon="walking" />
-            <span>Kom je langs?</span>
-        </MenuBtn>
-    */
-
     return (
         <div className={hamburgerOpen ? classes.open : classes.close}>
             <div className="navbar-start">
