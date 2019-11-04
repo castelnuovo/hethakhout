@@ -5,7 +5,7 @@ import Routes from 'Config/Routes';
 
 import './App.scss';
 
-import Navbar from 'Components/NavBar';
+import NavBar from 'Components/Navbar';
 // import Footer from 'Components/Footer';
 
 const App = () => {
