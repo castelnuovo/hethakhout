@@ -15,7 +15,7 @@ import Menu from './Menu';
 }
  */
 
-const Navbar = () => {
+const NavBar = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
     const toggleHamburger = () => {
@@ -35,4 +35,4 @@ const Navbar = () => {
     );
 };
 
-export default withRouter(Navbar);
+export default withRouter(NavBar);
