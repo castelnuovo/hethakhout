@@ -16,7 +16,7 @@ const App = () => {
 
     return (
         <Router>
-            <Navbar />
+            <NavBar />
             {renderRoutes(Routes)}
             {/* <Footer /> */}
         </Router>
