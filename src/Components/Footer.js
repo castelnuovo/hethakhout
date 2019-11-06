@@ -26,6 +26,12 @@ const Footer = () => {
                     <div class="level-item has-text-centered">
                         <div>
                             <p class="title">Social media</p>
+
+                            <a href="/">
+                                <span class="icon is-large has-text-dark">
+                                    <i class="fab fa-facebook-square fa-3x"></i>
+                                </span>
+                            </a>
                             <a href="/">
                                 <span class="icon is-large has-text-dark">
                                     <i class="fab fa-instagram fa-3x"></i>
@@ -33,7 +39,7 @@ const Footer = () => {
                             </a>
                             <a href="/">
                                 <span class="icon is-large has-text-dark">
-                                    <i class="fab fa-facebook-square fa-3x"></i>
+                                    <i class="fab fa-linkedin fa-3x"></i>
                                 </span>
                             </a>
                         </div>
