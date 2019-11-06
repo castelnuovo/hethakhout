@@ -6,7 +6,7 @@ import Routes from 'Config/Routes';
 import './App.scss';
 
 import NavBar from 'Components/Navbar';
-// import Footer from 'Components/Footer';
+import Footer from 'Components/Footer';
 
 const App = () => {
     useEffect(() => {
@@ -18,7 +18,7 @@ const App = () => {
         <Router>
             <NavBar />
             {renderRoutes(Routes)}
-            {/* <Footer /> */}
+            <Footer />
         </Router>
     );
 };

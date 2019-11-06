@@ -4,19 +4,41 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="content has-text-centered ">
-                <p>
-                    <strong>Bulma</strong> by
-                    <a href="https://jgthms.com">Jeremy Thomas</a>. The source
-                    code is licensed
-                    <a href="http://opensource.org/licenses/mit-license.php">
-                        MIT
-                    </a>
-                    . The website content is licensed
-                    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                        CC BY NC SA 4.0
-                    </a>
-                    .
-                </p>
+                <nav class="level">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="title">Locatie</p>
+                            <p>straatlaan 123</p>
+                            <p>1234AB Overlangbroek</p>
+                            <p>
+                                T: <a href="tel: 1234567890">1234</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <a
+                            href="/"
+                            className="button is-large is-primary is-outlined"
+                        >
+                            Kom je langs?
+                        </a>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="title">Social media</p>
+                            <a href="/">
+                                <span class="icon is-large has-text-dark">
+                                    <i class="fab fa-instagram fa-3x"></i>
+                                </span>
+                            </a>
+                            <a href="/">
+                                <span class="icon is-large has-text-dark">
+                                    <i class="fab fa-facebook-square fa-3x"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </footer>
     );
