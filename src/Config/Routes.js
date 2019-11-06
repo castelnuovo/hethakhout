@@ -33,6 +33,7 @@ const Routes = [
         path: '/booking',
         component: Booking
     },
+
     {
         component: NotFound
     }

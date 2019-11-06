@@ -8,7 +8,7 @@ import './App.scss';
 import Logo from 'Config/Logo';
 
 import NavBar from 'Components/NavBar';
-// import Footer from 'Components/Footer';
+import Footer from 'Components/Footer';
 
 const App = () => {
     useEffect(() => {
@@ -21,7 +21,7 @@ const App = () => {
             <Favicon url={Logo} />
             <NavBar />
             {renderRoutes(Routes)}
-            {/* <Footer /> */}
+            <Footer />
         </Router>
     );
 };
