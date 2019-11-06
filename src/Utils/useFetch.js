@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const useFetch = (url, defaultData, isJson = true) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,16 @@ const useFetch = (url, defaultData, isJson = true) => {
     }, [isJson, url]);
 
     return [data, isLoading];
+};
+
+useFetch.propTypes = {
+    url: PropTypes.string.isRequired,
+    defaultData: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+        PropTypes.array
+    ]).isRequired,
+    isJson: PropTypes.bool.isRequired
 };
 
 export default useFetch;

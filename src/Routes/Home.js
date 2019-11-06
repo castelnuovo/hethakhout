@@ -10,7 +10,6 @@ const Home = () => {
             <Hero />
             <AboutMe />
             <BlogWidget />
-            {/* <Contact /> */}
         </>
     );
 };

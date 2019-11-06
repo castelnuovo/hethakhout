@@ -20,7 +20,7 @@ const BookingCategory = ({ title, children }) => {
 
 BookingCategory.propTypes = {
     title: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired // todo: set proper type
+    children: PropTypes.node.isRequired
 };
 
 export default BookingCategory;

@@ -1,22 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styled from 'styled-components';
 import Logo from 'Config/Logo';
 
-const HeroImage = ({ styles }) => {
+const StyledImage = styled.img`
+    max-width: 20rem;
+    padding-bottom: 2rem;
+`;
+
+const HeroImage = () => {
     return (
         <figure className="center">
-            <img
-                src={Logo}
-                className={classNames('image', styles.image)}
-                alt="Logo"
-            />
+            <StyledImage src={Logo} className="image" alt="Logo" />
         </figure>
     );
-};
-
-HeroImage.propTypes = {
-    styles: PropTypes.object.isRequired
 };
 
 export default HeroImage;

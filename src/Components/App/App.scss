@@ -24,14 +24,3 @@ $navbar-item-active-background-color: #fafafa;
 
 // Import required Bulma files
 @import '~bulma/bulma.sass';
-
-// General Styles
-html {
-    overscroll-behavior: none;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
