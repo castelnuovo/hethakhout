@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import BrandHamburger from './BrandHamburger';
-import logo from 'Assets/images/logo_green_withouw_brand.png';
+import Logo from 'Config/Logo';
 
 const Brand = ({ hamburgerOpen, toggleHamburger }) => {
     return (
@@ -14,10 +14,7 @@ const Brand = ({ hamburgerOpen, toggleHamburger }) => {
             />
 
             <Link to="/" className="navbar-item">
-                <img
-                    src={logo}
-                    alt="Bulma: a modern CSS framework based on Flexbox"
-                />
+                <img src={Logo} alt="Het Hak Hout" />
             </Link>
         </div>
     );

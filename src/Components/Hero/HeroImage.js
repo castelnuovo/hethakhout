@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import logo from 'Assets/images/logo_orange_without_brand.png';
+import Logo from 'Config/Logo';
 
 const HeroImage = ({ styles }) => {
     return (
         <figure className="center">
             <img
-                src={logo}
+                src={Logo}
                 className={classNames('image', styles.image)}
                 alt="Logo"
             />
