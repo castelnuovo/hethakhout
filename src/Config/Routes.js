@@ -3,6 +3,7 @@ import Rondleidingen from 'Routes/Rondleidingen';
 import Blog from 'Routes/Blog';
 import Redirect from 'Routes/Redirect';
 import Booking from 'Routes/Booking';
+import Activity from 'Routes/Activity';
 import NotFound from 'Routes/NotFound';
 
 const Routes = [
@@ -33,7 +34,10 @@ const Routes = [
         path: '/booking',
         component: Booking
     },
-
+    {
+        path: '/activiteiten/wandelingen/lang',
+        component: Activity
+    },
     {
         component: NotFound
     }
