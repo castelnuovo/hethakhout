@@ -4,10 +4,10 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="content has-text-centered ">
-                <nav class="level">
-                    <div class="level-item has-text-centered">
+                <nav className="level">
+                    <div className="level-item has-text-centered">
                         <div>
-                            <p class="title">Locatie</p>
+                            <p className="title">Locatie</p>
                             <p>straatlaan 123</p>
                             <p>1234AB Overlangbroek</p>
                             <p>
@@ -15,7 +15,7 @@ const Footer = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="level-item has-text-centered">
+                    <div className="level-item has-text-centered">
                         <a
                             href="/"
                             className="button is-large is-primary is-outlined"
@@ -23,23 +23,23 @@ const Footer = () => {
                             Kom je langs?
                         </a>
                     </div>
-                    <div class="level-item has-text-centered">
+                    <div className="level-item has-text-centered">
                         <div>
-                            <p class="title">Social media</p>
+                            <p className="title">Social media</p>
 
                             <a href="/">
-                                <span class="icon is-large has-text-dark">
-                                    <i class="fab fa-facebook-square fa-3x"></i>
+                                <span className="icon is-large has-text-dark">
+                                    <i className="fab fa-facebook-square fa-3x"></i>
                                 </span>
                             </a>
                             <a href="/">
-                                <span class="icon is-large has-text-dark">
-                                    <i class="fab fa-instagram fa-3x"></i>
+                                <span className="icon is-large has-text-dark">
+                                    <i className="fab fa-instagram fa-3x"></i>
                                 </span>
                             </a>
                             <a href="/">
-                                <span class="icon is-large has-text-dark">
-                                    <i class="fab fa-linkedin fa-3x"></i>
+                                <span className="icon is-large has-text-dark">
+                                    <i className="fab fa-linkedin fa-3x"></i>
                                 </span>
                             </a>
                         </div>
