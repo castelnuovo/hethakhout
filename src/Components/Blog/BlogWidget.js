@@ -12,7 +12,7 @@ const BlogWidget = () => {
     return (
         <section className="section">
             <div className="container is-small has-text-centered">
-                <h1 class="title">Recente Artikelen</h1>
+                <h1 className="title">Recente Artikelen</h1>
                 <div className="columns is-vcentered is-multiline">
                     {isLoading && <Loader size="medium" />}
                     {data.slice(0, 4).map(post => (

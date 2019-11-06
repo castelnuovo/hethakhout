@@ -10,6 +10,16 @@ import Logo from 'Config/Logo';
 import NavBar from 'Components/NavBar';
 import Footer from 'Components/Footer';
 
+// body {
+//     display: flex;
+//     min-height: 100vh;
+//     flex-direction: column;
+// }
+
+// .App {
+//     flex: 1;
+// }
+
 const GlobalStyles = createGlobalStyle`
     html {
         overscroll-behavior: none;
@@ -39,7 +49,7 @@ const App = () => {
             <GlobalStyles />
             <Favicon url={Logo} />
             <NavBar />
-            {renderRoutes(Routes)}
+            <div className="App">{renderRoutes(Routes)}</div>
             <Footer />
         </Router>
     );
