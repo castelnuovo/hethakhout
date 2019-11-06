@@ -9,10 +9,11 @@ const Footer = () => {
                     <div className="level-item has-text-centered">
                         <div>
                             <p className="title">Locatie</p>
-                            <p>straatlaan 123</p>
+                            <p>Straatlaan 123</p>
                             <p>1234AB Overlangbroek</p>
                             <p>
-                                T: <a href="tel: 1234567890">1234</a>
+                                T:
+                                <Link to="/redirect/phone">06-1234-5678</Link>
                             </p>
                         </div>
                     </div>
@@ -28,33 +29,23 @@ const Footer = () => {
                         <div>
                             <p className="title">Social media</p>
 
-                            <a
-                                href="/redirect/linkedin"
-                                target="_blank"
-                                rel="noopener nofollow"
-                            >
+                            <Link to="/redirect/facebook">
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-facebook-square fa-3x"></i>
                                 </span>
-                            </a>
-                            <a
-                                href="/redirect/linkedin"
-                                target="_blank"
-                                rel="noopener nofollow"
-                            >
+                            </Link>
+
+                            <Link to="/redirect/instagram">
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-instagram fa-3x"></i>
                                 </span>
-                            </a>
-                            <a
-                                href="/redirect/linkedin"
-                                target="_blank"
-                                rel="noopener nofollow"
-                            >
+                            </Link>
+
+                            <Link to="/redirect/linkedin">
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-linkedin fa-3x"></i>
                                 </span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </nav>
