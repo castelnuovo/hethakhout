@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Loader = ({ isLoading, size }) => {
+const Loader = ({ size }) => {
     return (
         <progress
             className={`progress is-primary is-vcentered is-${size}`}
@@ -11,7 +11,6 @@ const Loader = ({ isLoading, size }) => {
 };
 
 Loader.propTypes = {
-    isLoading: PropTypes.bool,
     size: PropTypes.string.isRequired
 };
 
