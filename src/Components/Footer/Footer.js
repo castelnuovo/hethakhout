@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -16,28 +17,40 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="level-item has-text-centered">
-                        <a
-                            href="/"
+                        <Link
+                            to="/booking"
                             className="button is-large is-primary is-outlined"
                         >
                             Kom je langs?
-                        </a>
+                        </Link>
                     </div>
                     <div className="level-item has-text-centered">
                         <div>
                             <p className="title">Social media</p>
 
-                            <a href="/">
+                            <a
+                                href="/redirect/linkedin"
+                                target="_blank"
+                                rel="noopener nofollow"
+                            >
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-facebook-square fa-3x"></i>
                                 </span>
                             </a>
-                            <a href="/">
+                            <a
+                                href="/redirect/linkedin"
+                                target="_blank"
+                                rel="noopener nofollow"
+                            >
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-instagram fa-3x"></i>
                                 </span>
                             </a>
-                            <a href="/">
+                            <a
+                                href="/redirect/linkedin"
+                                target="_blank"
+                                rel="noopener nofollow"
+                            >
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-linkedin fa-3x"></i>
                                 </span>

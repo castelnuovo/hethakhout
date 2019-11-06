@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import Favicon from 'react-favicon';
 import { createGlobalStyle } from 'styled-components';
+import Favicon from 'react-favicon';
 import Routes from 'Config/Routes';
 import './App.scss';
+
 import Logo from 'Config/Logo';
 import NavBar from 'Components/NavBar';
 import Footer from 'Components/Footer';
