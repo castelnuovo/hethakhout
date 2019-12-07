@@ -1,7 +1,55 @@
 {
     "name": "het_hak_hout",
     "version": "0.1.0",
+    "browserslist": {
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ],
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "plugin:prettier/recommended"
+        ],
+        "settings": {
+            "import/resolver": {
+                "node": {
+                    "paths": [
+                        "src"
+                    ]
+                }
+            }
+        }
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,json,css}": [
+            "prettier --write",
+            "./node_modules/.bin/eslint --max-warnings 0",
+            "git add"
+        ]
+    },
+    "prettier": {
+        "singleQuote": true,
+        "tabWidth": 4
+    },
     "private": true,
+    "scripts": {
+        "build": "react-scripts build",
+        "start": "react-scripts start",
+        "test": "react-scripts test"
+    },
     "dependencies": {
         "bulma": "^0.7.5",
         "classnames": "^2.2.6",
@@ -25,53 +73,5 @@
         "husky": "^3.0.8",
         "lint-staged": "^9.4.2",
         "prettier": "^1.18.2"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "src/**/*.{js,jsx,json,css}": [
-            "prettier --write",
-            "./node_modules/.bin/eslint --max-warnings 0",
-            "git add"
-        ]
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "plugin:prettier/recommended"
-        ],
-        "settings": {
-            "import/resolver": {
-                "node": {
-                    "paths": [
-                        "src"
-                    ]
-                }
-            }
-        }
-    },
-    "prettier": {
-        "tabWidth": 4,
-        "singleQuote": true
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
     }
 }
