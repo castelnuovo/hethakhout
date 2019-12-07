@@ -5,15 +5,9 @@ import classNames from 'classnames';
 import MenuLink from '../Menu/MenuLink';
 
 const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
-    const classes = {
-        open: classNames('navbar-burger', 'burger', 'is-active'),
-        close: classNames('navbar-burger', 'burger')
-    };
-
-    // TODO: find way to use - in object key
-    // let classes = classNames('navbar-burger', 'burger', {
-    //     is-active: hamburgerOpen
-    // });
+    const classes = classNames('navbar-burger', 'burger', {
+        'is-active': hamburgerOpen
+    });
 
     return (
         <>
@@ -25,10 +19,7 @@ const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
                     <i className="fab fa-instagram"></i>
                 </span>
             </MenuLink>
-            <div
-                className={hamburgerOpen ? classes.open : classes.close}
-                onClick={hamburgerClick}
-            >
+            <div className={classes} onClick={hamburgerClick}>
                 <span />
                 <span />
                 <span />

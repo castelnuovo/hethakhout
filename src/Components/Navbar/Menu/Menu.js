@@ -8,18 +8,12 @@ import MenuLink from './MenuLink';
 import MenuBtn from './MenuBtn';
 
 const Menu = ({ hamburgerOpen }) => {
-    let classes = {
-        open: classNames('navbar-menu', 'is-active'),
-        close: classNames('navbar-menu')
-    };
-
-    // TODO: find way to use - in object key
-    // let classes = classNames('navbar-menu', {
-    //     is-active: hamburgerOpen
-    // });
+    const classes = classNames('navbar-menu', {
+        'is-active': hamburgerOpen
+    });
 
     return (
-        <div className={hamburgerOpen ? classes.open : classes.close}>
+        <div className={classes}>
             <div className="navbar-start">
                 <MenuLink to="/shinrin-yoku">Shinrin-Yoku</MenuLink>
                 <MenuMega title="Activiteiten">
