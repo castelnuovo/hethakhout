@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const BookingItem = ({ title, description }) => {
+const BookingItem = ({ id, title, description }) => {
     return (
         <article className="tile is-child notification is-primary">
             <div className="columns is-vcentered">
@@ -11,7 +12,12 @@ const BookingItem = ({ title, description }) => {
                 </div>
                 <div className="column"></div>
                 <div className="column">
-                    <div className="button is-medium">Kies</div>
+                    <Link
+                        to={`/booking/${id}/contact`}
+                        className="button is-medium"
+                    >
+                        Kies
+                    </Link>
                 </div>
             </div>
         </article>
