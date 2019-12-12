@@ -50,40 +50,7 @@ const Menu = ({ hamburgerOpen }) => {
                         </MenuLink>
                     </MenuColumn>
                 </MenuMega>
-                <MenuMega title="Blogs">
-                    <MenuColumn title="Recente Artikelen">
-                        <MenuLink to="/blog/3-een-struik">
-                            <div className="navbar-content">
-                                <p>
-                                    <small className="has-text-info">
-                                        03 Aug 2017
-                                    </small>
-                                </p>
-                                <p>Artikel 3: Een struik</p>
-                            </div>
-                        </MenuLink>
-                        <MenuLink to="/blog/2-een-struik">
-                            <div className="navbar-content">
-                                <p>
-                                    <small className="has-text-info">
-                                        02 Aug 2017
-                                    </small>
-                                </p>
-                                <p>Artikel 2: Een Boom</p>
-                            </div>
-                        </MenuLink>
-                        <MenuLink to="/blog/1-een-struik">
-                            <div className="navbar-content">
-                                <p>
-                                    <small className="has-text-info">
-                                        01 Aug 2017
-                                    </small>
-                                </p>
-                                <p>Artikel 1: Een Vogel</p>
-                            </div>
-                        </MenuLink>
-                    </MenuColumn>
-                </MenuMega>
+                <MenuLink to="/blog">Blog</MenuLink>
                 <MenuLink to="/fotos">Foto's</MenuLink>
             </div>
 

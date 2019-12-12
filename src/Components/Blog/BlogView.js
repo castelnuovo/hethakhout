@@ -1,49 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Markdown from 'markdown-to-jsx';
-import { Redirect } from 'react-router-dom';
 import useFetch from 'Utils/useFetch';
 import Loader from 'Components/Loader';
 
 const BlogView = ({ id }) => {
-    const [redirect, setRedirect] = useState(false);
     const [data, isLoading] = useFetch(
-        'https://jsonplaceholder.typicode.com/posts/' + id,
-        [],
-        false
+        'https://cms.hethakhout.nl/het-hak-hout/items/articles/' + id
     );
 
-    const handleRedirect = () => {
-        if (redirect) {
-            return <Redirect push to="/blog" />;
-        }
-    };
+    if (isLoading) {
+        return <Loader size="medium" />;
+    }
+
+    if (!isLoading && !data) {
+        // TODO: redirect back to /blog
+        return <h1 className="title">Error: Post Not Found</h1>;
+    }
 
     return (
-        <div className="modal is-active is-clipped">
-            <div className="modal-background"></div>
-            <div className="modal-card">
-                <header className="modal-card-head">
-                    <p className="modal-card-title">TITLE</p>
-                    <button
-                        className="delete"
-                        aria-label="close"
-                        onClick={() => setRedirect(true)}
-                    ></button>
-                </header>
-                <section className="modal-card-body">
-                    {isLoading && <Loader size="medium" />}
-                    {!isLoading && <Markdown>{data}</Markdown>}
-                </section>
-            </div>
-
-            {handleRedirect()}
-        </div>
+        <>
+            <section className="hero is-primary">
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title">{data.title}</h1>
+                        <h2 className="subtitle">
+                            Posted on: {data.created_on}
+                        </h2>
+                    </div>
+                </div>
+            </section>
+            <section className="section">
+                <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
+            </section>
+        </>
     );
 };
 
 BlogView.propTypes = {
-    id: PropTypes.number.isRequired
+    id: PropTypes.string.isRequired
 };
 
 export default BlogView;
