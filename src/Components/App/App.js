@@ -4,6 +4,7 @@ import { renderRoutes } from 'react-router-config';
 import { createGlobalStyle } from 'styled-components';
 import Favicon from 'react-favicon';
 import Routes from 'Config/Routes';
+import useLocalStorage from 'Utils/useLocalStorage';
 import './App.scss';
 
 import Logo from 'Config/Logo';
@@ -43,6 +44,16 @@ const App = () => {
         const preloader = document.querySelector('.preloader');
         preloader.classList.add('preloader--hide');
     }, []);
+
+    // Save API data
+    useLocalStorage(
+        'blogData',
+        'https://cms.hethakhout.nl/het-hak-hout/items/articles'
+    );
+    useLocalStorage(
+        'activityData',
+        'https://cms.hethakhout.nl/het-hak-hout/items/activities'
+    );
 
     return (
         <Router>
