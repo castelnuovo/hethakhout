@@ -51,6 +51,11 @@ const App = () => {
         'https://cms.hethakhout.nl/het-hak-hout/items/activities'
     );
 
+    useLocalStorage(
+        'fotoData',
+        'https://cms.hethakhout.nl/het-hak-hout/items/fotos'
+    );
+
     useEffect(() => {
         const preloader = document.querySelector('.preloader');
         preloader.classList.add('preloader--hide');
