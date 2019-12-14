@@ -1,19 +1,11 @@
 import React from 'react';
 // import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import useFetch from 'Utils/useFetch';
-import Loader from 'Components/Loader';
+import useBlog from 'Utils/useBlog';
 
 const BlogView = ({ id }) => {
-    const [data, isLoading] = useFetch(
-        'https://cms.hethakhout.nl/het-hak-hout/items/articles/' + id
-    );
-
-    if (isLoading) {
-        return <Loader size="medium" />;
-    }
-
-    if (!isLoading && !data) {
+    const data = useBlog('GET', id);
+    if (!data) {
         // TODO: redirect back to /blog
         return <h1 className="title">Error: Post Not Found</h1>;
     }

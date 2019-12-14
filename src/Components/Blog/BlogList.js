@@ -1,16 +1,9 @@
 import React from 'react';
-import useFetch from 'Utils/useFetch';
+import useBlog from 'Utils/useBlog';
 import BlogItem from './BlogItem';
-import Loader from 'Components/Loader';
 
 const BlogList = () => {
-    const [data, isLoading] = useFetch(
-        'https://cms.hethakhout.nl/het-hak-hout/items/articles'
-    );
-
-    if (isLoading) {
-        return <Loader size="medium" />;
-    }
+    const data = useBlog('ALL');
 
     return (
         <>
@@ -21,7 +14,7 @@ const BlogList = () => {
                         key={post.id}
                         id={post.id}
                         title={post.title}
-                        summary={post.body}
+                        summary={post.summary}
                     />
                 ))}
         </>

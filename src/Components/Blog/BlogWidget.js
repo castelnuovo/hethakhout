@@ -1,22 +1,16 @@
 import React from 'react';
-import useFetch from 'Utils/useFetch';
+import useBlog from 'Utils/useBlog';
 import BlogItem from './BlogItem';
-import Loader from 'Components/Loader';
 
 const BlogWidget = () => {
-    const [data, isLoading] = useFetch(
-        'https://cms.hethakhout.nl/het-hak-hout/items/articles'
-    );
+    const data = useBlog('ALL');
 
     return (
         <section className="section">
-            {console.log(data)}
             <div className="container is-small has-text-centered">
                 <h1 className="title">Recente Posts</h1>
                 <div className="columns is-vcentered is-multiline">
-                    {isLoading && <Loader size="medium" />}
-                    {!isLoading &&
-                        data &&
+                    {data &&
                         data.slice(0, 4).map(post => (
                             <div
                                 key={post.id}
@@ -25,7 +19,7 @@ const BlogWidget = () => {
                                 <BlogItem
                                     id={post.id}
                                     title={post.title}
-                                    summary={post.body}
+                                    summary={post.summary}
                                 />
                             </div>
                         ))}

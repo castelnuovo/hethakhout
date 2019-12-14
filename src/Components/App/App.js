@@ -40,20 +40,21 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
-    useEffect(() => {
-        const preloader = document.querySelector('.preloader');
-        preloader.classList.add('preloader--hide');
-    }, []);
-
     // Save API data
     useLocalStorage(
         'blogData',
         'https://cms.hethakhout.nl/het-hak-hout/items/articles'
     );
+
     useLocalStorage(
         'activityData',
         'https://cms.hethakhout.nl/het-hak-hout/items/activities'
     );
+
+    useEffect(() => {
+        const preloader = document.querySelector('.preloader');
+        preloader.classList.add('preloader--hide');
+    }, []);
 
     return (
         <Router>

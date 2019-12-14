@@ -1,28 +1,25 @@
-import { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import useLocalStorage from './useLocalStorage';
 
-const useBlog = id => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState(null);
+const useBlog = (action, id) => {
+    const [data] = useLocalStorage('blogData');
 
-    useEffect(() => {
-        const getData = async () => {
-            setIsLoading(true);
-
-            // get from localstorage
-
-            setData(data);
-            setIsLoading(false);
-        };
-
-        getData();
-    }, [data, id]);
-
-    return [data, isLoading];
+    switch (action) {
+        case 'ALL':
+            return data;
+        case 'GET':
+            id = parseInt(id, 10);
+            return data.filter(post => {
+                return post.id === id;
+            })[0];
+        default:
+            throw new Error();
+    }
 };
 
-// useBlog.propTypes = {
-//     id: PropTypes.string.optional
-// };
+useBlog.propTypes = {
+    action: PropTypes.string.isRequired,
+    id: PropTypes.string.optional
+};
 
 export default useBlog;
