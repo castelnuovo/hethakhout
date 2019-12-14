@@ -11,19 +11,19 @@ import Logo from 'Config/Logo';
 import NavBar from 'Components/NavBar';
 import Footer from 'Components/Footer';
 
-// body {
-//     display: flex;
-//     min-height: 100vh;
-//     flex-direction: column;
-// }
-
-// .App {
-//     flex: 1;
-// }
-
 const GlobalStyles = createGlobalStyle`
     html {
         overscroll-behavior: none;
+    }
+
+    #root {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .App {
+        flex: 1;
     }
 
     .center {
