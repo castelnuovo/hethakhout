@@ -8,6 +8,7 @@ const BlogList = () => {
     return (
         <>
             <h1 className="title">Blog Posts</h1>
+            <hr />
             {data &&
                 data.map(post => (
                     <BlogItem

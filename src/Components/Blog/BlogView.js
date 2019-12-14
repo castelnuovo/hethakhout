@@ -1,5 +1,6 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
+// import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useBlog from 'Utils/useBlog';
 
@@ -12,6 +13,19 @@ const BlogView = ({ id }) => {
 
     return (
         <>
+            <Link to="/blog">
+                <div className="level">
+                    <div className="level-left">
+                        <div className="level-item">
+                            <span className="icon is-large has-text-dark">
+                                <i className="fas fa-2x fa-arrow-left"></i>
+                            </span>
+                            <h2 className="title">Terug</h2>
+                        </div>
+                    </div>
+                </div>
+            </Link>
+            <hr />
             <section className="hero is-primary">
                 <div className="hero-body">
                     <div className="container">
