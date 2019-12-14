@@ -19,7 +19,7 @@ const useBlog = (action, id) => {
 
 useBlog.propTypes = {
     action: PropTypes.string.isRequired,
-    id: PropTypes.string.optional
+    id: PropTypes.string
 };
 
 export default useBlog;

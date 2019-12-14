@@ -17,7 +17,7 @@ const useLocalStorage = (name, url) => {
 
 useLocalStorage.propTypes = {
     name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    url: PropTypes.string
 };
 
 export default useLocalStorage;

@@ -4,7 +4,7 @@ const NotFound = () => {
     return (
         <section className="section">
             <div className="container">
-                <h1>404: NotFound</h1>
+                <h1>404: Pagina niet gevonden!</h1>
             </div>
         </section>
     );
