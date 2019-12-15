@@ -16,7 +16,9 @@ const useFetch = url => {
             setIsLoading(false);
         };
 
-        fetchData();
+        if (url) {
+            fetchData();
+        }
     }, [url]);
 
     return [data, isLoading];

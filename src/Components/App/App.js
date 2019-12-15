@@ -4,25 +4,26 @@ import { renderRoutes } from 'react-router-config';
 import { createGlobalStyle } from 'styled-components';
 import Favicon from 'react-favicon';
 import Routes from 'Config/Routes';
+import useLocalStorage from 'Utils/useLocalStorage';
 import './App.scss';
 
 import Logo from 'Config/Logo';
 import NavBar from 'Components/NavBar';
 import Footer from 'Components/Footer';
 
-// body {
-//     display: flex;
-//     min-height: 100vh;
-//     flex-direction: column;
-// }
-
-// .App {
-//     flex: 1;
-// }
-
 const GlobalStyles = createGlobalStyle`
     html {
         overscroll-behavior: none;
+    }
+
+    #root {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .App {
+        flex: 1;
     }
 
     .center {
@@ -39,6 +40,22 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
+    // Save API data
+    useLocalStorage(
+        'blogData',
+        'https://cms.hethakhout.nl/het-hak-hout/items/articles'
+    );
+
+    useLocalStorage(
+        'activityData',
+        'https://cms.hethakhout.nl/het-hak-hout/items/activities'
+    );
+
+    useLocalStorage(
+        'fotoData',
+        'https://cms.hethakhout.nl/het-hak-hout/items/fotos'
+    );
+
     useEffect(() => {
         const preloader = document.querySelector('.preloader');
         preloader.classList.add('preloader--hide');
