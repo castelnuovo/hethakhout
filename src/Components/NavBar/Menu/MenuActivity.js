@@ -15,46 +15,31 @@ const MenuActivity = () => {
         )
     ];
 
-    for (let category of categories) {
-        console.log(`<MenuColumn title=${category}>`);
-        data.filter(activity => {
-            return activity.category === category;
-        }).forEach(link => {
-            console.log(
-                `<MenuLink to="/activiteiten/${category.toLowerCase()}/${link.title
-                    .toLowerCase()
-                    .replace(' ', '-')}">${link.title}</MenuLink>`
-            );
-        });
-        console.log(`</MenuColumn>`);
-    }
-
     return (
         <MenuMega title="Activiteiten">
-            <MenuColumn title="Wandelingen">
-                <MenuLink to="/activiteiten/wandelingen/lang">
-                    Lange Route
-                </MenuLink>
-                <MenuLink to="/activiteiten/wandelingen/kort">
-                    Korte Route
-                </MenuLink>
-            </MenuColumn>
-            <MenuColumn title="Jeugd">
-                <MenuLink to="/activiteiten/jeugd/voetballen">
-                    Voetballen
-                </MenuLink>
-                <MenuLink to="/activiteiten/jeugd/zwemmen">Zwemmen</MenuLink>
-                <MenuLink to="/activiteiten/jeugd/Schieten">Schieten</MenuLink>
-            </MenuColumn>
-            <MenuColumn title="Lezingen">
-                <MenuLink to="/activiteiten/lezingen/episch">
-                    Episch Verhaal
-                </MenuLink>
-            </MenuColumn>
-            <MenuColumn title="Vogels">
-                <MenuLink to="/activiteiten/vogels/huren">Hutje Huren</MenuLink>
-                <MenuLink to="/activiteiten/vogels/kopen">Hutje Kopen</MenuLink>
-            </MenuColumn>
+            {categories.map(category => {
+                return (
+                    <MenuColumn key={category} title={category}>
+                        {data
+                            .filter(activity => {
+                                return activity.category === category;
+                            })
+                            .map(link => {
+                                const url = `/activiteiten/${category.toLowerCase()}/${link.title
+                                    .toLowerCase()
+                                    .replace(/ /g, '-')}`;
+
+                                console.log(`Name: ${link.title}, URL: ${url}`);
+
+                                return (
+                                    <MenuLink key={url} to={url}>
+                                        {link.title}
+                                    </MenuLink>
+                                );
+                            })}
+                    </MenuColumn>
+                );
+            })}
         </MenuMega>
     );
 };
