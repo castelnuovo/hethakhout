@@ -10,15 +10,24 @@ const MenuActivity = () => {
     const categories = [
         ...new Set(
             data.map(activity => {
-                return activity.category; // also return name
+                return activity.category;
             })
         )
     ];
 
-    console.log('data', data);
-    console.log('categories', categories);
-
-    // loop trougfh array and then loop trough assoc items inside the catehory
+    for (let category of categories) {
+        console.log(`<MenuColumn title=${category}>`);
+        data.filter(activity => {
+            return activity.category === category;
+        }).forEach(link => {
+            console.log(
+                `<MenuLink to="/activiteiten/${category.toLowerCase()}/${link.title
+                    .toLowerCase()
+                    .replace(' ', '-')}">${link.title}</MenuLink>`
+            );
+        });
+        console.log(`</MenuColumn>`);
+    }
 
     return (
         <MenuMega title="Activiteiten">
