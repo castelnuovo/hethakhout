@@ -26,16 +26,30 @@ const GlobalStyles = createGlobalStyle`
         flex: 1;
     }
 
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     @media screen and (max-width: 1023px) {
         .navbar-menu.is-active {
             padding-bottom: 5rem;
         }
+    }
+
+    @media screen and (max-width: 768px) {
+        .hero-video {
+            display: unset !important;
+        }
+    }
+
+    .hero-video video {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        object-fit: cover;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `;
 
