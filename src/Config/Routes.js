@@ -1,7 +1,8 @@
 import Home from 'Routes/Home';
-import Blog from 'Routes/Blog';
-import Redirect from 'Routes/Redirect';
 import Activity from 'Routes/Activity';
+import Blog from 'Routes/Blog';
+import Fotos from 'Routes/Fotos';
+import Redirect from 'Routes/Redirect';
 import NotFound from 'Routes/NotFound';
 
 import Booking from 'Routes/Booking';
@@ -16,12 +17,26 @@ const Routes = [
         component: Home
     },
     {
+        path: '/shinrin-yoku',
+        component: NotFound
+    },
+    {
+        path: '/activiteiten/:category/:item',
+        component: NotFound
+    },
+    {
         path: '/blog/:id?',
         component: Blog
     },
     {
-        path: '/redirect/:src',
-        component: Redirect
+        path: '/fotos',
+        component: Fotos
+    },
+
+    // WIP
+    {
+        path: '/activiteiten/wandelingen/lang',
+        component: Activity
     },
     {
         path: '/booking',
@@ -39,9 +54,11 @@ const Routes = [
         path: '/booking_success',
         component: Success
     },
+    // END WIP
+
     {
-        path: '/activiteiten/wandelingen/lang',
-        component: Activity
+        path: '/redirect/:src',
+        component: Redirect
     },
     {
         component: NotFound

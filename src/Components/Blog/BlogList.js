@@ -1,5 +1,6 @@
 import React from 'react';
 import useBlog from 'Utils/useBlog';
+import Loader from 'Components/Loader';
 import BlogItem from './BlogItem';
 
 const BlogList = () => {
@@ -9,6 +10,7 @@ const BlogList = () => {
         <>
             <h1 className="title">Blog Posts</h1>
             <hr />
+            {!data && <Loader />}
             {data &&
                 data.map(post => (
                     <BlogItem
