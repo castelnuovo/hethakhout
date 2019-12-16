@@ -57,17 +57,17 @@ const App = () => {
     // Save API data
     useLocalStorage(
         'blogData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/articles'
+        'https://cms.hethakhout.nl/het-hak-hout/items/articles?fields=id,created_on,title,content,hero,summary'
     );
 
     useLocalStorage(
         'activityData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/activities'
+        'https://cms.hethakhout.nl/het-hak-hout/items/activities?fields=title,description,hero,category'
     );
 
     useLocalStorage(
         'fotoData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/fotos'
+        'https://cms.hethakhout.nl/het-hak-hout/items/fotos?fields=foto,description,created_on'
     );
 
     useEffect(() => {
