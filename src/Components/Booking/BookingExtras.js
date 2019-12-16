@@ -38,7 +38,7 @@ const BookingExtras = () => {
                             </nav>
                             <div className="level">
                                 <div className="level-right">
-                                    <div class="level-item">
+                                    <div className="level-item">
                                         <button></button>
                                     </div>
                                 </div>
