@@ -15,16 +15,16 @@ const MenuLink = ({ to, children, className, hasActiveState }) => {
     );
 };
 
+MenuLink.defaultProps = {
+    className: 'navbar-item',
+    hasActiveState: true
+};
+
 MenuLink.propTypes = {
     to: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
     className: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     hasActiveState: PropTypes.bool.isRequired
-};
-
-MenuLink.defaultProps = {
-    className: 'navbar-item',
-    hasActiveState: true
 };
 
 export default MenuLink;

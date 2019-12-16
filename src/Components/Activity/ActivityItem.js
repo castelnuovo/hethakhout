@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TestPicture from 'Assets/images/logo_green.png';
 
 const ActivityItem = ({ title, description }) => {
@@ -36,6 +37,11 @@ const ActivityItem = ({ title, description }) => {
             </div>
         </section>
     );
+};
+
+ActivityItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 };
 
 export default ActivityItem;

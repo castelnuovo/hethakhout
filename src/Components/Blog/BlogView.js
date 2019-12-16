@@ -1,49 +1,53 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Markdown from 'markdown-to-jsx';
-import { Redirect } from 'react-router-dom';
-import useFetch from 'Utils/useFetch';
-import Loader from 'Components/Loader';
+import useBlog from 'Utils/useBlog';
 
 const BlogView = ({ id }) => {
-    const [redirect, setRedirect] = useState(false);
-    const [data, isLoading] = useFetch(
-        'https://jsonplaceholder.typicode.com/posts/' + id,
-        [],
-        false
-    );
-
-    const handleRedirect = () => {
-        if (redirect) {
-            return <Redirect push to="/blog" />;
-        }
-    };
+    const data = useBlog('GET', id);
 
     return (
-        <div className="modal is-active is-clipped">
-            <div className="modal-background"></div>
-            <div className="modal-card">
-                <header className="modal-card-head">
-                    <p className="modal-card-title">TITLE</p>
-                    <button
-                        className="delete"
-                        aria-label="close"
-                        onClick={() => setRedirect(true)}
-                    ></button>
-                </header>
-                <section className="modal-card-body">
-                    {isLoading && <Loader size="medium" />}
-                    {!isLoading && <Markdown>{data}</Markdown>}
-                </section>
-            </div>
-
-            {handleRedirect()}
-        </div>
+        <>
+            <Link to="/blog">
+                <div className="level">
+                    <div className="level-left">
+                        <div className="level-item">
+                            <span className="icon is-large has-text-dark">
+                                <i className="fas fa-2x fa-arrow-left"></i>
+                            </span>
+                            <h2 className="title">Terug</h2>
+                        </div>
+                    </div>
+                </div>
+            </Link>
+            <hr />
+            {!data && <h1 className="title">Post niet gevonden.</h1>}
+            {data && (
+                <>
+                    <section className="hero is-primary">
+                        <div className="hero-body">
+                            <div className="container">
+                                <h1 className="title">{data.title}</h1>
+                                <h2 className="subtitle">
+                                    Posted on: {data.created_on}
+                                </h2>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="section">
+                        <div
+                            dangerouslySetInnerHTML={{ __html: data.content }}
+                        ></div>
+                    </section>
+                </>
+            )}
+        </>
     );
 };
 
 BlogView.propTypes = {
-    id: PropTypes.number.isRequired
+    id: PropTypes.string.isRequired
 };
 
 export default BlogView;

@@ -10,8 +10,7 @@ const Blog = ({ match }) => {
     return (
         <section className="section">
             <div className="container">
-                <h1 className="title">Blog Posts</h1>
-                <BlogList />
+                {!id && <BlogList />}
                 {id && <BlogView id={id} />}
             </div>
         </section>
