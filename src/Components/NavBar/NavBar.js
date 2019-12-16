@@ -19,6 +19,28 @@ const NavBarStyles = createGlobalStyle`
             padding-bottom: 5rem;
         }
     }
+
+    @include until($desktop) {
+        .navbar-menu {
+            display: block;
+            opacity: 0;
+    
+            position: absolute;
+            /* or float: left; width: 100%;*/
+            left: 0;
+            right: 0;
+    
+            transform: translateY(-50%);
+            transition: all .4s ease-in-out;
+            pointer-events: none;
+        }
+    
+        .navbar-menu.is-active {
+            opacity: 1;
+            transform: none;
+            pointer-events: auto;
+        }
+    }
 `;
 
 const NavBar = () => {
