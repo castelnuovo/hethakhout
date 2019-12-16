@@ -21,8 +21,8 @@ const Routes = [
         component: NotFound
     },
     {
-        path: '/activiteiten/:category/:item',
-        component: NotFound
+        path: '/activiteiten/:id',
+        component: Activity
     },
     {
         path: '/blog/:id?',
@@ -34,10 +34,6 @@ const Routes = [
     },
 
     // WIP
-    {
-        path: '/activiteiten/wandelingen/lang',
-        component: Activity
-    },
     {
         path: '/booking',
         component: Booking

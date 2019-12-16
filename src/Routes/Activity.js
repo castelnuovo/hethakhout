@@ -1,15 +1,15 @@
 import React from 'react';
 import withBaseRoute from 'Utils/withBaseRoute';
-import ActivityItem from 'Components/Activity/ActivityItem';
+import Activity from 'Components/Activity';
 
-const Activity = () => {
+const ActivityRoute = ({ match }) => {
     return (
-        <ActivityItem
-            title="placeholder title"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus et, eum amet maiores tenetur totam laborum dolore at labore soluta earum vel pariatur ipsam perspiciatis facere non asperiores. Qui, architecto?
-    "
-        />
+        <section className="section">
+            <div className="container">
+                <Activity id={match.params.id} />
+            </div>
+        </section>
     );
 };
 
-export default withBaseRoute(Activity);
+export default withBaseRoute(ActivityRoute);

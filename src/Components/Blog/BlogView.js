@@ -37,6 +37,7 @@ const BlogView = ({ id }) => {
                     </section>
                     <section className="section">
                         <div
+                            className="content is-large"
                             dangerouslySetInnerHTML={{ __html: data.content }}
                         ></div>
                     </section>
