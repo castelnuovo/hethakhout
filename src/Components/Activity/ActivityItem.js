@@ -42,8 +42,8 @@ const ActivityItem = ({ id, title, description }) => {
                 </div>
             </div>
             <div className="box">
-                <h1 className="title">Schrijf je in</h1>
-                <p className="is-size-4">(form in zetten)</p>
+                <h1 className="title">Extra's</h1>
+                <p className="is-size-4">Lijstje met mogelijke extra's</p>
             </div>
         </>
     );
