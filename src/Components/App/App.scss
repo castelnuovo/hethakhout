@@ -4,7 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Set brand style
-$family-sans-serif: 'Nunito', sans-serif;
+$family-sans-serif: 'Nunito',
+sans-serif;
 $primary-color: #358600;
 $secundary-color: #008ada;
 $background-color: #fff;
@@ -18,9 +19,31 @@ $fullhd-enabled: false;
 // Update Bulma's components
 $body-background-color: $background-color;
 $control-border-width: 2px;
-$input-border-color: transparent;
 $input-shadow: none;
 $navbar-item-active-background-color: #fafafa;
+$dimensions: 16 24 32 48 64 96 128 256 512;
 
 // Import required Bulma files
 @import '~bulma/bulma.sass';
+
+// Animated mobile nav
+@include until($desktop) {
+    .navbar-menu {
+        display: block;
+        opacity: 0;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        transform: translateY(-50%);
+        transition: all .4s ease-in-out;
+        pointer-events: none;
+    }
+
+    .navbar-menu.is-active {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+}

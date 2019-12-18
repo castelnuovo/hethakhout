@@ -1,10 +1,14 @@
 import Home from 'Routes/Home';
-import Rondleidingen from 'Routes/Rondleidingen';
-import Blog from 'Routes/Blog';
-import Redirect from 'Routes/Redirect';
-import Booking from 'Routes/Booking';
 import Activity from 'Routes/Activity';
+import Blog from 'Routes/Blog';
+import Fotos from 'Routes/Fotos';
+import Redirect from 'Routes/Redirect';
 import NotFound from 'Routes/NotFound';
+
+import Booking from 'Routes/Booking';
+import ContactInfo from 'Components/Booking/BookingContactInfo';
+import Extras from 'Components/Booking/BookingExtras';
+import Success from 'Components/Booking/BookingSuccess';
 
 const Routes = [
     {
@@ -13,30 +17,44 @@ const Routes = [
         component: Home
     },
     {
-        path: '/rondleidingen/:id',
-        component: Rondleidingen,
-        routes: [
-            {
-                path: '/rondleidingen/:id/test',
-                component: Rondleidingen
-            }
-        ]
+        path: '/shinrin-yoku',
+        component: NotFound
+    },
+    {
+        path: '/activiteiten/:id',
+        component: Activity
     },
     {
         path: '/blog/:id?',
         component: Blog
     },
     {
-        path: '/redirect/:src',
-        component: Redirect
+        path: '/fotos',
+        component: Fotos
     },
+
+    // WIP
     {
         path: '/booking',
         component: Booking
     },
     {
-        path: '/activiteiten/wandelingen/lang',
-        component: Activity
+        path: '/booking_contactinfo',
+        component: ContactInfo
+    },
+    {
+        path: '/booking_extras',
+        component: Extras
+    },
+    {
+        path: '/booking_success',
+        component: Success
+    },
+    // END WIP
+
+    {
+        path: '/redirect/:src',
+        component: Redirect
     },
     {
         component: NotFound

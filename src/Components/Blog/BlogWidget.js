@@ -1,5 +1,6 @@
 import React from 'react';
 import useBlog from 'Utils/useBlog';
+import Loader from 'Components/Loader';
 import BlogItem from './BlogItem';
 
 const BlogWidget = () => {
@@ -10,6 +11,7 @@ const BlogWidget = () => {
             <div className="container is-small has-text-centered">
                 <h1 className="title">Recente Posts</h1>
                 <div className="columns is-vcentered is-multiline">
+                    {!data && <Loader />}
                     {data &&
                         data.slice(0, 4).map(post => (
                             <div

@@ -10,33 +10,49 @@ const Booking = () => {
             <header className="container">
                 <BookingCategory title="Wandelingen">
                     <BookingItem
+                        id="1"
                         title="Lange route"
                         description="beschrijving"
                     />
                     <BookingItem
+                        id="2"
                         title="Korte route"
                         description="beschrijving"
                     />
                 </BookingCategory>
                 <BookingCategory title="Shinrin-Yoku">
-                    <BookingItem title="test1" description="test2" />
+                    <BookingItem id="3" title="test1" description="test2" />
                 </BookingCategory>
                 <BookingCategory title="Lezingen">
-                    <BookingItem title="Lezing 1" description="beschrijving" />
+                    <BookingItem
+                        id="4"
+                        title="Lezing 1"
+                        description="beschrijving"
+                    />
                 </BookingCategory>
                 <BookingCategory title="Vogels">
                     <BookingItem
+                        id="5"
                         title="Vogelaarshut huren"
                         description="beschrijving"
                     />
                 </BookingCategory>
                 <BookingCategory title="Jeugd-activiteiten">
                     <BookingItem
+                        id="6"
                         title="Voetballen"
                         description="beschrijving"
                     />
-                    <BookingItem title="Schieten" description="beschrijving" />
-                    <BookingItem title="Zwemmen" description="beschrijving" />
+                    <BookingItem
+                        id="7"
+                        title="Schieten"
+                        description="beschrijving"
+                    />
+                    <BookingItem
+                        id="8"
+                        title="Zwemmen"
+                        description="beschrijving"
+                    />
                 </BookingCategory>
             </header>
         </section>

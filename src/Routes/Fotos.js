@@ -1,15 +1,17 @@
 import React from 'react';
 import withBaseRoute from 'Utils/withBaseRoute';
-import Activity from 'Components/Activity';
+import Fotos from 'Components/Fotos';
 
-const ActivityRoute = ({ match }) => {
+const FotosRoute = () => {
     return (
         <section className="section">
             <div className="container">
-                <Activity id={match.params.id} />
+                <h1 className="title">Foto's</h1>
+                <hr />
+                <Fotos />
             </div>
         </section>
     );
 };
 
-export default withBaseRoute(ActivityRoute);
+export default withBaseRoute(FotosRoute);
