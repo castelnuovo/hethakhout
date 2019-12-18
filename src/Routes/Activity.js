@@ -6,7 +6,10 @@ const ActivityRoute = ({ match }) => {
     return (
         <section className="section">
             <div className="container">
-                <Activity id={match.params.id} />
+                <Activity
+                    category={match.params.category}
+                    title={match.params.title}
+                />
             </div>
         </section>
     );
