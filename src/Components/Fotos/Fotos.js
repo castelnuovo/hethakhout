@@ -9,15 +9,7 @@ const Fotos = () => {
     return (
         <div className="columns is-multiline">
             {!data && <Loader />}
-            {data &&
-                data.map(foto => (
-                    <Foto
-                        key={foto.id}
-                        data={foto}
-                        url={`https://unsplash.it/300/200/?random&pic=${foto.foto}`}
-                        description={foto.description}
-                    />
-                ))}
+            {data && data.map(foto => <Foto key={foto.id} data={foto} />)}
         </div>
     );
 };

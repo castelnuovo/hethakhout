@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Foto = ({ data }) => {
-    const thumbnail_url = data.foto.data.thumbnails[2].url;
+    const thumbnail_url = data.foto.data.thumbnails[4].url;
     const full_url = data.foto.data.full_url;
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -13,7 +13,7 @@ const Foto = ({ data }) => {
             >
                 <div className="card">
                     <div className="card-image">
-                        <figure className="image is-3by2">
+                        <figure className="image">
                             <img src={thumbnail_url} alt={data.description} />
                         </figure>
                     </div>
@@ -26,7 +26,7 @@ const Foto = ({ data }) => {
                 <div className="modal is-active">
                     <div className="modal-background"></div>
                     <div className="modal-content">
-                        <p className="image is-4by3">
+                        <p className="image">
                             <img src={full_url} alt={data.description} />
                         </p>
                     </div>

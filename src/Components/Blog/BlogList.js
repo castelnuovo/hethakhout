@@ -11,15 +11,7 @@ const BlogList = () => {
             <h1 className="title">Blog Posts</h1>
             <hr />
             {!data && <Loader />}
-            {data &&
-                data.map(post => (
-                    <BlogItem
-                        key={post.id}
-                        id={post.id}
-                        title={post.title}
-                        summary={post.summary}
-                    />
-                ))}
+            {data && data.map(post => <BlogItem key={post.id} {...post} />)}
         </>
     );
 };

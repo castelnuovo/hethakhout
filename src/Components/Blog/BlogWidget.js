@@ -18,11 +18,7 @@ const BlogWidget = () => {
                                 key={post.id}
                                 className="column is-half-tablet is-one-thirds-desktop is-one-third-widescreen is-one-third-fullhd"
                             >
-                                <BlogItem
-                                    id={post.id}
-                                    title={post.title}
-                                    summary={post.summary}
-                                />
+                                <BlogItem {...post} />
                             </div>
                         ))}
                 </div>

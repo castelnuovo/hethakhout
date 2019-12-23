@@ -1,11 +1,26 @@
 import React from 'react';
-// import { Link, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import useBlog from 'Utils/useBlog';
+
+const StyledHero = styled.section`
+    position: relative;
+    overflow: hidden;
+`;
+
+const StyledHeroBackground = styled.img`
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+`;
 
 const BlogView = ({ id }) => {
     const data = useBlog('GET', id);
+    const thumbnail_url = data?.hero.data.thumbnails[4].url;
 
     return (
         <>
@@ -25,7 +40,11 @@ const BlogView = ({ id }) => {
             {!data && <h1 className="title">Post niet gevonden.</h1>}
             {data && (
                 <>
-                    <section className="hero is-primary">
+                    <StyledHero className="hero is-primary is-medium">
+                        <StyledHeroBackground
+                            alt={data.title}
+                            src={thumbnail_url}
+                        />
                         <div className="hero-body">
                             <div className="container">
                                 <h1 className="title">{data.title}</h1>
@@ -34,7 +53,7 @@ const BlogView = ({ id }) => {
                                 </h2>
                             </div>
                         </div>
-                    </section>
+                    </StyledHero>
                     <section className="section">
                         <div
                             className="content is-large"
