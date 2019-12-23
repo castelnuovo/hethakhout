@@ -57,12 +57,12 @@ const App = () => {
     // Save API data
     useLocalStorage(
         'blogData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/articles?fields=id,created_on,title,content,hero.data,summary'
+        'https://cms.hethakhout.nl/het-hak-hout/items/articles?fields=id,created_on,title,content,hero.data,summary&sort=-created_on'
     );
 
     useLocalStorage(
         'activityData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/activities?fields=id,title,description,hero.data,category'
+        'https://cms.hethakhout.nl/het-hak-hout/items/activities?fields=id,title,description,category'
     );
 
     useLocalStorage(

@@ -5,12 +5,6 @@ const useLocalStorage = (name, url) => {
     const [data, isLoading] = useFetch(url);
 
     if (!isLoading && data) {
-        if (data[0].created_on) {
-            data.sort((a, b) => {
-                return new Date(b.created_on) - new Date(a.created_on);
-            });
-        }
-
         localStorage.setItem(name, JSON.stringify(data));
     }
 

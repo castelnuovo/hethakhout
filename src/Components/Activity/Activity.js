@@ -10,28 +10,18 @@ const Activities = ({ category, title }) => {
         return <Loader />;
     }
 
-    console.log(
-        data.filter(activity => {
-            const category_check = () =>
-                activity.category
-                    .toLowerCase()
-                    .includes(category.toLowerCase());
-            const title_check = () =>
-                activity.title
-                    .toLowerCase()
-                    .includes(title.toLowerCase().replace('-', / /g));
+    const activity = data.filter(activity => {
+        const category_check = () =>
+            activity.category.toLowerCase().includes(category.toLowerCase());
+        const title_check = () =>
+            activity.title
+                .toLowerCase()
+                .includes(title.toLowerCase().replace(/-/g, ' '));
 
-            return category_check() && title_check();
-        })
-    );
+        return category_check() && title_check();
+    })[0];
 
-    return (
-        <ActivityItem
-            // id={id}
-            title="Wandelingen || Lange Route"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus et, eum amet maiores tenetur totam laborum dolore at labore soluta earum vel pariatur ipsam perspiciatis facere non asperiores. Qui, architecto?"
-        />
-    );
+    return <ActivityItem {...activity} />;
 };
 
 export default Activities;

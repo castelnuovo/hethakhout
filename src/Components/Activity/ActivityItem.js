@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 
 import TestPicture from 'Assets/images/logo_green.png';
 
-const ActivityItem = ({ id, title, description }) => {
+const ActivityItem = ({ id, title, category, description }) => {
     return (
         <>
             <div className="level">
                 <div className="level-left">
                     <h1 className="level-item title">{title}</h1>
+                    <h2 className="level-item subtitle">{category}</h2>
                 </div>
                 <div className="level-right">
                     <div className="level-item">

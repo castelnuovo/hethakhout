@@ -9,11 +9,11 @@ const Footer = () => {
                     <div className="level-item has-text-centered">
                         <div>
                             <p className="title">Locatie</p>
-                            <p>Straatlaan 123</p>
-                            <p>1234AB Overlangbroek</p>
+                            <p>Langbroekerdijk B19</p>
+                            <p>3947BA Langbroek</p>
                             <p>
                                 T:
-                                <Link to="/redirect/phone">06-1234-5678</Link>
+                                <Link to="/redirect/phone">06-2155-5574</Link>
                             </p>
                         </div>
                     </div>

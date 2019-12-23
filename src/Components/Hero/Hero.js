@@ -1,14 +1,22 @@
 import React from 'react';
 import HeroImage from './HeroImage';
-import BackgroundVideo from 'Assets/videos/trailer.mp4';
+import BackgroundSnapshot from 'Assets/images/trailer.jpg';
+import BackgroundVideoWebM from 'Assets/videos/trailer.webm';
+import BackgroundVideoMP4 from 'Assets/videos/trailer.mp4';
 
 const Hero = () => {
     return (
         <section className="hero is-fullheight-with-navbar video">
             <div className="hero-video">
-                <video poster="img/bgimg.jpg" playsInline autoPlay muted loop>
-                    <source src="vid/BGvid.webm" type="video/webm" />
-                    <source src={BackgroundVideo} type="video/mp4" />
+                <video
+                    poster={BackgroundSnapshot}
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                >
+                    <source src={BackgroundVideoWebM} type="video/webm" />
+                    <source src={BackgroundVideoMP4} type="video/mp4" />
                 </video>
             </div>
 
