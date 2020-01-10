@@ -1,25 +1,26 @@
 import PropTypes from 'prop-types';
 import useLocalStorage from './useLocalStorage';
 
-const useBlog = (action, id) => {
-    const [data] = useLocalStorage('blogData');
+const useData = (storage, action, id) => {
+    const [data] = useLocalStorage(storage);
 
     switch (action) {
         case 'ALL':
             return data;
         case 'GET':
             id = parseInt(id, 10);
-            return data.filter(post => {
-                return post.id === id;
+            return data.filter(item => {
+                return item.id === id;
             })[0];
         default:
             throw new Error();
     }
 };
 
-useBlog.propTypes = {
+useData.propTypes = {
+    storage: PropTypes.string.isRequired,
     action: PropTypes.string.isRequired,
     id: PropTypes.string
 };
 
-export default useBlog;
+export default useData;

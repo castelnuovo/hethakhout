@@ -1,10 +1,10 @@
 import React from 'react';
-import useBlog from 'Utils/useBlog';
+import useData from 'Utils/useData';
 import Loader from 'Components/Loader';
 import BlogItem from './BlogItem';
 
 const BlogWidget = () => {
-    const data = useBlog('ALL');
+    const data = useData('useBlog', 'ALL');
 
     return (
         <section className="section">
