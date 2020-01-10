@@ -27,7 +27,8 @@ const BlogItem = ({ id, title, summary, hero }) => {
 BlogItem.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    summary: PropTypes.string.isRequired
+    summary: PropTypes.string.isRequired,
+    hero: PropTypes.object.isRequired
 };
 
 export default BlogItem;

@@ -25,6 +25,7 @@ const BookingItem = ({ id, title, description }) => {
 };
 
 BookingItem.propTypes = {
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
 };

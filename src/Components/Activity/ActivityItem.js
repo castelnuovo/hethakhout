@@ -51,7 +51,9 @@ const ActivityItem = ({ id, title, category, description }) => {
 };
 
 ActivityItem.propTypes = {
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
 };
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Foto = ({ data }) => {
     const thumbnail_url = data.foto.data.thumbnails[4].url;
@@ -39,6 +40,10 @@ const Foto = ({ data }) => {
             )}
         </>
     );
+};
+
+Foto.propTypes = {
+    data: PropTypes.object.isRequired
 };
 
 export default Foto;

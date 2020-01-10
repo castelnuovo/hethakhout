@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useLocalStorage from 'Utils/useLocalStorage';
 import Loader from 'Components/Loader';
 import ActivityItem from './ActivityItem';
+import Activity from 'Routes/Activity';
 
 const Activities = ({ category, title }) => {
     const [data] = useLocalStorage('activityData');
@@ -22,6 +24,11 @@ const Activities = ({ category, title }) => {
     })[0];
 
     return <ActivityItem {...activity} />;
+};
+
+Activity.propTypes = {
+    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
 };
 
 export default Activities;
