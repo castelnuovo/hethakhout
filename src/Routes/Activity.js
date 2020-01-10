@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withBaseRoute from 'Utils/withBaseRoute';
 import Activity from 'Components/Activity';
 
@@ -13,6 +14,10 @@ const ActivityRoute = ({ match }) => {
             </div>
         </section>
     );
+};
+
+Activity.propTypes = {
+    match: PropTypes.object.isRequired
 };
 
 export default withBaseRoute(ActivityRoute);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
 const Foto = ({ data }) => {
@@ -27,6 +28,10 @@ const Foto = ({ data }) => {
             </div>
         </>
     );
+};
+
+Foto.propTypes = {
+    data: PropTypes.object.isRequired
 };
 
 export default Foto;
