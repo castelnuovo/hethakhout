@@ -16,7 +16,7 @@ const ActivityRoute = ({ match }) => {
     );
 };
 
-Activity.propTypes = {
+ActivityRoute.propTypes = {
     match: PropTypes.object.isRequired
 };
 

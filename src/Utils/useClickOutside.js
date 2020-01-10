@@ -18,8 +18,8 @@ const useClickOutside = (ref, callback) => {
 };
 
 useClickOutside.propTypes = {
-    ref: PropTypes.isRequired, // TODO: set correct type
-    callback: PropTypes.isRequired // TODO: set correct type
+    ref: PropTypes.func.isRequired,
+    callback: PropTypes.func.isRequired
 };
 
 export default useClickOutside;
