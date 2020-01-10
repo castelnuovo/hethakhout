@@ -76,6 +76,14 @@ const App = () => {
     //     'https://cms.hethakhout.nl/het-hak-hout/items/redirects?fields=id,redirect_from,redirect_to'
     // );
 
+    // [
+    //     {
+    //         "id": 1,
+    //         "redirect_from": "instagram",
+    //         "redirect_to": "https://www.instagram.com/hethakhout/"
+    //     }
+    // ]
+
     useEffect(() => {
         const preloader = document.querySelector('.preloader');
         preloader.classList.add('preloader--hide');
