@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import useData from 'Utils/useData';
 
-const RedirectRoute = ({ match }) => {
+const Redirect = ({ match }) => {
     const data = useData(
         'redirectData',
         'GET_BY',
@@ -27,8 +27,8 @@ const RedirectRoute = ({ match }) => {
     );
 };
 
-RedirectRoute.propTypes = {
+Redirect.propTypes = {
     match: PropTypes.object.isRequired
 };
 
-export default RedirectRoute;
+export default Redirect;
