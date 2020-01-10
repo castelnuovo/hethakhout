@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import useBlog from 'Utils/useBlog';
+import useData from 'Utils/useData';
 
 const StyledHero = styled.section`
     position: relative;
@@ -19,7 +19,7 @@ const StyledHeroBackground = styled.img`
 `;
 
 const BlogView = ({ id }) => {
-    const data = useBlog('GET', id);
+    const data = useData('useBlog', 'GET', id);
     const thumbnail_url = data?.hero.data.thumbnails[4].url;
 
     return (

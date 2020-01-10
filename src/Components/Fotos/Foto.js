@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Foto = ({ data }) => {
     const thumbnail_url = data.foto.data.thumbnails[4].url;
-    const full_url = data.foto.data.full_url;
-    const [modalOpen, setModalOpen] = useState(false);
+    const history = useHistory();
+    const handleClick = () => {
+        history.push(`/fotos/${data.id}`);
+    };
 
     return (
         <>
             <div
                 className="column is-one-third-desktop is-half-tablet"
-                onClick={() => setModalOpen(true)}
+                onClick={() => handleClick()}
             >
                 <div className="card">
                     <div className="card-image">
@@ -22,21 +25,6 @@ const Foto = ({ data }) => {
                     </footer>
                 </div>
             </div>
-            {modalOpen && (
-                <div className="modal is-active">
-                    <div className="modal-background"></div>
-                    <div className="modal-content">
-                        <p className="image">
-                            <img src={full_url} alt={data.description} />
-                        </p>
-                    </div>
-                    <button
-                        className="modal-close is-large"
-                        aria-label="close"
-                        onClick={() => setModalOpen(false)}
-                    ></button>
-                </div>
-            )}
         </>
     );
 };

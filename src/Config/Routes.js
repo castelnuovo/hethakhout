@@ -29,7 +29,7 @@ const Routes = [
         component: Blog
     },
     {
-        path: '/fotos',
+        path: '/fotos/:id?',
         component: Fotos
     },
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import useLocalStorage from 'Utils/useLocalStorage';
+import useData from 'Utils/useData';
 import Loader from 'Components/Loader';
 import Foto from './Foto';
 
 const Fotos = () => {
-    const [data] = useLocalStorage('fotoData');
+    const data = useData('fotoData', 'ALL');
 
     return (
         <div className="columns is-multiline">
