@@ -65,6 +65,15 @@ const App = () => {
         'https://cms.hethakhout.nl/het-hak-hout/items/activities?fields=id,title,description,category'
     );
 
+    // TODO: update cms scheme
+    // [
+    //     {
+    //         "id": 1,
+    //         "title": "instagram",
+    //         "description": "lorem ipsum blah blah blah"
+    //     }
+    // ]
+
     useLocalStorage(
         'fotoData',
         'https://cms.hethakhout.nl/het-hak-hout/items/fotos?fields=id,foto.data,description,created_on'

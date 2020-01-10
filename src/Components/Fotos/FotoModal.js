@@ -18,10 +18,16 @@ const Foto = ({ id }) => {
     return (
         <div className="modal is-active">
             <div className="modal-background"></div>
-            <div className="modal-content">
-                <p ref={clickRef} className="image">
+            <div ref={clickRef} className="modal-content">
+                <p className="image">
                     <img src={full_url} alt={data.description} />
                 </p>
+                {data.description && (
+                    <>
+                        <hr />
+                        <p className="box ">{data.description}</p>
+                    </>
+                )}
             </div>
             <button
                 className="modal-close is-large"
