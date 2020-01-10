@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import Redirects from 'Config/Redirects';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import useData from 'Utils/useData';
 
 const RedirectRoute = ({ match }) => {
-    const [redirecting, setRedirecting] = useState(false);
-    const src = Redirects[match.params.src];
+    const data = useData(
+        'redirectData',
+        'GET_BY',
+        match.params.src,
+        'redirect_from'
+    );
+    const history = useHistory();
 
     useEffect(() => {
-        if (src) {
-            window.open(src);
+        if (data) {
+            window.open(data.redirect_to);
         }
 
-        setRedirecting(true);
-    }, [src]);
+        history.goBack();
+    }, [data, history]);
 
     return (
         <>
-            {redirecting && <Redirect to="/" />}
             <h1>Redirecting...</h1>
         </>
     );

@@ -70,6 +70,12 @@ const App = () => {
         'https://cms.hethakhout.nl/het-hak-hout/items/fotos?fields=id,foto.data,description,created_on'
     );
 
+    // TODO: create redirects in CMS
+    // useLocalStorage(
+    //     'redirectData',
+    //     'https://cms.hethakhout.nl/het-hak-hout/items/redirects?fields=id,redirect_from,redirect_to'
+    // );
+
     useEffect(() => {
         const preloader = document.querySelector('.preloader');
         preloader.classList.add('preloader--hide');

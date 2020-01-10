@@ -1,2 +1,2 @@
-/api/*	https://jsonplaceholder.typicode.com/:splat  200
+/cms/*	https://cms.hethakhout.nl/het-hak-hout/items/:splat  200
 /*    /index.html   200
