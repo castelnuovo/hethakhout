@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useParams } from 'react-router';
 import withBaseRoute from 'Utils/withBaseRoute';
 import Fotos from 'Components/Fotos';
 import FotoModal from 'Components/Fotos/FotoModal';
 
-const FotosRoute = ({ match }) => {
-    const id = match.params.id;
+const FotosRoute = () => {
+    const { id } = useParams();
 
     return (
         <section className="section">
@@ -17,10 +17,6 @@ const FotosRoute = ({ match }) => {
             </div>
         </section>
     );
-};
-
-FotosRoute.propTypes = {
-    match: PropTypes.object.isRequired
 };
 
 export default withBaseRoute(FotosRoute);

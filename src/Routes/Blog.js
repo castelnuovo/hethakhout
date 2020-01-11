@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useParams } from 'react-router';
 import withBaseRoute from 'Utils/withBaseRoute';
 import BlogList from 'Components/Blog/BlogList';
 import BlogView from 'Components/Blog/BlogView';
 
-const Blog = ({ match }) => {
-    const id = match.params.id;
+const Blog = () => {
+    const { id } = useParams();
 
     return (
         <section className="section">
@@ -15,10 +15,6 @@ const Blog = ({ match }) => {
             </div>
         </section>
     );
-};
-
-Blog.propTypes = {
-    match: PropTypes.object.isRequired
 };
 
 export default withBaseRoute(Blog);
