@@ -4,7 +4,8 @@ import Loader from 'Components/Loader';
 import BlogItem from './BlogItem';
 
 const BlogList = () => {
-    const data = useData('useBlog', 'ALL');
+    const data = useData('blogData', 'ALL');
+    console.log('BlogListData', data);
 
     return (
         <>

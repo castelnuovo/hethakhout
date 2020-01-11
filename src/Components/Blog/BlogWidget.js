@@ -4,7 +4,7 @@ import Loader from 'Components/Loader';
 import BlogItem from './BlogItem';
 
 const BlogWidget = () => {
-    const data = useData('useBlog', 'ALL');
+    const data = useData('blogData', 'ALL');
 
     return (
         <section className="section">
