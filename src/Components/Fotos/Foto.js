@@ -18,11 +18,11 @@ const Foto = ({ data }) => {
                 <div className="card">
                     <div className="card-image">
                         <figure className="image">
-                            <img src={thumbnail_url} alt={data.description} />
+                            <img src={thumbnail_url} alt={data.title} />
                         </figure>
                     </div>
                     <footer className="card-footer">
-                        <p className="card-footer-item">{data.description}</p>
+                        <p className="card-footer-item">{data.title}</p>
                     </footer>
                 </div>
             </div>
