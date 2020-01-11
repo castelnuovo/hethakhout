@@ -5,7 +5,6 @@ import BlogItem from './BlogItem';
 
 const BlogList = () => {
     const data = useData('blogData', 'ALL');
-    console.log('BlogListData', data);
 
     return (
         <>
