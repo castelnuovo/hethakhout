@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router';
+import React, { useState, useRef, useEffect } from 'react';
+import { withRouter, useLocation } from 'react-router';
 import { createGlobalStyle } from 'styled-components';
+import useClickOutside from 'Utils/useClickOutside';
 import Brand from './Brand';
 import Menu from './Menu';
 
@@ -28,8 +29,18 @@ const NavBar = () => {
         setHamburgerOpen(!hamburgerOpen);
     };
 
+    // User clicks outside hamburger nav
+    const clickRef = useRef();
+    useClickOutside(clickRef, () => hamburgerOpen && toggleHamburger());
+
+    // User clicks on navlink
+    let location = useLocation();
+    useEffect(() => {
+        setHamburgerOpen(false);
+    }, [location.pathname]);
+
     return (
-        <nav className="navbar is-fixed-top">
+        <nav ref={clickRef} className="navbar is-fixed-top">
             <NavBarStyles />
             <div className="container">
                 <Brand
