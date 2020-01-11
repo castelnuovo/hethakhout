@@ -54,7 +54,6 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App = () => {
-    // Save API data
     useLocalStorage(
         'blogData',
         'https://cms.hethakhout.nl/het-hak-hout/items/articles?fields=id,created_on,title,content,hero.data,summary&sort=-created_on'
@@ -65,33 +64,15 @@ const App = () => {
         'https://cms.hethakhout.nl/het-hak-hout/items/activities?fields=id,title,description,category'
     );
 
-    // TODO: update cms scheme
-    // [
-    //     {
-    //         "id": 1,
-    //         "title": "instagram",
-    //         "description": "lorem ipsum blah blah blah"
-    //     }
-    // ]
-
     useLocalStorage(
         'fotoData',
         'https://cms.hethakhout.nl/het-hak-hout/items/fotos?fields=id,foto.data,description,created_on'
     );
 
-    // TODO: create redirects in CMS
-    // useLocalStorage(
-    //     'redirectData',
-    //     'https://cms.hethakhout.nl/het-hak-hout/items/redirects?fields=id,redirect_from,redirect_to'
-    // );
-
-    // [
-    //     {
-    //         "id": 1,
-    //         "redirect_from": "instagram",
-    //         "redirect_to": "https://www.instagram.com/hethakhout/"
-    //     }
-    // ]
+    useLocalStorage(
+        'redirectData',
+        'https://cms.hethakhout.nl/het-hak-hout/items/redirects?fields=id,redirect_from,redirect_to'
+    );
 
     useEffect(() => {
         const preloader = document.querySelector('.preloader');
