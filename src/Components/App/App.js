@@ -66,7 +66,7 @@ const App = () => {
 
     useLocalStorage(
         'fotoData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/fotos?fields=id,foto.data,description,created_on'
+        'https://cms.hethakhout.nl/het-hak-hout/items/fotos?fields=id,foto.data,title,description,created_on'
     );
 
     useLocalStorage(
