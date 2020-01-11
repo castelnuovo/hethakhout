@@ -3,7 +3,7 @@ import Profile_Picture from 'Assets/images/francisca_laporte.jpg';
 
 const AboutMe = () => {
     return (
-        <section id="ciskaComponent" className="section">
+        <section className="section">
             <div className="container">
                 <div className="columns">
                     <div className="column is-one-third">
