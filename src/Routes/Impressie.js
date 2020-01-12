@@ -19,7 +19,7 @@ const Impressie = () => {
                         poster={BackgroundSnapshot}
                         playsInline
                         autoPlay
-                        // muted
+                        muted
                         loop
                     >
                         <source src={ImpressieVideoWebM} type="video/webm" />
