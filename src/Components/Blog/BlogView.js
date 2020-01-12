@@ -19,7 +19,7 @@ const StyledHeroBackground = styled.img`
 `;
 
 const BlogView = ({ id }) => {
-    const data = useData('blogData', 'GET', id);
+    const data = useData('blogData', 'GET', 'id', parseInt(id));
     const thumbnail_url = data?.hero.data.thumbnails[4].url;
 
     return (

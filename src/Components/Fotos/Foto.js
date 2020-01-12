@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
 const Foto = ({ data }) => {
-    const thumbnail_url = data.foto.data.thumbnails[4].url;
+    const thumbnail_url = data?.foto.data.thumbnails[4].url;
     const history = useHistory();
     const handleClick = () => {
         history.push(`/impressie/${data.id}`);

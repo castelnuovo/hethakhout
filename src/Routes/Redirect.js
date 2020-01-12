@@ -7,16 +7,17 @@ const Redirect = ({ route }) => {
     const { openNewTab } = route;
     const { src } = useParams();
     const history = useHistory();
-    const data = useData('redirectData', 'GET_BY', src, 'redirect_from');
+    const data = useData('redirectData', 'GET', 'redirect_from', src);
 
     useEffect(() => {
-        if (data) {
-            if (openNewTab) {
-                window.open(data.redirect_to);
-                history.goBack();
-            } else {
-                window.location.replace(data.redirect_to);
-            }
+        if (!data) {
+            history.goBack();
+        }
+
+        if (openNewTab) {
+            window.open(data.redirect_to);
+        } else {
+            window.location.replace(data.redirect_to);
         }
     }, [data, history, openNewTab]);
 
