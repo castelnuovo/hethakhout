@@ -13,7 +13,6 @@ const useData = (storage, action, id, filter_by) => {
                 return item.id === id;
             })[0];
         case 'GET_BY':
-            id = parseInt(id, 10);
             return data.filter(item => {
                 return item[filter_by] === id;
             })[0];

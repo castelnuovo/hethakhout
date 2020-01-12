@@ -1,11 +1,10 @@
 @charset "utf-8";
 
 // Import Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic:400,700');
 
 // Set brand style
-$family-sans-serif: 'Nunito',
-sans-serif;
+$family-sans-serif: 'Didact Gothic', sans-serif;
 $primary-color: #358600;
 $secundary-color: #008ada;
 $background-color: #fff;
@@ -19,6 +18,7 @@ $fullhd-enabled: false;
 // Update Bulma's components
 $body-background-color: $background-color;
 $control-border-width: 2px;
+// $control-radius: 100px;
 $input-shadow: none;
 $navbar-item-active-background-color: #fafafa;
 $dimensions: 16 24 32 48 64 96 128 256 512;
@@ -37,7 +37,7 @@ $dimensions: 16 24 32 48 64 96 128 256 512;
         right: 0;
 
         transform: translateY(-50%);
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         pointer-events: none;
     }
 

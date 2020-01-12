@@ -1,7 +1,7 @@
 import Home from 'Routes/Home';
 import Activity from 'Routes/Activity';
 import Blog from 'Routes/Blog';
-import Fotos from 'Routes/Fotos';
+import Impressie from 'Routes/Impressie';
 import Redirect from 'Routes/Redirect';
 import NotFound from 'Routes/NotFound';
 
@@ -29,8 +29,8 @@ const Routes = [
         component: Blog
     },
     {
-        path: '/fotos/:id?',
-        component: Fotos
+        path: '/impressie/:id?',
+        component: Impressie
     },
 
     // WIP
@@ -53,7 +53,13 @@ const Routes = [
     // END WIP
 
     {
-        path: '/redirect/:src',
+        path: '/open/:src',
+        openNewTab: true,
+        component: Redirect
+    },
+    {
+        path: '/qr/:src',
+        openNewTab: false,
         component: Redirect
     },
     {

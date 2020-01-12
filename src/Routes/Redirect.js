@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router';
 import useData from 'Utils/useData';
 
-const Redirect = ({ match }) => {
-    const data = useData(
-        'redirectData',
-        'GET_BY',
-        match.params.src,
-        'redirect_from'
-    );
+const Redirect = ({ route }) => {
+    const { openNewTab } = route;
+    const { src } = useParams();
     const history = useHistory();
+    const data = useData('redirectData', 'GET_BY', src, 'redirect_from');
 
     useEffect(() => {
         if (data) {
-            window.open(data.redirect_to);
+            if (openNewTab) {
+                window.open(data.redirect_to);
+                history.goBack();
+            } else {
+                window.location.replace(data.redirect_to);
+            }
         }
-
-        history.goBack();
-    }, [data, history]);
+    }, [data, history, openNewTab]);
 
     return (
         <>
@@ -28,7 +28,7 @@ const Redirect = ({ match }) => {
 };
 
 Redirect.propTypes = {
-    match: PropTypes.object.isRequired
+    openNewTab: PropTypes.bool
 };
 
 export default Redirect;

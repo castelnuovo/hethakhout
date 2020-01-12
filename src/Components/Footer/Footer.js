@@ -13,7 +13,7 @@ const Footer = () => {
                             <p>3947BA Langbroek</p>
                             <p>
                                 T:
-                                <Link to="/redirect/phone">06-2155-5574</Link>
+                                <Link to="/open/phone"> 06-2155-5574</Link>
                             </p>
                         </div>
                     </div>
@@ -28,22 +28,14 @@ const Footer = () => {
                     <div className="level-item has-text-centered">
                         <div>
                             <p className="title">Social media</p>
-
-                            <Link to="/redirect/facebook">
-                                <span className="icon is-large has-text-dark">
-                                    <i className="fab fa-facebook-square fa-3x"></i>
-                                </span>
-                            </Link>
-
-                            <Link to="/redirect/instagram">
+                            <Link to="/open/instagram">
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-instagram fa-3x"></i>
                                 </span>
                             </Link>
-
-                            <Link to="/redirect/linkedin">
+                            <Link to="/open/facebook">
                                 <span className="icon is-large has-text-dark">
-                                    <i className="fab fa-linkedin fa-3x"></i>
+                                    <i className="fab fa-facebook-square fa-3x"></i>
                                 </span>
                             </Link>
                         </div>

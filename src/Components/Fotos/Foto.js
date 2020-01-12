@@ -6,7 +6,7 @@ const Foto = ({ data }) => {
     const thumbnail_url = data.foto.data.thumbnails[4].url;
     const history = useHistory();
     const handleClick = () => {
-        history.push(`/fotos/${data.id}`);
+        history.push(`/impressie/${data.id}`);
     };
 
     return (

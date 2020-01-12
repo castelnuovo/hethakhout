@@ -25,11 +25,6 @@ const ActivityItem = ({ id, title, category, description }) => {
             </div>
             <hr />
             <div className="box">
-                <p className="is-size-4">{description}</p>
-            </div>
-            <div className="box">
-                <h1 className="title">Foto's</h1>
-                <hr />
                 <div className="columns">
                     <div className="column">
                         <img src={TestPicture} alt="alt" />
@@ -43,7 +38,13 @@ const ActivityItem = ({ id, title, category, description }) => {
                 </div>
             </div>
             <div className="box">
-                <h1 className="title">Extra's</h1>
+                <div
+                    className="content is-large"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                ></div>
+            </div>
+            <div className="box">
+                <h1 className="title">Opties</h1>
                 <p className="is-size-4">Lijstje met mogelijke extra's</p>
             </div>
         </>

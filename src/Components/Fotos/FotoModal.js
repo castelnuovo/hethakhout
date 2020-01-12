@@ -12,7 +12,7 @@ const Foto = ({ id }) => {
 
     const history = useHistory();
     const handleClick = () => {
-        history.push('/fotos');
+        history.push('/impressie');
     };
 
     return (
@@ -23,10 +23,9 @@ const Foto = ({ id }) => {
                     <img src={full_url} alt={data.description} />
                 </p>
                 {data.description && (
-                    <>
-                        <hr />
-                        <p className="box ">{data.description}</p>
-                    </>
+                    <p className="subtitle has-text-white">
+                        {data.description}
+                    </p>
                 )}
             </div>
             <button

@@ -17,12 +17,12 @@ const Menu = ({ hamburgerOpen }) => {
                 <MenuLink to="/shinrin-yoku">Shinrin-Yoku</MenuLink>
                 <MenuActivity />
                 <MenuLink to="/blog">Blog</MenuLink>
-                <MenuLink to="/fotos">Foto's</MenuLink>
+                <MenuLink to="/impressie">Impressie</MenuLink>
             </div>
 
             <div className="navbar-end">
                 <MenuLink
-                    to="/redirect/instagram"
+                    to="/open/instagram"
                     className="navbar-item is-hidden-touch"
                 >
                     <span className="icon" style={{ color: '#333' }}>
@@ -32,7 +32,7 @@ const Menu = ({ hamburgerOpen }) => {
 
                 <MenuBtn to="/booking">
                     <span className="icon">
-                        <i className="fas fa-walking"></i>
+                        <i className="fas fa-hiking"></i>
                     </span>
                     <span>Kom je langs?</span>
                 </MenuBtn>
