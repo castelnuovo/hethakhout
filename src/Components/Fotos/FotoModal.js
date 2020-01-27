@@ -5,7 +5,7 @@ import useData from 'Utils/useData';
 
 const Foto = ({ id }) => {
     const data = useData('fotoData', 'GET', 'id', parseInt(id));
-    const full_url = data?.foto.data.full_url;
+    const full_url = data?.foto?.data?.full_url;
     const clickRef = useRef();
 
     useClickOutside(clickRef, () => handleClick());

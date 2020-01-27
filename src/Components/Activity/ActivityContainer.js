@@ -4,7 +4,7 @@ import useLocalStorage from 'Utils/useLocalStorage';
 import Loader from 'Components/Loader';
 import ActivityItem from './ActivityItem';
 
-const Activities = ({ category, title }) => {
+const ActivityContainer = ({ category, title }) => {
     const [data] = useLocalStorage('activityData');
 
     if (!data) {
@@ -25,9 +25,9 @@ const Activities = ({ category, title }) => {
     return <ActivityItem {...activity} />;
 };
 
-Activities.propTypes = {
+ActivityContainer.propTypes = {
     category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
 };
 
-export default Activities;
+export default ActivityContainer;

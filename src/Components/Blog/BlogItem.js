@@ -14,7 +14,7 @@ const BlogItem = ({ id, title, summary, hero }) => {
                         <p className="subtitle">{summary}</p>
                     </div>
                     <div className="column is-one-fifths-desktop half-tablet is-full-mobile">
-                        <figure className="image image image ">
+                        <figure className="image">
                             <img src={thumbnail_url} alt={title} />
                         </figure>
                     </div>
