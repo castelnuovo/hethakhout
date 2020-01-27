@@ -54,25 +54,25 @@
         "bulma": "^0.8.0",
         "classnames": "^2.2.6",
         "markdown-to-jsx": "^6.10.3",
-        "node-sass": "^4.12.0",
+        "node-sass": "^4.13.1",
         "prop-types": "^15.7.2",
         "react": "^16.10.2",
         "react-dom": "^16.10.2",
         "react-favicon": "0.0.17",
-        "react-hook-form": "^4.4.8",
+        "react-hook-form": "^4.7.1",
         "react-router-config": "^5.1.1",
         "react-router-dom": "^5.1.2",
         "react-scripts": "^3.3.0",
-        "styled-components": "^4.4.0"
+        "styled-components": "^5.0.0"
     },
     "devDependencies": {
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.9.0",
-        "eslint-plugin-import": "^2.19.1",
+        "eslint-plugin-import": "^2.20.0",
         "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-react": "^7.17.0",
-        "husky": "^4.0.6",
-        "lint-staged": "^9.4.2",
+        "eslint-plugin-react": "^7.18.0",
+        "husky": "^4.2.1",
+        "lint-staged": "^10.0.2",
         "prettier": "^1.18.2"
     }
 }
