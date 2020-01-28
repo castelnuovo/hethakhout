@@ -1,5 +1,5 @@
 import React from 'react';
-// TODO: update proptypes
+import PropTypes from 'prop-types';
 
 const ActivityOption = ({ title, image, description }) => {
     return (
@@ -19,6 +19,12 @@ const ActivityOption = ({ title, image, description }) => {
             </div>
         </div>
     );
+};
+
+ActivityOption.propTypes = {
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 };
 
 export default ActivityOption;
