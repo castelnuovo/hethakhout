@@ -9,11 +9,7 @@ import MenuActivity from './MenuActivity';
 
 const StyledDiv = styled.div`
     @media screen and (max-width: 1023px) {
-        ${({ hamburgerOpen }) =>
-            hamburgerOpen &&
-            `
-            padding-bottom: 5rem;
-        `}
+        padding-bottom: 5rem !important;
     }
 `;
 
