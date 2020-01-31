@@ -6,7 +6,7 @@ GET https://hethakhout.nl/cms/articles
 ###
 
 GET https://hethakhout.nl/cms/activities
-    ?fields=id,title,description,category,options
+    ?fields=id,title,description,category,options,heros.directus_files_id.data
 
 ###
 

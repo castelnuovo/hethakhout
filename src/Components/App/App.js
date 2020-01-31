@@ -36,7 +36,7 @@ const App = () => {
 
     useLocalStorage(
         'activityData',
-        'https://hethakhout.nl/cms/activities?fields=id,title,description,category,options'
+        'https://hethakhout.nl/cms/activities?fields=id,title,description,category,options,heros.directus_files_id.data'
     );
 
     useLocalStorage(

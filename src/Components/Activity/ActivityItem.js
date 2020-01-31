@@ -4,88 +4,7 @@ import { Link } from 'react-router-dom';
 import ActivityFoto from './ActivityFoto';
 import ActivityOption from './ActivityOption';
 
-const ActivityFotoData = [
-    {
-        foto: {
-            data: {
-                full_url:
-                    'https://loremflickr.com/cache/resized/65535_49116919046_5cefebd2fb_c_512_512_nofilter.jpg',
-                thumbnails: [
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url:
-                            'https://image.shutterstock.com/image-photo/majestic-view-on-turquoise-water-260nw-266538056.jpg'
-                    }
-                ]
-            }
-        }
-    },
-    {
-        foto: {
-            data: {
-                full_url:
-                    'https://loremflickr.com/cache/resized/6535_49116919046_5cefebd2fb_c_512_512_nofilter.jpg',
-                thumbnails: [
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url:
-                            'https://image.shutterstock.com/image-photo/majestic-view-on-turquoise-water-260nw-266538056.jpg'
-                    }
-                ]
-            }
-        }
-    },
-    {
-        foto: {
-            data: {
-                full_url:
-                    'https://loremflickr.com/cache/resized/6553_49116919046_5cefebd2fb_c_512_512_nofilter.jpg',
-                thumbnails: [
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url: 'https://loremflickr.com/256/256/nature,animal'
-                    },
-                    {
-                        url:
-                            'https://image.shutterstock.com/image-photo/majestic-view-on-turquoise-water-260nw-266538056.jpg'
-                    }
-                ]
-            }
-        }
-    }
-];
-
-const ActivityItem = ({ id, title, category, description, options }) => {
+const ActivityItem = ({ id, title, category, description, heros, options }) => {
     return (
         <>
             <div className="level">
@@ -105,13 +24,18 @@ const ActivityItem = ({ id, title, category, description, options }) => {
                 </div>
             </div>
             <hr />
-            <div className="box">
-                <div className="columns">
-                    {ActivityFotoData.map(data => (
-                        <ActivityFoto key={data.foto.data.full_url} {...data} />
-                    ))}
+            {heros.length !== 0 && (
+                <div className="box">
+                    <div className="columns">
+                        {heros.map(hero => (
+                            <ActivityFoto
+                                key={hero.directus_files_id.data.full_url}
+                                {...hero.directus_files_id.data}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
             <div className="box">
                 <div
                     className="content is-large"

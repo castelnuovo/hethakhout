@@ -1,9 +1,7 @@
 import React, { useState, useRef } from 'react';
 import useClickOutside from 'Utils/useClickOutside';
 
-const ActivityFoto = ({ description, foto }) => {
-    const thumbnail_url = foto?.data?.thumbnails[4]?.url;
-    const full_url = foto?.data?.full_url;
+const ActivityFoto = ({ full_url, thumbnails }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const clickRef = useRef();
 
@@ -15,8 +13,8 @@ const ActivityFoto = ({ description, foto }) => {
                 <figure className="image image image ">
                     <img
                         className="is-256x256"
-                        src={thumbnail_url}
-                        alt={description}
+                        src={thumbnails[4]?.url}
+                        alt={full_url}
                     />
                 </figure>
             </div>
@@ -25,7 +23,7 @@ const ActivityFoto = ({ description, foto }) => {
                     <div className="modal-background"></div>
                     <div ref={clickRef} className="modal-content">
                         <p className="image">
-                            <img src={full_url} alt={description} />
+                            <img src={full_url} alt={full_url} />
                         </p>
                     </div>
                     <button
