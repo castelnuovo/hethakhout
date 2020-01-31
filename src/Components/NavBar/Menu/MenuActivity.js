@@ -19,11 +19,15 @@ const MenuActivity = () => {
 
     const categories = [
         ...new Set(
-            data.map(activity => {
-                return activity.category !== 'Overig'
-                    ? activity.category
-                    : null;
-            })
+            data
+                .map(activity => {
+                    return activity.category !== 'Overig'
+                        ? activity.category
+                        : null;
+                })
+                .filter(category => {
+                    return category !== null;
+                })
         )
     ];
 

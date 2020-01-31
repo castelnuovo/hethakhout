@@ -6,9 +6,7 @@ import BackgroundVideoMP4 from 'Assets/videos/trailer.mp4';
 
 const StyledDiv = styled.div`
     @media screen and (max-width: 768px) {
-        .hero-video {
-            display: unset !important;
-        }
+        display: unset !important;
     }
 `;
 
