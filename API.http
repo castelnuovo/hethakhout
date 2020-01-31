@@ -1,0 +1,24 @@
+// https://github.com/Huachao/vscode-restclient/blob/master/README.md
+
+GET https://hethakhout.nl/cms/articles
+    ?fields=id,created_on,title,content,hero.data,summary&sort=-created_on
+
+###
+
+GET https://hethakhout.nl/cms/activities
+    ?fields=id,title,description,category,options
+
+###
+
+GET https://hethakhout.nl/cms/fotos
+    ?fields=id,foto.data,title,description,created_on
+
+###
+
+GET https://hethakhout.nl/cms/redirects
+    ?fields=id,redirect_from,redirect_to
+
+###
+
+GET https://hethakhout.nl/cms/activityoptions
+    ?fields=hero,title,description

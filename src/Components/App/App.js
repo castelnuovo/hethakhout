@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Favicon from 'react-favicon';
 import Routes from 'Config/Routes';
 import useLocalStorage from 'Utils/useLocalStorage';
+import ScrollToTop from 'Utils/ScrollToTop';
 import './App.scss';
 
 import Logo from 'Config/Logo';
@@ -21,57 +22,36 @@ const GlobalStyles = createGlobalStyle`
         min-height: 100vh;
         flex-direction: column;
     }
-    
-    .App {
-        flex: 1;
-    }
+`;
 
-    @media screen and (max-width: 1023px) {
-        .navbar-menu.is-active {
-            padding-bottom: 5rem;
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        .hero-video {
-            display: unset !important;
-        }
-    }
-
-    .hero-video video {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        object-fit: cover;
-    }
-
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+const StyledDiv = styled.div`
+    flex: 1;
 `;
 
 const App = () => {
     useLocalStorage(
         'blogData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/articles?fields=id,created_on,title,content,hero.data,summary&sort=-created_on'
+        'https://hethakhout.nl/cms/articles?fields=id,created_on,title,content,hero.data,summary&sort=-created_on'
     );
 
     useLocalStorage(
         'activityData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/activities?fields=id,title,description,category'
+        'https://hethakhout.nl/cms/activities?fields=id,title,description,category,options'
+    );
+
+    useLocalStorage(
+        'optionsData',
+        'https://hethakhout.nl/cms/activityoptions?fields=hero.data,title,description'
     );
 
     useLocalStorage(
         'fotoData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/fotos?fields=id,foto.data,title,description,created_on'
+        'https://hethakhout.nl/cms/fotos?fields=id,foto.data,title,description,created_on'
     );
 
     useLocalStorage(
         'redirectData',
-        'https://cms.hethakhout.nl/het-hak-hout/items/redirects?fields=id,redirect_from,redirect_to'
+        'https://hethakhout.nl/cms/redirects?fields=id,redirect_from,redirect_to'
     );
 
     useEffect(() => {
@@ -81,10 +61,11 @@ const App = () => {
 
     return (
         <Router>
+            <ScrollToTop />
             <GlobalStyles />
             <Favicon url={Logo} />
             <NavBar />
-            <div className="App">{renderRoutes(Routes)}</div>
+            <StyledDiv className="App">{renderRoutes(Routes)}</StyledDiv>
             <Footer />
         </Router>
     );

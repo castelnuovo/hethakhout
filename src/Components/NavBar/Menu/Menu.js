@@ -1,10 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import styled from 'styled-components';
 
 import MenuLink from './MenuLink';
 import MenuBtn from './MenuBtn';
 import MenuActivity from './MenuActivity';
+
+const StyledDiv = styled.div`
+    @media screen and (max-width: 1023px) {
+        ${({ hamburgerOpen }) =>
+            hamburgerOpen &&
+            `
+            padding-bottom: 5rem;
+        `}
+    }
+`;
 
 const Menu = ({ hamburgerOpen }) => {
     const classes = classNames('navbar-menu', {
@@ -12,9 +23,11 @@ const Menu = ({ hamburgerOpen }) => {
     });
 
     return (
-        <div className={classes}>
+        <StyledDiv className={classes}>
             <div className="navbar-start">
-                <MenuLink to="/shinrin-yoku">Shinrin-Yoku</MenuLink>
+                <MenuLink to="/activiteiten/overig/shinrin-yoku">
+                    Shinrin-Yoku
+                </MenuLink>
                 <MenuActivity />
                 <MenuLink to="/blog">Blog</MenuLink>
                 <MenuLink to="/impressie">Impressie</MenuLink>
@@ -37,7 +50,7 @@ const Menu = ({ hamburgerOpen }) => {
                     <span>Kom je langs?</span>
                 </MenuBtn>
             </div>
-        </div>
+        </StyledDiv>
     );
 };
 
