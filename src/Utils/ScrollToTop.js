@@ -7,18 +7,12 @@ const ScrollToTop = () => {
     const prevPathname = usePrevious(pathname);
 
     useEffect(() => {
-        console.log('prevPath', prevPathname);
-        console.log('path', pathname);
-
-        if (prevPathname && !prevPathname.includes('/impressie')) {
-            if (!pathname.includes('/impressie')) {
-                window.scrollTo(0, 0);
-            }
+        if (
+            (prevPathname && !prevPathname.includes('/impressie')) ||
+            !pathname.includes('/impressie')
+        ) {
+            window.scrollTo(0, 0);
         }
-
-        // if (!pathname.includes('/impressie')) {
-        //     window.scrollTo(0, 0);
-        // }
     }, [pathname, prevPathname]);
 
     return null;
