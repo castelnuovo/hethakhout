@@ -59,20 +59,20 @@
         "react": "^16.10.2",
         "react-dom": "^16.10.2",
         "react-favicon": "0.0.17",
-        "react-hook-form": "^4.7.1",
+        "react-hook-form": "^4.7.2",
         "react-router-config": "^5.1.1",
         "react-router-dom": "^5.1.2",
-        "react-scripts": "^3.3.0",
+        "react-scripts": "^3.3.1",
         "styled-components": "^5.0.0"
     },
     "devDependencies": {
         "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.9.0",
+        "eslint-config-prettier": "^6.10.0",
         "eslint-plugin-import": "^2.20.0",
         "eslint-plugin-prettier": "^3.1.2",
         "eslint-plugin-react": "^7.18.0",
         "husky": "^4.2.1",
-        "lint-staged": "^10.0.2",
+        "lint-staged": "^10.0.6",
         "prettier": "^1.18.2"
     }
 }
