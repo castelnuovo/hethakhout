@@ -13,6 +13,16 @@ const Hero = () => {
                     </h2>
                 </div>
             </div>
+
+            <div className="hero-foot">
+                <div className="columns is-centered is-mobile">
+                    <div className="column is-narrow is-unselectable">
+                        <span className="icon is-large has-text-white">
+                            <i className="fas fa-2x fa-arrow-down"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </HeroVideo>
     );
 };

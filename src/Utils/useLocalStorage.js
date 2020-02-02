@@ -9,10 +9,8 @@ const useLocalStorage = (name, url) => {
     }
 
     if (!url) {
-        return [JSON.parse(localStorage.getItem(name)), false];
+        return JSON.parse(localStorage.getItem(name));
     }
-
-    return [data, isLoading];
 };
 
 useLocalStorage.propTypes = {

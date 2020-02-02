@@ -9,14 +9,14 @@ const useFetch = url => {
         const fetchData = async url => {
             setIsLoading(true);
 
-            let data = await fetch(url);
+            let data = await fetch(`https://hethakhout.nl/cms/${url}`);
             data = await data.json();
 
             setData(data.data);
             setIsLoading(false);
         };
 
-        if (url && url.includes('https://')) {
+        if (url) {
             fetchData(url);
         }
     }, [url]);

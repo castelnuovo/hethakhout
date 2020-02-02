@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import useLocalStorage from './useLocalStorage';
 
 const useData = (storage, action, filter_by, search) => {
-    const [data] = useLocalStorage(storage);
+    const data = useLocalStorage(storage);
 
     switch (action) {
         case 'ALL':

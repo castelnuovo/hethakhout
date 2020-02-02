@@ -7,7 +7,7 @@ import MenuColumn from './MenuColumn';
 import MenuLink from './MenuLink';
 
 const MenuActivity = () => {
-    const [data] = useLocalStorage('activityData');
+    const data = useLocalStorage('activityData');
 
     if (!data) {
         return (

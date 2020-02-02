@@ -8,7 +8,7 @@ const ActivityOption = ({ option }) => {
 
     const data = useData('optionsData', 'GET', 'title', option);
     const { title, hero, description } = data;
-    const thumbnail_url = hero.data.thumbnails[4].url;
+    const thumbnail_url = hero?.data?.thumbnails[4]?.url;
 
     if (!data) {
         return <Loader />;

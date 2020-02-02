@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const BlogItem = ({ id, title, summary, hero }) => {
-    const thumbnail_url = hero.data.thumbnails[4].url;
+    const thumbnail_url = hero?.data?.thumbnails[4]?.url;
 
     return (
         <div className="tile is-vertical box is-large">

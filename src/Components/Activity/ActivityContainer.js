@@ -6,7 +6,7 @@ import Loader from 'Components/Loader';
 import ActivityItem from './ActivityItem';
 
 const ActivityContainer = ({ category, title }) => {
-    const [data] = useLocalStorage('activityData');
+    const data = useLocalStorage('activityData');
     const history = useHistory();
 
     if (!data) {
