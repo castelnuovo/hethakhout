@@ -9,10 +9,12 @@ const ActivityFoto = ({ full_url, thumbnails }) => {
 
     return (
         <>
-            <div className="column" onClick={() => setModalOpen(true)}>
-                <figure className="image image image ">
+            <div
+                className="column is-one-quarter"
+                onClick={() => setModalOpen(true)}
+            >
+                <figure className="image">
                     <img
-                        className="is-256x256"
                         src={thumbnails[4]?.url}
                         alt="Activity Foto || Het Hak Hout"
                     />
