@@ -25,7 +25,7 @@ const BlogView = ({ id }) => {
 
     if (!data) {
         history.push('/blog/not-found');
-        window.location.reload(); // TODO: find cleaner method
+        window.location.reload();
     }
 
     return (
