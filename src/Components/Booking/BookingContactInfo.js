@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const ContactInfo = () => {
@@ -81,7 +80,5 @@ const ContactInfo = () => {
         </section>
     );
 };
-
-ContactInfo.propTypes = {};
 
 export default ContactInfo;

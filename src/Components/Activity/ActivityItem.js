@@ -26,13 +26,19 @@ const ActivityItem = ({ id, title, category, description, heros, options }) => {
             <hr />
             {heros.length !== 0 && (
                 <div className="box">
-                    <div className="columns">
+                    <div className="columns is-hidden-mobile is-multiline">
                         {heros.map(hero => (
                             <ActivityFoto
                                 key={hero.directus_files_id.data.full_url}
                                 {...hero.directus_files_id.data}
                             />
                         ))}
+                    </div>
+                    <div className="columns is-hidden-tablet">
+                        <ActivityFoto
+                            key={heros[0].directus_files_id.data.full_url}
+                            {...heros[0].directus_files_id.data}
+                        />
                     </div>
                 </div>
             )}
@@ -51,13 +57,25 @@ const ActivityItem = ({ id, title, category, description, heros, options }) => {
                             kiezen voor heerlijke extra's.
                         </p>
                         <br />
-                        <div className="columns">
+                        <div className="columns is-multiline">
                             {options.map(option => (
                                 <ActivityOption key={option} option={option} />
                             ))}
                         </div>
                     </div>
                 </>
+            )}
+            {heros.length !== 0 && (
+                <div className="box is-hidden-tablet">
+                    <div className="columns is-multiline">
+                        {heros.map(hero => (
+                            <ActivityFoto
+                                key={hero.directus_files_id.data.full_url}
+                                {...hero.directus_files_id.data}
+                            />
+                        ))}
+                    </div>
+                </div>
             )}
         </>
     );

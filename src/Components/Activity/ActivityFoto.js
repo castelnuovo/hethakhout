@@ -10,7 +10,7 @@ const ActivityFoto = ({ full_url, thumbnails }) => {
     return (
         <>
             <div
-                className="column is-one-quarter"
+                className="column is-one-third"
                 onClick={() => setModalOpen(true)}
             >
                 <figure className="image">
