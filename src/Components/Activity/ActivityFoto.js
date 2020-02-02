@@ -14,7 +14,7 @@ const ActivityFoto = ({ full_url, thumbnails }) => {
                     <img
                         className="is-256x256"
                         src={thumbnails[4]?.url}
-                        alt={full_url}
+                        alt="Activity Foto || Het Hak Hout"
                     />
                 </figure>
             </div>
@@ -23,7 +23,10 @@ const ActivityFoto = ({ full_url, thumbnails }) => {
                     <div className="modal-background"></div>
                     <div ref={clickRef} className="modal-content">
                         <p className="image">
-                            <img src={full_url} alt={full_url} />
+                            <img
+                                src={full_url}
+                                alt="Activity Foto || Het Hak Hout"
+                            />
                         </p>
                     </div>
                     <button

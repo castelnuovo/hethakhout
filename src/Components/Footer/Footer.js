@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+
+const FooterBottomStyle = createGlobalStyle`
+    #root {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+`;
 
 const Footer = () => {
     return (
         <footer className="footer">
+            <FooterBottomStyle />
+
             <div className="content has-text-centered ">
                 <nav className="level">
                     <div className="level-item has-text-centered">
@@ -13,7 +24,7 @@ const Footer = () => {
                             <p>3947BA Langbroek</p>
                             <p>
                                 T:
-                                <Link to="/open/phone"> 06-2155-5574</Link>
+                                <Link to="/redirect/phone"> 06-2155-5574</Link>
                             </p>
                         </div>
                     </div>
@@ -28,12 +39,12 @@ const Footer = () => {
                     <div className="level-item has-text-centered">
                         <div>
                             <p className="title">Social media</p>
-                            <Link to="/open/instagram">
+                            <Link to="/redirect/instagram">
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-instagram fa-3x"></i>
                                 </span>
                             </Link>
-                            <Link to="/open/facebook">
+                            <Link to="/redirect/facebook">
                                 <span className="icon is-large has-text-dark">
                                     <i className="fab fa-facebook-square fa-3x"></i>
                                 </span>

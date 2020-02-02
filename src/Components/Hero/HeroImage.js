@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from 'Config/Logo';
+import { Hero as Logo } from 'Config/Brand';
 
 const StyledFigure = styled.figure`
     display: flex;
@@ -9,14 +9,17 @@ const StyledFigure = styled.figure`
 `;
 
 const StyledImage = styled.img`
-    max-width: 20rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
 `;
 
 const HeroImage = () => {
     return (
         <StyledFigure>
-            <StyledImage src={Logo} className="image" alt="Logo" />
+            <StyledImage
+                src={Logo}
+                className="image"
+                alt="Hero || Het Hak Hout"
+            />
         </StyledFigure>
     );
 };

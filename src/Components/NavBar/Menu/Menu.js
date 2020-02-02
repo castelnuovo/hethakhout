@@ -31,7 +31,7 @@ const Menu = ({ hamburgerOpen }) => {
 
             <div className="navbar-end">
                 <MenuLink
-                    to="/open/instagram"
+                    to="/redirect/instagram"
                     className="navbar-item is-hidden-touch"
                 >
                     <span className="icon" style={{ color: '#333' }}>

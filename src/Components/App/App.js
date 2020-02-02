@@ -1,58 +1,24 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import Favicon from 'react-favicon';
 import Routes from 'Config/Routes';
-import useLocalStorage from 'Utils/useLocalStorage';
+import useAPI from 'Utils/useAPI';
 import ScrollToTop from 'Utils/ScrollToTop';
 import './App.scss';
 
-import Logo from 'Config/Logo';
+import { Logo } from 'Config/Brand';
 import NavBar from 'Components/NavBar';
-import Footer from 'Components/Footer';
+// import Footer from 'Components/Footer';
 
-const GlobalStyles = createGlobalStyle`
-    html {
-        overscroll-behavior: none;
-    }
-
-    #root {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-    }
-`;
-
+// Sticky footer style
 const StyledDiv = styled.div`
     flex: 1;
 `;
 
 const App = () => {
-    useLocalStorage(
-        'blogData',
-        'https://hethakhout.nl/cms/articles?fields=id,created_on,title,content,hero.data,summary&sort=-created_on'
-    );
-
-    useLocalStorage(
-        'activityData',
-        'https://hethakhout.nl/cms/activities?fields=id,title,description,category,options,heros.directus_files_id.data'
-    );
-
-    useLocalStorage(
-        'optionsData',
-        'https://hethakhout.nl/cms/activityoptions?fields=hero.data,title,description'
-    );
-
-    useLocalStorage(
-        'fotoData',
-        'https://hethakhout.nl/cms/fotos?fields=id,foto.data,title,description,created_on'
-    );
-
-    useLocalStorage(
-        'redirectData',
-        'https://hethakhout.nl/cms/redirects?fields=id,redirect_from,redirect_to'
-    );
+    useAPI();
 
     useEffect(() => {
         const preloader = document.querySelector('.preloader');
@@ -62,11 +28,10 @@ const App = () => {
     return (
         <Router>
             <ScrollToTop />
-            <GlobalStyles />
             <Favicon url={Logo} />
             <NavBar />
             <StyledDiv className="App">{renderRoutes(Routes)}</StyledDiv>
-            <Footer />
+            {/* <Footer /> */}
         </Router>
     );
 };

@@ -18,7 +18,10 @@ const Foto = ({ data }) => {
                 <div className="card">
                     <div className="card-image">
                         <figure className="image">
-                            <img src={thumbnail_url} alt={data.title} />
+                            <img
+                                src={thumbnail_url}
+                                alt="Impressie Foto || Het Hak Hout"
+                            />
                         </figure>
                     </div>
                     <footer className="card-footer">

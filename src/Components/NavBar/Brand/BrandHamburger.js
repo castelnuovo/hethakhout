@@ -12,7 +12,7 @@ const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
     return (
         <>
             <MenuLink
-                to="/open/instagram"
+                to="/redirect/instagram"
                 className="navbar-item is-hidden-desktop"
             >
                 <span className="icon" style={{ color: '#333' }}>

@@ -15,13 +15,14 @@ $fullhd-enabled: false;
 // Update Bulma's components
 $body-background-color: $background-color;
 $control-border-width: 2px;
-// $control-radius: 100px;
+$control-radius: 100px;
 $input-shadow: none;
 $navbar-item-active-background-color: #fafafa;
-$dimensions: 16 24 32 48 64 96 128 256 512;
+$dimensions: 16 24 32 48 64 96 128 192 256 512;
 
 // Import required Bulma files
 @import '~bulma/bulma.sass';
+// TODO: only import required files
 
 // Animated mobile nav
 @include until($desktop) {

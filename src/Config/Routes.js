@@ -53,13 +53,7 @@ const Routes = [
     // END WIP
 
     {
-        path: '/open/:src',
-        openNewTab: true,
-        component: Redirect
-    },
-    {
-        path: '/qr/:src',
-        openNewTab: false,
+        path: '/redirect/:src',
         component: Redirect
     },
     {

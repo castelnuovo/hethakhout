@@ -11,7 +11,7 @@ const AboutMe = () => {
                             <img
                                 className="is-rounded"
                                 src={Profile_Picture}
-                                alt="Het hak hout: Francisca Laporte"
+                                alt="Francisca Laporte || Het Hak Hout"
                             />
                         </figure>
                     </div>

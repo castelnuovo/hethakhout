@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import BrandHamburger from './BrandHamburger';
-import Logo from 'Config/Logo';
+import { Logo } from 'Config/Brand';
 
 const Brand = ({ hamburgerOpen, toggleHamburger }) => {
     return (
@@ -14,7 +14,7 @@ const Brand = ({ hamburgerOpen, toggleHamburger }) => {
             />
 
             <Link to="/" className="navbar-item">
-                <img src={Logo} alt="Het Hak Hout" />
+                <img src={Logo} alt="Logo || Het Hak Hout" />
             </Link>
         </div>
     );

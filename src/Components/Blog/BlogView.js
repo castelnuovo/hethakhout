@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import useData from 'Utils/useData';
 
@@ -21,6 +21,12 @@ const StyledHeroBackground = styled.img`
 const BlogView = ({ id }) => {
     const data = useData('blogData', 'GET', 'id', parseInt(id));
     const thumbnail_url = data?.hero?.data?.thumbnails[4]?.url;
+    const history = useHistory();
+
+    if (!data) {
+        history.push('/blog/not-found');
+        window.location.reload(); // TODO: find cleaner method
+    }
 
     return (
         <>
@@ -37,31 +43,26 @@ const BlogView = ({ id }) => {
                 </div>
             </Link>
             <hr />
-            {!data && <h1 className="title">Post niet gevonden.</h1>}
-            {data && (
-                <>
-                    <StyledHero className="hero is-primary is-medium">
-                        <StyledHeroBackground
-                            alt={data.title}
-                            src={thumbnail_url}
-                        />
-                        <div className="hero-body">
-                            <div className="container">
-                                <h1 className="title">{data.title}</h1>
-                                <h2 className="subtitle">
-                                    Posted on: {data.created_on}
-                                </h2>
-                            </div>
-                        </div>
-                    </StyledHero>
-                    <section className="section">
-                        <div
-                            className="content is-large"
-                            dangerouslySetInnerHTML={{ __html: data.content }}
-                        ></div>
-                    </section>
-                </>
-            )}
+            <StyledHero className="hero is-primary is-medium">
+                <StyledHeroBackground
+                    alt="Blog Hero || Het Hak Hout"
+                    src={thumbnail_url}
+                />
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title">{data.title}</h1>
+                        <h2 className="subtitle">
+                            Posted on: {data.created_on}
+                        </h2>
+                    </div>
+                </div>
+            </StyledHero>
+            <section className="section">
+                <div
+                    className="content is-large"
+                    dangerouslySetInnerHTML={{ __html: data.content }}
+                ></div>
+            </section>
         </>
     );
 };

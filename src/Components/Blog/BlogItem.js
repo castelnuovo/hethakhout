@@ -15,7 +15,10 @@ const BlogItem = ({ id, title, summary, hero }) => {
                     </div>
                     <div className="column is-one-fifths-desktop half-tablet is-full-mobile">
                         <figure className="image">
-                            <img src={thumbnail_url} alt={title} />
+                            <img
+                                src={thumbnail_url}
+                                alt="Blog Preview || Het Hak Hout"
+                            />
                         </figure>
                     </div>
                 </div>

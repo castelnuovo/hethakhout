@@ -15,14 +15,18 @@ const Foto = ({ id }) => {
         history.push('/impressie');
     };
 
+    if (!data) {
+        handleClick();
+    }
+
     return (
         <div className="modal is-active">
             <div className="modal-background"></div>
             <div ref={clickRef} className="modal-content">
                 <p className="image">
-                    <img src={full_url} alt={data.description} />
+                    <img src={full_url} alt="Impressie Foto || Het Hak Hout" />
                 </p>
-                {data.description && (
+                {data?.description && (
                     <p className="subtitle has-text-white">
                         {data.description}
                     </p>

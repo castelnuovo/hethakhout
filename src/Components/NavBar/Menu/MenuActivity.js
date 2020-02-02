@@ -12,7 +12,7 @@ const MenuActivity = () => {
     if (!data) {
         return (
             <MenuMega title="Activiteiten">
-                <Loader />
+                <Loader simple={true} />
             </MenuMega>
         );
     }

@@ -6,7 +6,7 @@ const useFetch = url => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async url => {
             setIsLoading(true);
 
             let data = await fetch(url);
@@ -16,8 +16,8 @@ const useFetch = url => {
             setIsLoading(false);
         };
 
-        if (url) {
-            fetchData();
+        if (url && url.includes('https://')) {
+            fetchData(url);
         }
     }, [url]);
 
@@ -25,7 +25,7 @@ const useFetch = url => {
 };
 
 useFetch.propTypes = {
-    url: PropTypes.string.isRequired
+    url: PropTypes.string
 };
 
 export default useFetch;

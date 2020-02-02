@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useParams, useHistory } from 'react-router';
 import useData from 'Utils/useData';
+import Loader from 'Components/Loader';
 
-const Redirect = ({ route }) => {
-    const { openNewTab } = route;
+const Redirect = () => {
     const { src } = useParams();
     const history = useHistory();
     const data = useData('redirectData', 'GET', 'redirect_from', src);
@@ -14,22 +13,16 @@ const Redirect = ({ route }) => {
             history.goBack();
         }
 
-        if (openNewTab) {
-            window.open(data.redirect_to);
-        } else {
-            window.location.replace(data.redirect_to);
-        }
-    }, [data, history, openNewTab]);
+        window.location.replace(data.redirect_to);
+    }, [data, history]);
 
     return (
-        <>
-            <h1>Redirecting...</h1>
-        </>
+        <section className="section">
+            <div className="container">
+                <Loader title="Redirecting..." />
+            </div>
+        </section>
     );
-};
-
-Redirect.propTypes = {
-    openNewTab: PropTypes.bool
 };
 
 export default Redirect;
