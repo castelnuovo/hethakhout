@@ -41,7 +41,7 @@ const MenuActivity = () => {
                                 return activity.category === category;
                             })
                             .map(link => {
-                                const url = `/activiteiten/${category.toLowerCase()}/${link.title
+                                const url = `/activiteit/${category.toLowerCase()}/${link.title
                                     .toLowerCase()
                                     .replace(/ /g, '-')}`;
 

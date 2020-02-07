@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHiking } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import MenuLink from './MenuLink';
 import MenuBtn from './MenuBtn';
@@ -23,7 +24,7 @@ const Menu = ({ hamburgerOpen }) => {
     return (
         <StyledDiv className={classes}>
             <div className="navbar-start">
-                <MenuLink to="/activiteiten/overig/shinrin-yoku">
+                <MenuLink to="/activiteit/overig/shinrin-yoku">
                     Shinrin-Yoku
                 </MenuLink>
                 <MenuActivity />
@@ -37,11 +38,11 @@ const Menu = ({ hamburgerOpen }) => {
                     className="navbar-item is-hidden-touch"
                 >
                     <span className="icon" style={{ color: '#333' }}>
-                        <i className="fab fa-instagram"></i>
+                        <FontAwesomeIcon icon={faInstagram} />
                     </span>
                 </MenuLink>
 
-                <MenuBtn to="/booking">
+                <MenuBtn to="/activiteiten">
                     <span className="icon">
                         <FontAwesomeIcon icon={faHiking} />
                     </span>

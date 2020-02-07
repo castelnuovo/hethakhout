@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const StyledContainer = styled.div`
     display: flex;
@@ -7,15 +10,41 @@ const StyledContainer = styled.div`
     align-items: center;
 `;
 
-const BookingSuccess = () => {
+const BookingSuccess = ({ title, category }) => {
+    const activityURL = `/activiteit/${category.toLowerCase()}/${title
+        .toLowerCase()
+        .replace(/ /g, '-')}`;
+
     return (
-        <section className="section">
-            <StyledContainer className="container">
-                <span className="icon is-large has-text-primary">
-                    <i className="fas fa-9x fa-check-circle"></i>
-                </span>
-            </StyledContainer>
-        </section>
+        <>
+            <div className="is-relative">
+                <StyledContainer>
+                    <span className="icon is-large has-text-primary">
+                        <FontAwesomeIcon icon={faCheckCircle} size="3x" />
+                    </span>
+                </StyledContainer>
+            </div>
+
+            <div className="has-text-centered">
+                <h1 className="title">Boeking Bevestigd</h1>
+                <hr />
+                <p className="is-size-3">
+                    Wij zullen spoedig contact met u opnemen om een datum te
+                    prikken.
+                </p>
+            </div>
+
+            <br />
+
+            <div className="buttons has-addons is-centered">
+                <Link as="button" to={activityURL} className="button is-large">
+                    De Activiteit
+                </Link>
+                <Link as="button" to="/" className="button is-large">
+                    Naar Home
+                </Link>
+            </div>
+        </>
     );
 };
 

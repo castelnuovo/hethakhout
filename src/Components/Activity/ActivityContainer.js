@@ -25,7 +25,7 @@ const ActivityContainer = ({ category, title }) => {
     })[0];
 
     if (!activity) {
-        history.push('/activiteiten/not-found');
+        history.push('/activiteit/not-found');
         window.location.reload();
     }
 

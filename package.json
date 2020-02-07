@@ -47,15 +47,17 @@
     "private": true,
     "scripts": {
         "build": "craco build",
-        "start": "craco start",
-        "test": "craco test"
+        "start": "react-scripts start",
+        "test": "react-scripts test"
     },
     "dependencies": {
         "@craco/craco": "^5.6.3",
         "@fortawesome/fontawesome-svg-core": "^1.2.27",
+        "@fortawesome/free-brands-svg-icons": "^5.12.1",
         "@fortawesome/free-solid-svg-icons": "^5.12.1",
         "@fortawesome/react-fontawesome": "^0.1.8",
         "bulma": "^0.8.0",
+        "bulma-steps-component": "^0.5.3",
         "classnames": "^2.2.6",
         "node-sass": "^4.13.1",
         "prop-types": "^15.7.2",

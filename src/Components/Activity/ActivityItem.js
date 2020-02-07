@@ -15,7 +15,7 @@ const ActivityItem = ({ id, title, category, description, heros, options }) => {
                 <div className="level-right">
                     <div className="level-item">
                         <Link
-                            to={`/booking/${id}`}
+                            to={`/boeking/${id}`}
                             className="button is-large is-link"
                         >
                             Boeken

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import MenuLink from '../Menu/MenuLink';
 
@@ -16,7 +18,7 @@ const BrandHamburger = ({ hamburgerOpen, hamburgerClick }) => {
                 className="navbar-item is-hidden-desktop"
             >
                 <span className="icon" style={{ color: '#333' }}>
-                    <i className="fab fa-instagram"></i>
+                    <FontAwesomeIcon icon={faInstagram} />
                 </span>
             </MenuLink>
             <div className={classes} onClick={hamburgerClick}>

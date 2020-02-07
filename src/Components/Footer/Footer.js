@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const FooterBottomStyle = createGlobalStyle`
     #root {
@@ -30,7 +32,7 @@ const Footer = () => {
                     </div>
                     <div className="level-item has-text-centered">
                         <Link
-                            to="/booking"
+                            to="/activiteiten"
                             className="button is-large is-primary is-outlined"
                         >
                             Kom je langs?
@@ -41,12 +43,18 @@ const Footer = () => {
                             <p className="title">Social media</p>
                             <Link to="/redirect/instagram">
                                 <span className="icon is-large has-text-dark">
-                                    <i className="fab fa-instagram fa-3x"></i>
+                                    <FontAwesomeIcon
+                                        icon={faInstagram}
+                                        size="3x"
+                                    />
                                 </span>
                             </Link>
                             <Link to="/redirect/facebook">
                                 <span className="icon is-large has-text-dark">
-                                    <i className="fab fa-facebook-square fa-3x"></i>
+                                    <FontAwesomeIcon
+                                        icon={faFacebook}
+                                        size="3x"
+                                    />
                                 </span>
                             </Link>
                         </div>

@@ -1,14 +1,11 @@
 import Home from 'Routes/Home';
+import ActivityList from 'Routes/ActivityList';
 import Activity from 'Routes/Activity';
 import Blog from 'Routes/Blog';
 import Impressie from 'Routes/Impressie';
+import Booking from 'Routes/Booking';
 import Redirect from 'Routes/Redirect';
 import NotFound from 'Routes/NotFound';
-
-import Booking from 'Routes/Booking';
-import ContactInfo from 'Components/Booking/BookingContactInfo';
-import Extras from 'Components/Booking/BookingExtras';
-import Success from 'Components/Booking/BookingSuccess';
 
 const Routes = [
     {
@@ -21,7 +18,11 @@ const Routes = [
         component: NotFound
     },
     {
-        path: '/activiteiten/:category/:title',
+        path: '/activiteiten',
+        component: ActivityList
+    },
+    {
+        path: '/activiteit/:category/:title',
         component: Activity
     },
     {
@@ -32,26 +33,10 @@ const Routes = [
         path: '/impressie/:id?',
         component: Impressie
     },
-
-    // WIP
     {
-        path: '/booking/:id?',
+        path: '/boeking/:id',
         component: Booking
     },
-    {
-        path: '/booking_contactinfo',
-        component: ContactInfo
-    },
-    {
-        path: '/booking_extras',
-        component: Extras
-    },
-    {
-        path: '/booking_success',
-        component: Success
-    },
-    // END WIP
-
     {
         path: '/redirect/:src',
         component: Redirect

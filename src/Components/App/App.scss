@@ -22,7 +22,6 @@ $dimensions: 16 24 32 48 64 96 128 192 256 512;
 
 // Import required Bulma files
 @import '~bulma/bulma.sass';
-// TODO: only import required files
 
 // Animated mobile nav
 @include until($desktop) {
@@ -45,3 +44,6 @@ $dimensions: 16 24 32 48 64 96 128 192 256 512;
         pointer-events: auto;
     }
 }
+
+// Import bulma-steps
+@import '~bulma-steps-component/bulma-steps.sass';
