@@ -25,7 +25,7 @@ npm run start
 OR
 
 ```sh
-npm run build && python -m SimpleHTTPServer build/
+npm run build && cd build/ && python -m SimpleHTTPServer build/
 ```
 
 ## Author
