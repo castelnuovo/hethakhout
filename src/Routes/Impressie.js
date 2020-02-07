@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import withBaseRoute from 'Utils/withBaseRoute';
 import Fotos from 'Components/Fotos';
@@ -10,6 +10,11 @@ import ImpressieVideoMP4 from 'Assets/videos/impressie.mp4';
 
 const Impressie = () => {
     const { id } = useParams();
+    const [muted, setMuted] = useState(true);
+
+    const toggleMuted = () => {
+        setMuted(!muted);
+    };
 
     return (
         <section className="section">
@@ -17,14 +22,27 @@ const Impressie = () => {
                 <div className="video">
                     <video
                         poster={BackgroundSnapshot}
+                        muted={muted}
                         playsInline
                         autoPlay
-                        muted
                         loop
                     >
                         <source src={ImpressieVideoWebM} type="video/webm" />
                         <source src={ImpressieVideoMP4} type="video/mp4" />
                     </video>
+                    <div className="buttons is-right is-overlay">
+                        <button
+                            className="button is-outlined is-medium"
+                            onClick={() => toggleMuted()}
+                        >
+                            <span className="icon is-small">
+                                {muted && (
+                                    <i className="fas fa-volume-mute"></i>
+                                )}
+                                {!muted && <i className="fas fa-volume-up"></i>}
+                            </span>
+                        </button>
+                    </div>
                 </div>
                 <br />
                 <h1 className="title">Foto's</h1>
