@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import withBaseRoute from 'Utils/withBaseRoute';
 import Fotos from 'Components/Fotos';
 import FotoModal from 'Components/Fotos/FotoModal';
@@ -37,9 +39,11 @@ const Impressie = () => {
                         >
                             <span className="icon is-small">
                                 {muted && (
-                                    <i className="fas fa-volume-mute"></i>
+                                    <FontAwesomeIcon icon={faVolumeMute} />
                                 )}
-                                {!muted && <i className="fas fa-volume-up"></i>}
+                                {!muted && (
+                                    <FontAwesomeIcon icon={faVolumeUp} />
+                                )}
                             </span>
                         </button>
                     </div>

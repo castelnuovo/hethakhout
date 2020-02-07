@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import useData from 'Utils/useData';
 
@@ -35,7 +37,7 @@ const BlogView = ({ id }) => {
                     <div className="level-left">
                         <div className="level-item">
                             <span className="icon is-large has-text-dark">
-                                <i className="fas fa-2x fa-arrow-left"></i>
+                                <FontAwesomeIcon icon={faArrowLeft} size="2x" />
                             </span>
                             <h2 className="title">Terug</h2>
                         </div>

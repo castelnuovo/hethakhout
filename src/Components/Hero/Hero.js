@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { Link as ScrollLink } from 'react-scroll';
 import HeroVideo from './HeroVideo';
 import HeroImage from './HeroImage';
@@ -45,7 +47,7 @@ const Hero = () => {
             >
                 <div className="container has-text-centered">
                     <StyledSpan className="icon is-large has-text-white">
-                        <i className="fas fa-2x fa-arrow-down"></i>
+                        <FontAwesomeIcon icon={faArrowDown} size="2x" />
                     </StyledSpan>
                 </div>
             </ScrollLink>

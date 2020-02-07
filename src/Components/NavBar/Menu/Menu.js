@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHiking } from '@fortawesome/free-solid-svg-icons';
 
 import MenuLink from './MenuLink';
 import MenuBtn from './MenuBtn';
@@ -41,7 +43,7 @@ const Menu = ({ hamburgerOpen }) => {
 
                 <MenuBtn to="/booking">
                     <span className="icon">
-                        <i className="fas fa-hiking"></i>
+                        <FontAwesomeIcon icon={faHiking} />
                     </span>
                     <span>Kom je langs?</span>
                 </MenuBtn>
