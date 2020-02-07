@@ -1,10 +1,11 @@
 import React from 'react';
+import { Element as ScrollTarget } from 'react-scroll';
 import Profile_Picture from 'Assets/images/francisca_laporte.jpg';
 
 const AboutMe = () => {
     return (
         <section className="section">
-            <div className="container">
+            <ScrollTarget name="aboutMe" className="container">
                 <div className="columns">
                     <div className="column is-one-third">
                         <figure className="image">
@@ -30,7 +31,7 @@ const AboutMe = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </ScrollTarget>
         </section>
     );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { Link as ScrollLink } from 'react-scroll';
 import HeroVideo from './HeroVideo';
 import HeroImage from './HeroImage';
 
@@ -35,16 +36,19 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div
+            <ScrollLink
+                to="aboutMe"
+                smooth={true}
+                duration={500}
+                offset={-75}
                 className="hero-foot"
-                onClick={() => console.log('scroll clicked')}
             >
                 <div className="container has-text-centered">
                     <StyledSpan className="icon is-large has-text-white">
                         <i className="fas fa-2x fa-arrow-down"></i>
                     </StyledSpan>
                 </div>
-            </div>
+            </ScrollLink>
         </HeroVideo>
     );
 };

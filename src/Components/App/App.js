@@ -10,7 +10,7 @@ import './App.scss';
 
 import { Logo } from 'Config/Brand';
 import NavBar from 'Components/NavBar';
-// import Footer from 'Components/Footer';
+import Footer from 'Components/Footer';
 
 // Sticky footer style
 const StyledDiv = styled.div`
@@ -31,7 +31,7 @@ const App = () => {
             <Favicon url={Logo} />
             <NavBar />
             <StyledDiv className="App">{renderRoutes(Routes)}</StyledDiv>
-            {/* <Footer /> */}
+            <Footer />
         </Router>
     );
 };
