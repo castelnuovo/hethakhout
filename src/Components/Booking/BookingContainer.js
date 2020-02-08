@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import useData from 'Utils/useData';
 import BookingSteps from './BookingSteps';
+import BookingContent from './BookingContent';
+import BookingInfo from './BookingInfo';
 import BookingButtons from './BookingButtons';
-
-import BookingContactInfo from 'Components/Booking/BookingContact';
-import BookingExtras from 'Components/Booking/BookingOptions';
-import BookingSuccess from 'Components/Booking/BookingSuccess';
 
 const Booking = ({ id }) => {
     const [state, setState] = useState(0);
@@ -42,27 +40,15 @@ const Booking = ({ id }) => {
                 requestState={requestState}
             />
 
-            <div className="box">
-                <div className="level">
-                    <div className="level-left">
-                        <h1 className="level-item title">{title}</h1>
-                        <h2 className="level-item subtitle">{category}</h2>
-                    </div>
-                </div>
-            </div>
+            <BookingInfo title={title} category={category} />
 
-            <div className="box">
-                {state === 0 && <BookingContactInfo />}
-                {state === 1 && (
-                    <BookingExtras
-                        options={options}
-                        onClickNext={onClickNext}
-                    />
-                )}
-                {state === 2 && (
-                    <BookingSuccess title={title} category={category} />
-                )}
-            </div>
+            <BookingContent
+                state={state}
+                options={options}
+                title={title}
+                category={category}
+                onClickNext={onClickNext}
+            />
 
             <BookingButtons
                 state={state}
