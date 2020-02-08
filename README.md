@@ -36,7 +36,7 @@ npm run build && cd build/ && python -m SimpleHTTPServer build/
 
 👤 **PepijnRezelman**
 
--   Github: [@Luca-Castelnuovo](https://github.com/PepijnRezelman)
+-   Github: [@PepijnRezelman](https://github.com/PepijnRezelman)
 
 ## 🤝 Contributing
 
