@@ -23,7 +23,7 @@ const Booking = ({ id }) => {
 
         setState(state);
         // TODO: add logic to check if user can access the step in question
-        // cant access confirmation before contactinfo
+        // cant access "confirmation" before "finishing contactinfo"
     };
 
     const onClickPrevious = () => {
@@ -36,7 +36,11 @@ const Booking = ({ id }) => {
 
     return (
         <>
-            <BookingSteps state={state} requestState={requestState} />
+            <BookingSteps
+                state={state}
+                options={options}
+                requestState={requestState}
+            />
 
             <div className="box">
                 <div className="level">

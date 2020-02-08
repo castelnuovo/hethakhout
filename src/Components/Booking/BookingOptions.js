@@ -6,7 +6,7 @@ const BookingOptions = ({ onClickNext, options }) => {
         onClickNext();
     }
 
-    // TODO: make item selectable
+    // TODO: make an "extra" item selectable and save to state
 
     return (
         <div className="columns is-multiline">
