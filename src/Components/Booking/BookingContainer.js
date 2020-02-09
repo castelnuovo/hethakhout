@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Loader from 'Components/Loader';
 import useData from 'Utils/useData';
+import EmailJS from 'Config/EmailJS';
 import BookingSteps from './BookingSteps';
 import BookingInfo from './BookingInfo';
 import BookingContent from './BookingContent';
@@ -51,8 +52,7 @@ const Booking = ({ id }) => {
     };
 
     const onSubmit = async () => {
-        // const url = 'https://hethakhout.nl/mail';
-        const url = 'https://enasazi9la05.x.pipedream.net';
+        const url = 'https://hethakhout.nl/mail';
         const userData =
             Object.entries(formData).length !== 0
                 ? { ...formData, activeOptions } // Activity with options
@@ -64,9 +64,12 @@ const Booking = ({ id }) => {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
-                category: data.category,
-                title: data.title,
-                ...userData
+                ...EmailJS,
+                template_params: {
+                    category: data.category,
+                    title: data.title,
+                    ...userData
+                }
             })
         })
             .then(() => {
