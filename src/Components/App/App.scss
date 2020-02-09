@@ -20,8 +20,9 @@ $input-shadow: none;
 $navbar-item-active-background-color: #fafafa;
 $dimensions: 16 24 32 48 64 96 128 192 256 512;
 
-// Import required Bulma files
+// Import Bulma
 @import '~bulma/bulma.sass';
+@import '~bulma-steps-component/bulma-steps.sass';
 
 // Animated mobile nav
 @include until($desktop) {
@@ -44,6 +45,3 @@ $dimensions: 16 24 32 48 64 96 128 192 256 512;
         pointer-events: auto;
     }
 }
-
-// Import bulma-steps
-@import '~bulma-steps-component/bulma-steps.sass';

@@ -1,29 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
-const ContactInput = ({
-    id,
-    title,
-    placeholder,
-    register,
-    settings,
-    error
-}) => {
+const ContactText = ({ id, title, placeholder, register, settings, error }) => {
+    const classes = classNames('textarea', 'is-medium', {
+        'is-danger': error
+    });
+
     return (
         <div className="field">
             <label className="label is-medium" htmlFor={id}>
                 {title}
             </label>
             <div className="control has-icons-right">
-                <input
-                    type="text"
+                <textarea
                     name={id}
                     placeholder={placeholder}
                     ref={register(settings)}
-                    className={`input is-medium ${error && 'is-danger'}`}
-                />
+                    className={classes}
+                ></textarea>
 
                 {error && (
                     <span className="icon is-small is-right">
@@ -36,7 +33,7 @@ const ContactInput = ({
     );
 };
 
-ContactInput.propTypes = {
+ContactText.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
@@ -45,8 +42,8 @@ ContactInput.propTypes = {
     error: PropTypes.object
 };
 
-ContactInput.defaultProps = {
+ContactText.defaultProps = {
     error: null
 };
 
-export default ContactInput;
+export default ContactText;

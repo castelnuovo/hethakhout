@@ -11,14 +11,14 @@ const BookingContact = ({ register, errors }) => {
                 placeholder="volledige naam"
                 register={register}
                 settings={{
-                    required: 'Name is required',
+                    required: 'Naam is verplicht',
                     minLength: {
                         value: 4,
-                        message: 'Minimum length is 4'
+                        message: 'Minimum lengte is 4'
                     },
                     maxLength: {
                         value: 64,
-                        message: 'Maximum length is 64'
+                        message: 'Maximum lengte is 64'
                     }
                 }}
                 error={errors.name}
@@ -30,10 +30,10 @@ const BookingContact = ({ register, errors }) => {
                 placeholder="welkom@hethakhout.nl"
                 register={register}
                 settings={{
-                    required: 'Email is required',
+                    required: 'Email is verplicht',
                     pattern: {
                         value: /^\S+@\S+$/i,
-                        message: 'Email must be valid'
+                        message: 'Email ongeldig'
                     }
                 }}
                 error={errors.email}
@@ -45,17 +45,28 @@ const BookingContact = ({ register, errors }) => {
                 placeholder="0612345678"
                 register={register}
                 settings={{
-                    required: 'Phone is required',
+                    required: 'Telefoonnummer verplicht',
                     minLength: {
                         value: 8,
-                        message: 'Minimum length is 8'
+                        message: 'Minimum lengte is 8'
                     },
                     maxLength: {
                         value: 15,
-                        message: 'Maximum length is 15'
+                        message: 'Maximum lengte is 15'
                     }
                 }}
                 error={errors.phone}
+            />
+
+            <BookingContactInput
+                id="participants"
+                title="Aantal deelnemers*"
+                placeholder="bijvoorbeeld. 4, 5-8, halve klas"
+                register={register}
+                settings={{
+                    required: 'Aantal deelnemers is verplicht'
+                }}
+                error={errors.participants}
             />
 
             <BookingContactText

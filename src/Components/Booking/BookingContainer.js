@@ -1,60 +1,73 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Loader from 'Components/Loader';
 import useData from 'Utils/useData';
 import BookingSteps from './BookingSteps';
-import BookingContent from './BookingContent';
 import BookingInfo from './BookingInfo';
+import BookingContent from './BookingContent';
 import BookingButtons from './BookingButtons';
 
 const Booking = ({ id }) => {
     const [state, setState] = useState(0);
-    const [data, setData] = useState({});
+    const [formData, setFormData] = useState({});
+    const [activeOptions, setActiveOptions] = useState(null);
     const { register, errors, triggerValidation, getValues } = useForm({
         mode: 'onBlur'
     });
-    const { title, category, options } = useData(
-        'activityData',
-        'GET',
-        'id',
-        parseInt(id)
-    );
+    const data = useData('activityData', 'GET', 'id', parseInt(id));
 
-    const requestState = async state => {
-        if (state < 0 || state > 2) {
-            return;
-        }
-
-        if (state === 1) {
-            if (!(await triggerValidation())) {
-                return;
-            }
-
-            setData(getValues());
-        }
-
+    const requestState = async newState => {
         if (state === 2) {
-            onSubmit();
-
             return;
         }
 
-        setState(state);
-    };
+        switch (newState) {
+            case 0:
+                break;
 
-    const setActiveOptions = activeOptions => {
-        console.log('container', activeOptions);
-        setData({ ...data, activeOptions });
+            case 1:
+                if (!(await triggerValidation())) {
+                    return;
+                }
+
+                setFormData(getValues());
+
+                if (data.options.length === 0) {
+                    requestState(2);
+                }
+
+                break;
+
+            case 2:
+                onSubmit();
+
+                return;
+
+            default:
+                return;
+        }
+
+        setState(newState);
     };
 
     const onSubmit = async () => {
+        // const url = 'https://hethakhout.nl/mail';
         const url = 'https://enasazi9la05.x.pipedream.net';
+        const userData =
+            Object.entries(formData).length !== 0
+                ? { ...formData, activeOptions } // Activity with options
+                : getValues(); // Activity without options
 
         await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({
+                category: data.category,
+                title: data.title,
+                ...userData
+            })
         })
             .then(() => {
                 setState(2);
@@ -64,26 +77,31 @@ const Booking = ({ id }) => {
             });
     };
 
+    if (!data) {
+        return <Loader />;
+    }
+
     return (
         <form className="form">
             <BookingSteps
                 state={state}
-                options={options}
+                options={data.options}
                 requestState={requestState}
             />
 
-            <BookingInfo title={title} category={category} />
+            <BookingInfo title={data.title} category={data.category} />
 
-            <BookingContent
-                title={title}
-                state={state}
-                errors={errors}
-                options={options}
-                register={register}
-                category={category}
-                requestState={requestState}
-                setActiveOptions={setActiveOptions}
-            />
+            <div className="box">
+                {data.options.length === 0 && state === 1 && <Loader />}
+                <BookingContent
+                    state={state}
+                    data={data}
+                    errors={errors}
+                    register={register}
+                    activeOptions={activeOptions}
+                    setActiveOptions={setActiveOptions}
+                />
+            </div>
 
             <BookingButtons state={state} requestState={requestState} />
         </form>

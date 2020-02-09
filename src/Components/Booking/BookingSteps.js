@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faUser,
@@ -7,13 +8,24 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const BookingSteps = ({ state, options, requestState }) => {
+    const classesState0 = classNames('steps-segment', {
+        'is-active': state === 0,
+        'has-gaps': state === 0
+    });
+
+    const classesState1 = classNames('steps-segment', {
+        'is-active': state === 0,
+        'has-gaps': state === 0
+    });
+
+    const classesState2 = classNames('steps-segment', 'is-unselectable', {
+        'is-active': state === 0,
+        'has-gaps': state === 0
+    });
+
     return (
         <ul className="level-item steps is-medium is-centered has-content-centered is-horizontal">
-            <li
-                className={`steps-segment ${state === 0 &&
-                    'is-active has-gaps'}`}
-                onClick={() => requestState(0)}
-            >
+            <li className={classesState0} onClick={() => requestState(0)}>
                 <span className="steps-marker">
                     <span className="icon">
                         <FontAwesomeIcon icon={faUser} />
@@ -24,11 +36,7 @@ const BookingSteps = ({ state, options, requestState }) => {
                 </div>
             </li>
             {options.length !== 0 && (
-                <li
-                    className={`steps-segment ${state === 1 &&
-                        'is-active has-gaps'}`}
-                    onClick={() => requestState(1)}
-                >
+                <li className={classesState1} onClick={() => requestState(1)}>
                     <span className="steps-marker">
                         <span className="icon">
                             <FontAwesomeIcon icon={faPlusSquare} />
@@ -39,11 +47,7 @@ const BookingSteps = ({ state, options, requestState }) => {
                     </div>
                 </li>
             )}
-            <li
-                className={`steps-segment ${state === 2 &&
-                    'is-active has-gaps'}`}
-                onClick={() => requestState(2)}
-            >
+            <li className={classesState2}>
                 <span className="steps-marker">
                     <span className="icon">
                         <FontAwesomeIcon icon={faCheck} />

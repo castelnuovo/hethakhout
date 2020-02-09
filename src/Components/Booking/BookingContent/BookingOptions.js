@@ -1,24 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BookingOption from './BookingOption';
 
-const BookingOptions = ({ state, requestState, options, setActiveOptions }) => {
-    if (options.length === 0) {
-        requestState(state + 1);
-    }
-
-    let activeOptions = [];
+const BookingOptions = ({ options, activeOptions, setActiveOptions }) => {
+    useEffect(() => {
+        setActiveOptions([]);
+    }, [setActiveOptions]);
 
     const onSelect = (title, state) => {
-        title = title + 'wip';
-
         if (state) {
-            activeOptions.push(title);
+            setActiveOptions([...activeOptions, title]);
         } else {
-            activeOptions = activeOptions.filter(item => item !== title);
+            setActiveOptions(activeOptions.filter(option => option !== title));
         }
-
-        console.log('booking', activeOptions);
-        // setActiveOptions(activeOptions);
     };
 
     return (
