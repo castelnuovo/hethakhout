@@ -1,14 +1,30 @@
 import React from 'react';
-import BookingContactInfo from 'Components/Booking/BookingContact';
-import BookingExtras from 'Components/Booking/BookingOptions';
+import BookingContact from 'Components/Booking/BookingContact';
+import BookingOptions from 'Components/Booking/BookingOptions';
 import BookingSuccess from 'Components/Booking/BookingSuccess';
 
-const BookingContent = ({ state, options, title, category, onClickNext }) => {
+const BookingContent = ({
+    title,
+    state,
+    errors,
+    options,
+    register,
+    category,
+    requestState,
+    setActiveOptions
+}) => {
     return (
         <div className="box">
-            {state === 0 && <BookingContactInfo />}
+            {state === 0 && (
+                <BookingContact register={register} errors={errors} />
+            )}
             {state === 1 && (
-                <BookingExtras options={options} onClickNext={onClickNext} />
+                <BookingOptions
+                    state={state}
+                    options={options}
+                    requestState={requestState}
+                    setActiveOptions={setActiveOptions}
+                />
             )}
             {state === 2 && (
                 <BookingSuccess title={title} category={category} />

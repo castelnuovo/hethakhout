@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const FooterBottomStyle = createGlobalStyle`
     #root {
@@ -49,14 +49,14 @@ const Footer = () => {
                                     />
                                 </span>
                             </Link>
-                            <Link to="/redirect/facebook">
+                            {/* <Link to="/redirect/facebook">
                                 <span className="icon is-large has-text-dark">
                                     <FontAwesomeIcon
                                         icon={faFacebook}
                                         size="3x"
                                     />
                                 </span>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </nav>

@@ -8,7 +8,7 @@ import {
 
 const BookingSteps = ({ state, options, requestState }) => {
     return (
-        <ul className="steps is-medium is-centered has-content-centered is-horizontal">
+        <ul className="level-item steps is-medium is-centered has-content-centered is-horizontal">
             <li
                 className={`steps-segment ${state === 0 &&
                     'is-active has-gaps'}`}

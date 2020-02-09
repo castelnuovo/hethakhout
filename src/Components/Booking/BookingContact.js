@@ -1,62 +1,73 @@
 import React from 'react';
+import BookingContactInput from './BookingContactInput';
+import BookingContactText from './BookingContactText';
 
-// TODO: fix icons, implement react-hook-form
-
-const Contact = () => {
+const BookingContact = ({ register, errors }) => {
     return (
         <>
-            <div className="field">
-                <label className="label">Naam van groepsleider</label>
-                <div className="control has-icons-left">
-                    <input
-                        className="input"
-                        type="text"
-                        placeholder="Volledige naam"
-                    />
-                    <span className="icon is-small is-left">
-                        <i className="fas fa-user"></i>
-                    </span>
-                </div>
-            </div>
+            <BookingContactInput
+                id="name"
+                title="Naam van groepsleider*"
+                placeholder="volledige naam"
+                register={register}
+                settings={{
+                    required: 'Name is required',
+                    minLength: {
+                        value: 4,
+                        message: 'Minimum length is 4'
+                    },
+                    maxLength: {
+                        value: 64,
+                        message: 'Maximum length is 64'
+                    }
+                }}
+                error={errors.name}
+            />
 
-            <div className="field">
-                <label className="label">Email</label>
-                <div className="control has-icons-left ">
-                    <input
-                        className="input"
-                        type="email"
-                        placeholder="E-mailadres"
-                    />
-                    <span className="icon is-small is-left">
-                        <i className="fas fa-envelope"></i>
-                    </span>
-                </div>
-            </div>
+            <BookingContactInput
+                id="email"
+                title="Email van groepsleider*"
+                placeholder="welkom@hethakhout.nl"
+                register={register}
+                settings={{
+                    required: 'Email is required',
+                    pattern: {
+                        value: /^\S+@\S+$/i,
+                        message: 'Email must be valid'
+                    }
+                }}
+                error={errors.email}
+            />
 
-            <div className="field">
-                <label className="label">Telefoonnummer</label>
-                <div className="control has-icons-left ">
-                    <input
-                        className="input"
-                        type="email"
-                        placeholder="Telefoonnummer"
-                    />
-                    <span className="icon is-small is-left">
-                        <i className="fas fa-phone"></i>
-                    </span>
-                </div>
-            </div>
+            <BookingContactInput
+                id="phone"
+                title="Telefoonnummer van groepsleider*"
+                placeholder="0612345678"
+                register={register}
+                settings={{
+                    required: 'Phone is required',
+                    minLength: {
+                        value: 8,
+                        message: 'Minimum length is 8'
+                    },
+                    maxLength: {
+                        value: 15,
+                        message: 'Maximum length is 15'
+                    }
+                }}
+                error={errors.phone}
+            />
 
-            <div className="field">
-                <div className="control">
-                    <label className="checkbox">
-                        <input type="checkbox" /> I agree to the{' '}
-                        <a href="/">terms and conditions</a>
-                    </label>
-                </div>
-            </div>
+            <BookingContactText
+                id="comments"
+                title="Opmerkingen"
+                placeholder="Eventuele vragen of opmerkingen"
+                register={register}
+                settings={{}}
+                error={errors.comments}
+            />
         </>
     );
 };
 
-export default Contact;
+export default BookingContact;

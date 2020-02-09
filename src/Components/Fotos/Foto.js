@@ -24,9 +24,6 @@ const Foto = ({ data }) => {
                             />
                         </figure>
                     </div>
-                    <footer className="card-footer">
-                        <p className="card-footer-item">{data.title}</p>
-                    </footer>
                 </div>
             </div>
         </>

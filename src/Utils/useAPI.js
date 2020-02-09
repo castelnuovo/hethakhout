@@ -20,7 +20,7 @@ const useAPI = () => {
 
     useLocalStorage(
         'fotoData',
-        `${root_url}/fotos?fields=id,foto.data,title,description,created_on`
+        `${root_url}/fotos?fields=id,foto.data,description,created_on`
     );
 
     useLocalStorage(
