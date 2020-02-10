@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import useClickOutside from 'Utils/useClickOutside';
+import PropTypes from 'prop-types';
 
 const ActivityFoto = ({ full_url, thumbnails }) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -39,6 +40,11 @@ const ActivityFoto = ({ full_url, thumbnails }) => {
             )}
         </>
     );
+};
+
+ActivityFoto.propTypes = {
+    full_url: PropTypes.string.isRequired,
+    thumbnails: PropTypes.string.isRequired
 };
 
 export default ActivityFoto;

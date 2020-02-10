@@ -5,6 +5,7 @@ import {
     faPlusSquare,
     faCheck
 } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 const BookingSteps = ({ state, options, requestState }) => {
     return (
@@ -55,6 +56,12 @@ const BookingSteps = ({ state, options, requestState }) => {
             </li>
         </ul>
     );
+};
+
+BookingSteps.propTypes = {
+    state: PropTypes.number.isRequired,
+    options: PropTypes.number.isRequired,
+    requestState: PropTypes.func.isRequired
 };
 
 export default BookingSteps;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookingInfo = ({ title, category }) => {
     return (
@@ -11,6 +12,11 @@ const BookingInfo = ({ title, category }) => {
             </div>
         </div>
     );
+};
+
+BookingInfo.propTypes = {
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired
 };
 
 export default BookingInfo;

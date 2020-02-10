@@ -85,7 +85,9 @@ ActivityItem.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+    description: PropTypes.string.isRequired,
+    heros: PropTypes.string.isRequired,
+    options: PropTypes.string.isRequired
 };
 
 export default ActivityItem;

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import useClickOutside from 'Utils/useClickOutside';
 import useData from 'Utils/useData';
+import PropTypes from 'prop-types';
 
 const Foto = ({ id }) => {
     const data = useData('fotoData', 'GET', 'id', parseInt(id));
@@ -39,6 +40,10 @@ const Foto = ({ id }) => {
             ></button>
         </div>
     );
+};
+
+Foto.propTypes = {
+    id: PropTypes.number.isRequired
 };
 
 export default Foto;

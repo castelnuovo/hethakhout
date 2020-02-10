@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 const StyledContainer = styled.div`
     display: flex;
@@ -48,4 +49,8 @@ const BookingSuccess = ({ title, category }) => {
     );
 };
 
+BookingSuccess.propTypes = {
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired
+};
 export default BookingSuccess;

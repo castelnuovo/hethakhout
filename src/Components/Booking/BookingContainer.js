@@ -4,6 +4,7 @@ import BookingSteps from './BookingSteps';
 import BookingContent from './BookingContent';
 import BookingInfo from './BookingInfo';
 import BookingButtons from './BookingButtons';
+import PropTypes from 'prop-types';
 
 const Booking = ({ id }) => {
     const [state, setState] = useState(0);
@@ -57,6 +58,11 @@ const Booking = ({ id }) => {
             />
         </>
     );
+};
+
+Booking.propTypes = {
+    id: PropTypes.number.isRequired,
+    state: PropTypes.number.isRequired
 };
 
 export default Booking;

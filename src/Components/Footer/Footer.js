@@ -16,14 +16,21 @@ const Footer = () => {
     return (
         <footer className="footer">
             <FooterBottomStyle />
-
             <div className="content has-text-centered ">
                 <nav className="level">
                     <div className="level-item has-text-centered">
                         <div>
                             <p className="title">Locatie</p>
-                            <p>Langbroekerdijk B19</p>
-                            <p>3947BA Langbroek</p>
+                            <p>
+                                <Link to="/redirect/gmaps">
+                                    Langbroekerdijk B19
+                                </Link>
+                            </p>
+                            <p>
+                                <Link to="/redirect/gmaps">
+                                    3947BA Langbroek
+                                </Link>
+                            </p>
                             <p>
                                 T:
                                 <Link to="/redirect/phone"> 06-2155-5574</Link>

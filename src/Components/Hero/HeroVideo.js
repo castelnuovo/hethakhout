@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BackgroundSnapshot from 'Assets/images/trailer.jpg';
 import BackgroundVideoWebM from 'Assets/videos/trailer.webm';
 import BackgroundVideoMP4 from 'Assets/videos/trailer.mp4';
+import PropTypes from 'prop-types';
 
 const StyledDiv = styled.div`
     @media screen and (max-width: 768px) {
@@ -37,6 +38,10 @@ const HeroVideo = ({ children }) => {
             {children}
         </section>
     );
+};
+
+HeroVideo.propTypes = {
+    children: PropTypes.node.isRequired
 };
 
 export default HeroVideo;

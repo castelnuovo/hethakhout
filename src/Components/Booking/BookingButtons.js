@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookingSteps = ({ state, onClickNext, onClickPrevious }) => {
     return (
@@ -22,6 +23,12 @@ const BookingSteps = ({ state, onClickNext, onClickPrevious }) => {
             )}
         </div>
     );
+};
+
+BookingSteps.propTypes = {
+    state: PropTypes.number.isRequired,
+    onClickNext: PropTypes.func.isRequired,
+    onClickPrevious: PropTypes.func.isRequired
 };
 
 export default BookingSteps;
