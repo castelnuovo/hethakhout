@@ -1,25 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BookingSteps = ({ state, onClickNext, onClickPrevious }) => {
+const BookingSteps = ({ state, requestState }) => {
     return (
         <div className="buttons is-right">
             {state !== 0 && state !== 2 && (
-                <button
+                <span
                     className="button is-medium is-primary is-outlined"
-                    onClick={() => onClickPrevious()}
+                    onClick={() => requestState(state - 1)}
                 >
                     Terug
-                </button>
+                </span>
             )}
 
             {state !== 2 && (
-                <button
+                <span
                     className="button is-medium is-primary"
-                    onClick={() => onClickNext()}
+                    onClick={() => requestState(state + 1)}
                 >
                     Volgende
-                </button>
+                </span>
             )}
         </div>
     );

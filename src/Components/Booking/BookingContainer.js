@@ -1,62 +1,114 @@
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Loader from 'Components/Loader';
 import useData from 'Utils/useData';
+import EmailJS from 'Config/EmailJS';
 import BookingSteps from './BookingSteps';
-import BookingContent from './BookingContent';
 import BookingInfo from './BookingInfo';
+import BookingContent from './BookingContent';
 import BookingButtons from './BookingButtons';
 import PropTypes from 'prop-types';
 
 const Booking = ({ id }) => {
     const [state, setState] = useState(0);
-    const { title, category, options } = useData(
-        'activityData',
-        'GET',
-        'id',
-        parseInt(id)
-    );
+    const [formData, setFormData] = useState({});
+    const [activeOptions, setActiveOptions] = useState(null);
+    const { register, errors, triggerValidation, getValues } = useForm({
+        mode: 'onBlur'
+    });
+    const data = useData('activityData', 'GET', 'id', parseInt(id));
 
-    const requestState = state => {
-        if (state < 0 || state > 2) {
+    const requestState = async newState => {
+        if (state === 2) {
             return;
         }
 
-        setState(state);
-        // TODO: add logic to check if user can access the step in question
-        // cant access "confirmation" before "finishing contactinfo"
+        switch (newState) {
+            case 0:
+                break;
+
+            case 1:
+                if (!(await triggerValidation())) {
+                    return;
+                }
+
+                setFormData(getValues());
+
+                if (data.options.length === 0) {
+                    requestState(2);
+                }
+
+                break;
+
+            case 2:
+                onSubmit();
+
+                return;
+
+            default:
+                return;
+        }
+
+        setState(newState);
     };
 
-    const onClickPrevious = () => {
-        requestState(state - 1);
+    const onSubmit = async () => {
+        const url = 'https://hethakhout.nl/mail';
+        const userData =
+            Object.entries(formData).length !== 0
+                ? { ...formData, activeOptions } // Activity with options
+                : getValues(); // Activity without options
+
+        await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                ...EmailJS,
+                template_params: {
+                    category: data.category,
+                    title: data.title,
+                    ...userData
+                }
+            })
+        })
+            .then(() => {
+                setState(2);
+            })
+            .catch(error => {
+                console.error('Error: ' + error);
+            });
     };
 
-    const onClickNext = () => {
-        requestState(state + 1);
-    };
+    if (!data) {
+        return <Loader />;
+    }
 
     return (
-        <>
+        <form className="form">
             <BookingSteps
                 state={state}
-                options={options}
+                options={data.options}
                 requestState={requestState}
             />
 
-            <BookingInfo title={title} category={category} />
+            <BookingInfo title={data.title} category={data.category} />
 
-            <BookingContent
-                state={state}
-                options={options}
-                title={title}
-                category={category}
-                onClickNext={onClickNext}
-            />
+            <div className="box">
+                {data.options.length === 0 && state === 1 && <Loader />}
+                <BookingContent
+                    state={state}
+                    data={data}
+                    errors={errors}
+                    register={register}
+                    activeOptions={activeOptions}
+                    setActiveOptions={setActiveOptions}
+                />
+            </div>
 
-            <BookingButtons
-                state={state}
-                onClickPrevious={onClickPrevious}
-                onClickNext={onClickNext}
-            />
-        </>
+            <BookingButtons state={state} requestState={requestState} />
+        </form>
     );
 };
 

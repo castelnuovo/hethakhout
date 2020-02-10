@@ -5,6 +5,12 @@ import ActivityFoto from './ActivityFoto';
 import ActivityOption from './ActivityOption';
 
 const ActivityItem = ({ id, title, category, description, heros, options }) => {
+    let herosMobile = [];
+    if (heros.length !== 0) {
+        herosMobile = [...heros];
+        herosMobile.shift();
+    }
+
     return (
         <>
             <div className="level">
@@ -65,10 +71,10 @@ const ActivityItem = ({ id, title, category, description, heros, options }) => {
                     </div>
                 </>
             )}
-            {heros.length !== 0 && (
+            {herosMobile.length !== 0 && (
                 <div className="box is-hidden-tablet">
                     <div className="columns is-multiline">
-                        {heros.map(hero => (
+                        {herosMobile.map(hero => (
                             <ActivityFoto
                                 key={hero.directus_files_id.data.full_url}
                                 {...hero.directus_files_id.data}

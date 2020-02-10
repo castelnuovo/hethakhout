@@ -4,8 +4,6 @@ import Loader from 'Components/Loader';
 import ActivityListCategory from './ActivityListCategory';
 import ActivityListItem from './ActivityListItem';
 
-// TODO: pull from api
-
 const ActivityListContainer = () => {
     const data = useLocalStorage('activityData');
 
