@@ -10,6 +10,28 @@
 
 ### 🏠 [Homepage](https://hethakhout.nl)
 
+## Infrastructure
+#### Domein en Email Hosting
+- URL: [Strato](https://strato.nl)
+- Gebruikersnaam: `info@hethakhout.nl`
+- Prijs: `$3/mo`
+
+#### Front-End Hosting
+- URL: [Netlify](https://app.netlify.com/)
+- Gebruikersnaam: `GitHub SSO (Luca-Castelnuovo)`
+- Prijs: `$9/mo`
+
+#### Back-End Hosting
+- URL: [Digital Ocean](https://cloud.digitalocean.com/)
+- Gebruikersnaam: `info@hethakhout.nl`
+- Prijs: `$5/mo`
+
+#### Email Service
+- URL: [EmailJS](https://dashboard.emailjs.com)
+- Gebruikersnaam: `info@hethakhout.nl`
+- Prijs: `$5/mo`
+
+
 ## Install
 
 ```sh
