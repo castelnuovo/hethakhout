@@ -4,9 +4,12 @@
   <a href="https://choosealicense.com/no-permission/" target="_blank">
     <img alt="License: UNLICENSED" src="https://img.shields.io/badge/License-UNLICENSED-yellow.svg" />
   </a>
+  <a href="https://app.netlify.com/sites/hethakhout/deploys" target="_blank">
+    <img alt="Status: Unknown" src="https://api.netlify.com/api/v1/badges/1a4084be-e9b1-4779-96c7-0196d5fa1392/deploy-status" />
+  </a>
 </p>
 
-> Het Hak Hout is een natuurgebied met historische waarde.
+> Het Hak Hout in een unieke omgeving, Een historisch landschap langs de Kromme Rijn. Een verborgen juweel van de provincie Utrecht. Ervaar Shinrin-Yuku, wandel langs kastelen en door het bos, traditioneel boogschieten, vogelspotten, Een stilte retraite of huur een cabin.
 
 ### 🏠 [Homepage](https://hethakhout.nl)
 
