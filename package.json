@@ -46,7 +46,8 @@
     },
     "private": true,
     "scripts": {
-        "build": "craco build",
+        "build": "react-scripts build",
+        "build-optimized": "craco build",
         "start": "react-scripts start",
         "test": "react-scripts test"
     },
@@ -64,7 +65,7 @@
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
         "react-favicon": "0.0.17",
-        "react-hook-form": "^4.9.6",
+        "react-hook-form": "^4.9.8",
         "react-router-config": "^5.1.1",
         "react-router-dom": "^5.1.2",
         "react-scripts": "^3.4.0",
@@ -82,6 +83,6 @@
         "lint-staged": "^10.0.8",
         "path": "^0.12.7",
         "prettier": "^1.18.2",
-        "purgecss-webpack-plugin": "^2.0.6"
+        "purgecss-webpack-plugin": "^2.1.0"
     }
 }
