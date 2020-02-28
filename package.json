@@ -46,7 +46,8 @@
     },
     "private": true,
     "scripts": {
-        "build": "craco build",
+        "build": "react-scripts build",
+        "build-optimized": "craco build",
         "start": "react-scripts start",
         "test": "react-scripts test"
     },
