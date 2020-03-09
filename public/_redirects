@@ -1,4 +1,4 @@
 /cms/*	https://cms.hethakhout.nl/het-hak-hout/items/:splat     200
-/maildisabled   https://api.emailjs.com/api/v1.0/email/send             200
-/mail   https://enasazi9la05.x.pipedream.net                     200
+/maildisabled   https://api.emailjs.com/api/v1.0/email/send     200
+/mail   https://enasazi9la05.x.pipedream.net                    200
 /*      /index.html                                             200
