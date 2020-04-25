@@ -16,7 +16,7 @@ const BookingInfo = ({ title, category }) => {
 
 BookingInfo.propTypes = {
     title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired
+    category: PropTypes.string.isRequired,
 };
 
 export default BookingInfo;

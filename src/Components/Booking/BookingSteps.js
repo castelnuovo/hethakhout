@@ -4,24 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faUser,
     faPlusSquare,
-    faCheck
+    faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 const BookingSteps = ({ state, options, requestState }) => {
     const classesState0 = classNames('steps-segment', {
         'is-active': state === 0,
-        'has-gaps': state === 0
+        'has-gaps': state === 0,
     });
 
     const classesState1 = classNames('steps-segment', {
         'is-active': state === 0,
-        'has-gaps': state === 0
+        'has-gaps': state === 0,
     });
 
     const classesState2 = classNames('steps-segment', 'is-unselectable', {
         'is-active': state === 0,
-        'has-gaps': state === 0
+        'has-gaps': state === 0,
     });
 
     return (
@@ -64,8 +64,8 @@ const BookingSteps = ({ state, options, requestState }) => {
 
 BookingSteps.propTypes = {
     state: PropTypes.number.isRequired,
-    options: PropTypes.number.isRequired,
-    requestState: PropTypes.func.isRequired
+    options: PropTypes.array.isRequired,
+    requestState: PropTypes.func.isRequired,
 };
 
 export default BookingSteps;

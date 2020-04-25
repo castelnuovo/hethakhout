@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import MailJS from 'mailjs-sdk';
 import Loader from 'Components/Loader';
 import useData from 'Utils/useData';
-import EmailJS from 'Config/EmailJS';
+import MailJSConfig from 'Config/MailJS';
 import BookingSteps from './BookingSteps';
 import BookingInfo from './BookingInfo';
 import BookingContent from './BookingContent';
@@ -53,32 +54,27 @@ const BookingContainer = ({ id }) => {
     };
 
     const onSubmit = async () => {
-        const url = 'https://hethakhout.nl/mail';
         const userData =
             Object.entries(formData).length !== 0
                 ? { ...formData, activeOptions } // Activity with options
                 : getValues(); // Activity without options
 
-        await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                ...EmailJS,
-                template_params: {
-                    category: data.category,
-                    title: data.title,
-                    ...userData,
-                },
-            }),
-        })
-            .then(() => {
+        const submitData = {
+            category: data.category,
+            title: data.title,
+            ...userData,
+        };
+
+        console.log(submitData);
+
+        MailJS.send(MailJSConfig.access_token, submitData).then(
+            (response) => {
                 setState(2);
-            })
-            .catch((error) => {
-                console.error('Error: ' + error);
-            });
+            },
+            (error) => {
+                console.error('Error: ' + JSON.stringify(error));
+            }
+        );
     };
 
     if (!data) {
@@ -114,7 +110,6 @@ const BookingContainer = ({ id }) => {
 
 BookingContainer.propTypes = {
     id: PropTypes.string.isRequired,
-    state: PropTypes.number.isRequired,
 };
 
 export default BookingContainer;
