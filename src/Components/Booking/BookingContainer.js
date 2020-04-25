@@ -9,16 +9,16 @@ import BookingContent from './BookingContent';
 import BookingButtons from './BookingButtons';
 import PropTypes from 'prop-types';
 
-const Booking = ({ id }) => {
+const BookingContainer = ({ id }) => {
     const [state, setState] = useState(0);
     const [formData, setFormData] = useState({});
     const [activeOptions, setActiveOptions] = useState(null);
     const { register, errors, triggerValidation, getValues } = useForm({
-        mode: 'onBlur'
+        mode: 'onBlur',
     });
     const data = useData('activityData', 'GET', 'id', parseInt(id));
 
-    const requestState = async newState => {
+    const requestState = async (newState) => {
         if (state === 2) {
             return;
         }
@@ -62,21 +62,21 @@ const Booking = ({ id }) => {
         await fetch(url, {
             method: 'POST',
             headers: {
-                'Content-type': 'application/json'
+                'Content-type': 'application/json',
             },
             body: JSON.stringify({
                 ...EmailJS,
                 template_params: {
                     category: data.category,
                     title: data.title,
-                    ...userData
-                }
-            })
+                    ...userData,
+                },
+            }),
         })
             .then(() => {
                 setState(2);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error('Error: ' + error);
             });
     };
@@ -112,9 +112,9 @@ const Booking = ({ id }) => {
     );
 };
 
-Booking.propTypes = {
-    id: PropTypes.number.isRequired,
-    state: PropTypes.number.isRequired
+BookingContainer.propTypes = {
+    id: PropTypes.string.isRequired,
+    state: PropTypes.number.isRequired,
 };
 
-export default Booking;
+export default BookingContainer;

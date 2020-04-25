@@ -4,7 +4,7 @@ import useClickOutside from 'Utils/useClickOutside';
 import useData from 'Utils/useData';
 import PropTypes from 'prop-types';
 
-const Foto = ({ id }) => {
+const FotoModal = ({ id }) => {
     const data = useData('fotoData', 'GET', 'id', parseInt(id));
     const full_url = data?.foto?.data?.full_url;
     const clickRef = useRef();
@@ -42,8 +42,8 @@ const Foto = ({ id }) => {
     );
 };
 
-Foto.propTypes = {
-    id: PropTypes.number.isRequired
+FotoModal.propTypes = {
+    id: PropTypes.string.isRequired,
 };
 
-export default Foto;
+export default FotoModal;
