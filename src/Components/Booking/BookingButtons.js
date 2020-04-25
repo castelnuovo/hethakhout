@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BookingSteps = ({ state, requestState }) => {
+const BookingButtons = ({ state, requestState }) => {
     return (
         <div className="buttons is-right">
             {state !== 0 && state !== 2 && (
@@ -25,10 +25,10 @@ const BookingSteps = ({ state, requestState }) => {
     );
 };
 
-BookingSteps.propTypes = {
+BookingButtons.propTypes = {
     state: PropTypes.number.isRequired,
     onClickNext: PropTypes.func.isRequired,
-    onClickPrevious: PropTypes.func.isRequired
+    onClickPrevious: PropTypes.func.isRequired,
 };
 
-export default BookingSteps;
+export default BookingButtons;

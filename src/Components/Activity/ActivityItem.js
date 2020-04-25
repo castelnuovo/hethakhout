@@ -30,10 +30,10 @@ const ActivityItem = ({ id, title, category, description, heros, options }) => {
                 </div>
             </div>
             <hr />
-            {heros.length !== 0 && (
+            {heros.length !== 0 && heros[0].directus_files_id && (
                 <div className="box">
                     <div className="columns is-hidden-mobile is-multiline">
-                        {heros.map(hero => (
+                        {heros.map((hero) => (
                             <ActivityFoto
                                 key={hero.directus_files_id.data.full_url}
                                 {...hero.directus_files_id.data}
@@ -64,7 +64,7 @@ const ActivityItem = ({ id, title, category, description, heros, options }) => {
                         </p>
                         <br />
                         <div className="columns is-multiline">
-                            {options.map(option => (
+                            {options.map((option) => (
                                 <ActivityOption key={option} option={option} />
                             ))}
                         </div>
@@ -74,7 +74,7 @@ const ActivityItem = ({ id, title, category, description, heros, options }) => {
             {herosMobile.length !== 0 && (
                 <div className="box is-hidden-tablet">
                     <div className="columns is-multiline">
-                        {herosMobile.map(hero => (
+                        {herosMobile.map((hero) => (
                             <ActivityFoto
                                 key={hero.directus_files_id.data.full_url}
                                 {...hero.directus_files_id.data}
@@ -92,8 +92,8 @@ ActivityItem.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    heros: PropTypes.string.isRequired,
-    options: PropTypes.string.isRequired
+    heros: PropTypes.array.isRequired,
+    options: PropTypes.array.isRequired,
 };
 
 export default ActivityItem;
