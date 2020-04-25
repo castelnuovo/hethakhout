@@ -1,0 +1,6 @@
+const MailJS = {
+    access_token:
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbWFpbGpzLmx1Y2FjYXN0ZWxudW92by5ubCIsImlhdCI6MTU4NzgxMDg5NiwiZXhwIjoxNjE5MzQ2ODk2LCJ0eXBlIjoic3VibWlzc2lvbiIsInN1YiI6ImIxYzBmMTg4LTYyNGEtNGE3ZC04MzhhLTFiODM4NGQxNGM0ZCIsImFsbG93ZWRfb3JpZ2luIjoiaHR0cHM6XC9cL2hldGhha2hvdXQubmwifQ.GSOTTlLbL9yp0TCpmLLABqWw4XArx7t5ZJYKGfNJBaY',
+};
+
+export default MailJS;

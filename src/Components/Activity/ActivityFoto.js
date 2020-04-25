@@ -44,7 +44,7 @@ const ActivityFoto = ({ full_url, thumbnails }) => {
 
 ActivityFoto.propTypes = {
     full_url: PropTypes.string.isRequired,
-    thumbnails: PropTypes.string.isRequired
+    thumbnails: PropTypes.array.isRequired,
 };
 
 export default ActivityFoto;

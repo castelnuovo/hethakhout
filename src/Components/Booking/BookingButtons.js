@@ -27,8 +27,7 @@ const BookingButtons = ({ state, requestState }) => {
 
 BookingButtons.propTypes = {
     state: PropTypes.number.isRequired,
-    onClickNext: PropTypes.func.isRequired,
-    onClickPrevious: PropTypes.func.isRequired,
+    requestState: PropTypes.func.isRequired,
 };
 
 export default BookingButtons;
