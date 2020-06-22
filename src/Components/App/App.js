@@ -6,7 +6,6 @@ import Favicon from 'react-favicon';
 import Routes from 'Config/Routes';
 import useAPI from 'Utils/useAPI';
 import ScrollToTop from 'Utils/ScrollToTop';
-import Analytics from 'Components/Analytics';
 import './App.scss';
 
 import { Logo } from 'Config/Brand';
@@ -28,7 +27,6 @@ const App = () => {
 
     return (
         <Router>
-            <Analytics />
             <ScrollToTop />
             <Favicon url={Logo} />
             <NavBar />
