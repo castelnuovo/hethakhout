@@ -83,7 +83,7 @@
         "husky": "^4.2.5",
         "lint-staged": "^10.2.11",
         "path": "^0.12.7",
-        "prettier": "^2.0.5",
+        "prettier": "^2.1.1",
         "purgecss-webpack-plugin": "^2.3.0"
     }
 }
