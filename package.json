@@ -81,7 +81,7 @@
         "eslint-plugin-react": "^7.20.6",
         "glob-all": "^3.2.1",
         "husky": "^4.2.5",
-        "lint-staged": "^10.2.11",
+        "lint-staged": "^10.2.13",
         "path": "^0.12.7",
         "prettier": "^2.1.1",
         "purgecss-webpack-plugin": "^2.3.0"
