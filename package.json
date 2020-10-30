@@ -56,7 +56,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.30",
         "@fortawesome/free-brands-svg-icons": "^5.15.1",
         "@fortawesome/free-solid-svg-icons": "^5.14.0",
-        "@fortawesome/react-fontawesome": "^0.1.11",
+        "@fortawesome/react-fontawesome": "^0.1.12",
         "bulma": "^0.9.1",
         "bulma-steps-component": "^0.5.3",
         "classnames": "^2.2.6",
