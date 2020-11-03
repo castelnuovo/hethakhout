@@ -84,6 +84,6 @@
         "lint-staged": "^10.5.1",
         "path": "^0.12.7",
         "prettier": "^2.1.2",
-        "purgecss-webpack-plugin": "^2.3.0"
+        "purgecss-webpack-plugin": "^3.0.0"
     }
 }
