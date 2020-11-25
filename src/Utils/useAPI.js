@@ -1,7 +1,7 @@
 import useLocalStorage from 'Utils/useLocalStorage';
 
 const useAPI = () => {
-    const root_url = 'https://hethakhout.nl/cms';
+    const root_url = '/cms';
 
     useLocalStorage(
         'blogData',
