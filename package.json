@@ -52,38 +52,38 @@
         "test": "react-scripts test"
     },
     "dependencies": {
-        "@craco/craco": "^5.6.4",
-        "@fortawesome/fontawesome-svg-core": "^1.2.30",
-        "@fortawesome/free-brands-svg-icons": "^5.14.0",
-        "@fortawesome/free-solid-svg-icons": "^5.14.0",
-        "@fortawesome/react-fontawesome": "^0.1.11",
-        "bulma": "^0.9.0",
+        "@craco/craco": "^5.8.0",
+        "@fortawesome/fontawesome-svg-core": "^1.2.32",
+        "@fortawesome/free-brands-svg-icons": "^5.15.1",
+        "@fortawesome/free-solid-svg-icons": "^5.15.1",
+        "@fortawesome/react-fontawesome": "^0.1.13",
+        "bulma": "^0.9.1",
         "bulma-steps-component": "^0.5.3",
         "classnames": "^2.2.6",
         "mailjs-sdk": "^1.0.0",
         "node-sass": "^4.14.1",
         "prop-types": "^15.7.2",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
         "react-favicon": "0.0.18",
         "react-hook-form": "^5.7.2",
         "react-router-config": "^5.1.1",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^3.4.3",
         "react-scroll": "^1.8.1",
-        "styled-components": "^5.2.0"
+        "styled-components": "^5.2.1"
     },
     "devDependencies": {
         "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.11.0",
-        "eslint-plugin-import": "^2.22.0",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-prettier": "^3.1.4",
-        "eslint-plugin-react": "^7.20.6",
+        "eslint-plugin-react": "^7.21.5",
         "glob-all": "^3.2.1",
         "husky": "^4.3.0",
-        "lint-staged": "^10.4.0",
+        "lint-staged": "^10.5.2",
         "path": "^0.12.7",
-        "prettier": "^2.1.2",
-        "purgecss-webpack-plugin": "^2.3.0"
+        "prettier": "^2.2.0",
+        "purgecss-webpack-plugin": "^3.0.0"
     }
 }
