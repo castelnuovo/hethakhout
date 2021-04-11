@@ -65,7 +65,7 @@
         "prop-types": "^15.7.2",
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
-        "react-favicon": "0.0.18",
+        "react-favicon": "0.0.19",
         "react-hook-form": "^6.15.5",
         "react-router-config": "^5.1.1",
         "react-router-dom": "^5.2.0",
