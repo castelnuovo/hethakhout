@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: react-hook-form
+    versions:
+    - ">= 7.a, < 8"
+  - dependency-name: react-hook-form
+    versions:
+    - 6.15.6
+  - dependency-name: react-favicon
+    versions:
+    - 0.0.19
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.2
+    - 4.0.3
